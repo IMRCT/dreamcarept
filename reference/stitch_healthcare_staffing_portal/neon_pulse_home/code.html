@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neon Pulse Medical | The Future of Medical Staffing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#00f2ff",
+                    "on-secondary": "#4b007e",
+                    "on-tertiary-container": "#006a71",
+                    "surface-container-lowest": "#0c0e12",
+                    "tertiary-fixed-dim": "#00dbe7",
+                    "on-secondary-fixed": "#2d004f",
+                    "on-primary-fixed": "#3f001a",
+                    "inverse-on-surface": "#2f3035",
+                    "tertiary-fixed": "#74f5ff",
+                    "surface-container-highest": "#333539",
+                    "secondary": "#dfb7ff",
+                    "on-background": "#e2e2e8",
+                    "surface-tint": "#ffb1c4",
+                    "surface-container-low": "#1a1c20",
+                    "outline": "#849495",
+                    "primary-fixed-dim": "#ffb1c4",
+                    "error-container": "#93000a",
+                    "on-secondary-container": "#f7e6ff",
+                    "secondary-fixed": "#f1daff",
+                    "surface-container-high": "#282a2e",
+                    "secondary-fixed-dim": "#dfb7ff",
+                    "tertiary": "#e1fdff",
+                    "primary": "#fff5f6",
+                    "on-primary": "#65002e",
+                    "background": "#111318",
+                    "outline-variant": "#3a494b",
+                    "on-error": "#690005",
+                    "surface-bright": "#37393e",
+                    "surface-container": "#1e2024",
+                    "surface-dim": "#111318",
+                    "error": "#ffb4ab",
+                    "on-surface": "#e2e2e8",
+                    "primary-fixed": "#ffd9e1",
+                    "inverse-primary": "#ba005b",
+                    "on-tertiary": "#00363a",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "on-surface-variant": "#b9cacb",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#6b00b0",
+                    "primary-container": "#ffcfd9",
+                    "surface": "#111318",
+                    "secondary-container": "#9d05ff",
+                    "inverse-surface": "#e2e2e8",
+                    "on-tertiary-fixed": "#002022",
+                    "on-primary-fixed-variant": "#8f0044",
+                    "surface-variant": "#333539",
+                    "on-primary-container": "#bd005c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glow-primary { box-shadow: 0 0 20px rgba(255,177,196,0.3); }
+        .glow-secondary { box-shadow: 0 0 20px rgba(157,5,255,0.3); }
+        .glow-tertiary { box-shadow: 0 0 20px rgba(0,242,255,0.3); }
+        .glass-card { backdrop-filter: blur(20px); background: rgba(51, 53, 57, 0.6); }
+        .text-gradient-primary { background: linear-gradient(to right, #ffb1c4, #9d05ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .border-gradient-pulse { border: 1px solid transparent; border-image: linear-gradient(135deg, #ffb1c4, #9d05ff) 1; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary/30">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#111318]/60 backdrop-blur-xl border-b border-[#ffffff]/10 shadow-[0_0_20px_rgba(255,177,196,0.15)] h-20">
+<div class="flex justify-between items-center px-8 h-full w-full max-w-screen-2xl mx-auto font-['Space_Grotesk'] tracking-tight">
+<div class="text-2xl font-bold bg-gradient-to-r from-[#ffb1c4] to-[#9d05ff] bg-clip-text text-transparent">
+                Neon Pulse Medical
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#00f2ff] font-bold border-b-2 border-[#00f2ff] pb-1 transition-colors" href="#">For Facilities</a>
+<a class="text-[#e2e2e8] hover:text-[#ffb1c4] transition-colors" href="#">For Staff</a>
+<a class="text-[#e2e2e8] hover:text-[#ffb1c4] transition-colors" href="#">How it Works</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-gradient-to-r from-[#ffb1c4] to-[#9d05ff] text-on-primary px-6 py-2.5 rounded-lg font-bold hover:glow-primary active:scale-95 transition-all">
+                    Request Staff
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden px-6">
+<!-- Decorative Glows -->
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary-container/10 rounded-full blur-[120px]"></div>
+<div class="max-w-screen-xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-8">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold leading-tight tracking-tighter">
+                        The Future of <span class="text-gradient-primary">Medical Staffing</span> is Here.
+                    </h1>
+<p class="text-on-surface-variant text-xl md:text-2xl leading-relaxed max-w-xl">
+                        Connecting forward-thinking hospitals with elite Physical, Occupational, and Speech-Language Pathologists through luminescent technology.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-gradient-to-br from-primary-fixed-dim to-secondary-container text-on-primary px-8 py-4 rounded-xl font-bold text-lg hover:glow-primary transition-all active:scale-95">
+                            Request Staff
+                        </button>
+<button class="border border-secondary/30 text-secondary px-8 py-4 rounded-xl font-bold text-lg hover:bg-secondary-container/10 transition-all active:scale-95">
+                            Find Shifts
+                        </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-tertiary-container/20 blur-3xl opacity-50"></div>
+<div class="relative rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl">
+<img alt="Medical Staffing Concept" class="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700" data-alt="Modern medical professional in a high-tech clinical setting with blue and pink ambient neon lighting atmospheric vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2OswJBwlJN22L2vrgr-VAmU291IDVonSYwv1KJxCem2k6oWbGTgiUyo0jHABNQ_TPXu_zYhwVL7W0VmpgXKFOkkWfQXfrl0nw52db2gTskW3cLIFl3cGJN7uLUaFURaCL6STVt8BGvFBS1BkSl_QmMl5NKEq0IU2El5zma8MhgCX9jN22WRipD0m7Es6dtuygwYmPvQu2ZjXXfy7LzCnRbztiYilKFbb_gRpYmcBJZvhoyGxjdS3DrSS3LfhL4JrqNvs--q1UXY4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 p-6 glass-card rounded-xl border border-white/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-container">verified_user</span>
+</div>
+<div>
+<p class="font-headline font-bold text-on-primary-fixed">Pulse Verified™</p>
+<p class="text-sm text-on-surface-variant">Top 1% of Licensed Therapists</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Section -->
+<section class="py-24 px-6 max-w-screen-2xl mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline text-4xl font-bold">Engineered for Efficiency</h2>
+<div class="h-1 w-24 bg-gradient-to-r from-primary-fixed-dim to-tertiary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1: Pink Glow -->
+<div class="surface-container-high p-8 rounded-2xl border border-primary/20 hover:glow-primary transition-all duration-500 group">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim text-3xl">bolt</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Fast Reliable Matching</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Our proprietary Pulse Matching algorithm finds the perfect clinician for your facility in minutes, not days.
+                    </p>
+</div>
+<!-- Feature 2: Purple Glow -->
+<div class="surface-container-high p-8 rounded-2xl border border-secondary/20 hover:glow-secondary transition-all duration-500 group">
+<div class="w-14 h-14 rounded-xl bg-secondary-container/10 flex items-center justify-center mb-6 group-hover:bg-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-3xl">verified</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Qualified Professionals</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Every PT, OT, and SLP undergoes a rigorous 5-step credentialing process with automated license verification.
+                    </p>
+</div>
+<!-- Feature 3: Blue Glow -->
+<div class="surface-container-high p-8 rounded-2xl border border-tertiary-container/20 hover:glow-tertiary transition-all duration-500 group">
+<div class="w-14 h-14 rounded-xl bg-tertiary-container/10 flex items-center justify-center mb-6 group-hover:bg-tertiary-container/20 transition-colors">
+<span class="material-symbols-outlined text-tertiary-container text-3xl">sync</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4">Flexible Solutions</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        From per-diem shifts to long-term contracts, we scale our staffing solutions to meet your census fluctuations.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Who We Serve Section -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#9d05ff08,transparent_50%)]"></div>
+<div class="max-w-screen-xl mx-auto px-6 relative z-10">
+<div class="flex flex-col lg:flex-row items-end justify-between mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-4">Who we serve</h2>
+<p class="text-xl text-on-surface-variant">Precision staffing tailored for the diverse landscapes of modern healthcare.</p>
+</div>
+<a class="text-tertiary-container flex items-center gap-2 font-bold group" href="#">
+                        View All Sectors <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Hospitals Card -->
+<div class="relative h-80 rounded-3xl overflow-hidden group">
+<img alt="Hospitals" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Sleek modern hospital corridor with soft blue medical lighting and glass partitions futuristic medical architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByh_Y1fAAFBotVlcwaa8DAQQ2N3GOW4EQF296O4-nI7UBuNeVC58g2diTHhzWj96Xzy7EPRhdI67pdU8DFiEjLlWTQAsCJl6bVWwONK68-2p6o-ctCpL8w4w1W6luP8370wjhcoZKYT88jX51nHz1emGr1bgvGKIgnC5jf4LwhalBr0jKVKaQ6o7cSPXDgQy9v68xF8pMpr8Gv_IUa9axMgUujiZ6YEolwYqwGYYNvftXxoSBUBbjqNpS90Ll1O7YXX1deE2Rhe74"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+<div class="absolute bottom-0 p-8 w-full">
+<span class="material-symbols-outlined text-primary-fixed-dim text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">local_hospital</span>
+<h4 class="font-headline text-2xl font-bold text-white">Hospitals</h4>
+<p class="text-white/60 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Acute care and rehab facilities.</p>
+</div>
+</div>
+<!-- Clinics Card -->
+<div class="relative h-80 rounded-3xl overflow-hidden group">
+<img alt="Clinics" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Interior of a high-end physical therapy clinic with modern exercise equipment and bright clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnYzVBUwZIqe6o6qmOzNZnk9Cr7ZCxcVjMvk6RMhJGkQ4XVaF5RkoaQPecLgrUay-DcIKvTOFYed2sIulCwWflCzClgJdxpmgf6_UQs_v-6AK16M_bTT7boxfldIklCIHa7TXhQ-hmpEQ-QmCpZ6DWkDslLpNUh2JmqCnlY9XknNzPp1fiVbQKZSv1cvDZ4gAFCxAFy55bDssLy_DUWzD9aNvpyJ8BcVc59ayOykS9zHkN0RskYjSUbA-JWUvmeCDZJ6scxY5XRRA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+<div class="absolute bottom-0 p-8 w-full">
+<span class="material-symbols-outlined text-secondary-fixed-dim text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<h4 class="font-headline text-2xl font-bold text-white">Clinics</h4>
+<p class="text-white/60 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Outpatient and specialized practices.</p>
+</div>
+</div>
+<!-- Home Health Card -->
+<div class="relative h-80 rounded-3xl overflow-hidden group">
+<img alt="Home Health" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A comforting well-lit home interior representing home health care services with warm inviting atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQdE824j5pMfhJiKs8esoo9kV4QGBymvHDCpeC3uwlKQaxG-Y255dhz_kGhPXgld36E5rTeWcIW6AItO_nfKFP3flSpLMfQz_427AHfYDEdfuGKksO4e8voLd04n_E6g4AIOssUFEUJY68f8Ix7qQPHtsPCDRgAdWT82TEv737sco-hlAwnSsvtbsv4DoKWkbRf8jBMYpLpSYfir_3IRsY1dJtG04_Dh6dasIczbNldh4O1J_DMxCfiSedQ0b6AV_GFVWjkjqzBkk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+<div class="absolute bottom-0 p-8 w-full">
+<span class="material-symbols-outlined text-tertiary-container text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">home_health</span>
+<h4 class="font-headline text-2xl font-bold text-white">Home Health</h4>
+<p class="text-white/60 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Personalized care in residential settings.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-6">
+<div class="max-w-screen-xl mx-auto rounded-[2rem] bg-gradient-to-br from-surface-container-high to-surface-container-low p-12 md:p-20 relative overflow-hidden border border-outline-variant/10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-secondary-container/20 rounded-full blur-[100px]"></div>
+<div class="relative z-10 text-center max-w-3xl mx-auto space-y-8">
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold">Ready to Pulse?</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed">
+                        Join the network of medical facilities and therapy professionals redefining the standards of clinical excellence and operational speed.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+<button class="bg-gradient-to-r from-primary-fixed-dim to-secondary-container text-on-primary px-10 py-5 rounded-2xl font-bold text-xl hover:glow-primary transition-all">
+                            Partner With Us
+                        </button>
+<button class="bg-surface-container-highest border border-tertiary-container/30 text-tertiary-container px-10 py-5 rounded-2xl font-bold text-xl hover:bg-tertiary-container/10 transition-all">
+                            Browse Open Shifts
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#111318] w-full py-12 border-t border-[#ffffff]/05 flex flex-col items-center gap-6 px-4">
+<div class="w-full max-w-screen-xl flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-['Space_Grotesk'] font-bold text-[#ffb1c4] text-xl">
+                Neon Pulse Medical
+            </div>
+<div class="flex gap-8 text-[#e2e2e8]/40 hover:text-[#e2e2e8]">
+<a class="hover:text-[#9d05ff] transition-colors font-['Manrope'] text-sm tracking-wide" href="#">Privacy Policy</a>
+<a class="hover:text-[#9d05ff] transition-colors font-['Manrope'] text-sm tracking-wide" href="#">Terms of Service</a>
+<a class="hover:text-[#9d05ff] transition-colors font-['Manrope'] text-sm tracking-wide" href="#">Contact Support</a>
+</div>
+</div>
+<div class="text-[#e2e2e8]/40 font-['Manrope'] text-xs uppercase tracking-widest mt-8">
+            © 2024 Neon Pulse Medical. The Luminescent Authority.
+        </div>
+</footer>
+</body></html>

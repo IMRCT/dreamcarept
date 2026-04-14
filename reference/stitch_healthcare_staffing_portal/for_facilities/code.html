@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#00f2ff",
+                    "on-secondary": "#4b007e",
+                    "on-tertiary-container": "#006a71",
+                    "surface-container-lowest": "#0c0e12",
+                    "tertiary-fixed-dim": "#00dbe7",
+                    "on-secondary-fixed": "#2d004f",
+                    "on-primary-fixed": "#3f001a",
+                    "inverse-on-surface": "#2f3035",
+                    "tertiary-fixed": "#74f5ff",
+                    "surface-container-highest": "#333539",
+                    "secondary": "#dfb7ff",
+                    "on-background": "#e2e2e8",
+                    "surface-tint": "#ffb1c4",
+                    "surface-container-low": "#1a1c20",
+                    "outline": "#849495",
+                    "primary-fixed-dim": "#ffb1c4",
+                    "error-container": "#93000a",
+                    "on-secondary-container": "#f7e6ff",
+                    "secondary-fixed": "#f1daff",
+                    "surface-container-high": "#282a2e",
+                    "secondary-fixed-dim": "#dfb7ff",
+                    "tertiary": "#e1fdff",
+                    "primary": "#fff5f6",
+                    "on-primary": "#65002e",
+                    "background": "#111318",
+                    "outline-variant": "#3a494b",
+                    "on-error": "#690005",
+                    "surface-bright": "#37393e",
+                    "surface-container": "#1e2024",
+                    "surface-dim": "#111318",
+                    "error": "#ffb4ab",
+                    "on-surface": "#e2e2e8",
+                    "primary-fixed": "#ffd9e1",
+                    "inverse-primary": "#ba005b",
+                    "on-tertiary": "#00363a",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "on-surface-variant": "#b9cacb",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#6b00b0",
+                    "primary-container": "#ffcfd9",
+                    "surface": "#111318",
+                    "secondary-container": "#9d05ff",
+                    "inverse-surface": "#e2e2e8",
+                    "on-tertiary-fixed": "#002022",
+                    "on-primary-fixed-variant": "#8f0044",
+                    "surface-variant": "#333539",
+                    "on-primary-container": "#bd005c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glow-primary { box-shadow: 0 0 20px rgba(255,177,196,0.3); }
+        .glow-tertiary { box-shadow: 0 0 20px rgba(0,242,255,0.3); }
+        .glass-panel { backdrop-filter: blur(20px); background: rgba(51, 53, 57, 0.6); }
+        .text-gradient { background: linear-gradient(135deg, #ffb1c4 0%, #9d05ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .neon-border { border: 1px solid rgba(255, 177, 196, 0.2); }
+        .neon-border-tertiary { border: 1px solid rgba(0, 242, 255, 0.2); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#111318]/60 backdrop-blur-xl border-b border-[#ffffff]/10 shadow-[0_0_20px_rgba(255,177,196,0.15)] h-20">
+<div class="flex justify-between items-center px-8 h-full w-full max-w-screen-2xl mx-auto font-['Space_Grotesk'] tracking-tight">
+<div class="text-2xl font-bold bg-gradient-to-r from-[#ffb1c4] to-[#9d05ff] bg-clip-text text-transparent">
+                Neon Pulse Medical
+            </div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-[#00f2ff] font-bold border-b-2 border-[#00f2ff] pb-1" href="#">For Facilities</a>
+<a class="text-[#e2e2e8] hover:text-[#ffb1c4] transition-colors" href="#">For Staff</a>
+<a class="text-[#e2e2e8] hover:text-[#ffb1c4] transition-colors" href="#">How it Works</a>
+</div>
+<button class="bg-gradient-to-r from-[#ffb1c4] to-[#9d05ff] text-on-primary px-6 py-2 rounded-lg font-bold hover:glow-primary duration-300 active:scale-95 transition-transform">
+                Request Staff
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden px-8">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-30" data-alt="Wide angle view of a modern high-tech hospital corridor with soft neon ambient lighting and clean glass surfaces, futuristic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuLiypVb4plP6Tlaf0La2SUlStlcyLEwPXEGHdWiW0Ji8heL7ARDs2zgx_OWFcZ3R2UnhKFCNwGeBJ7YaTm-H2uG2xXeH7SjJopXfbhKXwU7Mi1T28Ma5r9lHv0O1wAEnDefAPLyIJEkC6xkL2AI-ncA9KiTleqse1oM4rICe-3lPvkzV9k7SmbQk3u9OeN8Y54sFHjdXXx7OoN6MH_N5J4N2cHDDyfwiEYB1oHIqhEEUKvSwXQfCacbPl94SvLcfMY5NMINsJl_I"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+</div>
+<div class="relative z-10 max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter leading-none">
+                        Reliable Staffing, <br/>
+<span class="text-gradient">Delivered with Precision.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        Neon Pulse Medical integrates advanced data logistics with human expertise to ensure your facility never misses a beat. From critical care to general wards, we light the path to full coverage.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-gradient-to-r from-primary-fixed-dim to-secondary-container rounded-xl font-bold text-on-primary-fixed glow-primary active:scale-95 transition-all">
+                            Partner With Us
+                        </button>
+<button class="px-8 py-4 border border-outline-variant rounded-xl font-bold hover:bg-surface-container-high transition-all">
+                            View Credentials
+                        </button>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="glass-panel p-8 rounded-3xl neon-border relative z-20 overflow-hidden">
+<div class="flex items-center gap-4 mb-6">
+<div class="h-3 w-3 rounded-full bg-tertiary-container animate-pulse"></div>
+<span class="text-tertiary font-bold tracking-widest uppercase text-xs">Live Facility Dashboard</span>
+</div>
+<div class="space-y-4">
+<div class="h-16 bg-surface-container-low rounded-xl flex items-center px-4 gap-4">
+<span class="material-symbols-outlined text-tertiary-container">local_hospital</span>
+<div class="flex-1">
+<div class="h-2 w-24 bg-outline-variant rounded-full mb-2"></div>
+<div class="h-2 w-16 bg-outline-variant opacity-40 rounded-full"></div>
+</div>
+<div class="text-tertiary text-xs font-bold">98% Filled</div>
+</div>
+<div class="h-16 bg-surface-container-low rounded-xl flex items-center px-4 gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim">emergency</span>
+<div class="flex-1">
+<div class="h-2 w-32 bg-outline-variant rounded-full mb-2"></div>
+<div class="h-2 w-20 bg-outline-variant opacity-40 rounded-full"></div>
+</div>
+<div class="text-primary-fixed-dim text-xs font-bold">Urgent Action</div>
+</div>
+<div class="h-16 bg-surface-container-low rounded-xl flex items-center px-4 gap-4">
+<span class="material-symbols-outlined text-secondary">groups</span>
+<div class="flex-1">
+<div class="h-2 w-28 bg-outline-variant rounded-full mb-2"></div>
+<div class="h-2 w-12 bg-outline-variant opacity-40 rounded-full"></div>
+</div>
+<div class="text-secondary text-xs font-bold">12 Registered</div>
+</div>
+</div>
+</div>
+<!-- Decorative background glow -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-secondary-container opacity-20 blur-[100px]"></div>
+<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-tertiary-container opacity-20 blur-[100px]"></div>
+</div>
+</div>
+</section>
+<!-- Process Section: Step-by-Step Visual Journey -->
+<section class="py-24 px-8 bg-surface-container-lowest">
+<div class="max-w-screen-xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-6">The Pulse Protocol</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Our four-stage integration process ensures seamless staffing flow between our network and your administration.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+<!-- Step 1 -->
+<div class="group relative p-8 rounded-3xl bg-surface-container-low neon-border hover:bg-surface-container-high transition-all">
+<div class="text-5xl font-black text-outline-variant opacity-20 mb-4">01</div>
+<h3 class="font-headline text-xl font-bold mb-2">Integration</h3>
+<p class="text-sm text-on-surface-variant">Sync your scheduling software with our real-time API for instant gap detection.</p>
+<div class="absolute top-1/2 -right-2 hidden md:block z-30">
+<span class="material-symbols-outlined text-tertiary-container animate-pulse">chevron_right</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group relative p-8 rounded-3xl bg-surface-container-low neon-border hover:bg-surface-container-high transition-all">
+<div class="text-5xl font-black text-outline-variant opacity-20 mb-4">02</div>
+<h3 class="font-headline text-xl font-bold mb-2">Verification</h3>
+<p class="text-sm text-on-surface-variant">Our system audits 50+ compliance points per clinician before they ever see your shifts.</p>
+<div class="absolute top-1/2 -right-2 hidden md:block z-30">
+<span class="material-symbols-outlined text-tertiary-container animate-pulse">chevron_right</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group relative p-8 rounded-3xl bg-surface-container-low neon-border hover:bg-surface-container-high transition-all">
+<div class="text-5xl font-black text-outline-variant opacity-20 mb-4">03</div>
+<h3 class="font-headline text-xl font-bold mb-2">Matching</h3>
+<p class="text-sm text-on-surface-variant">AI-driven matching connects your specific ward needs with local, top-tier talent.</p>
+<div class="absolute top-1/2 -right-2 hidden md:block z-30">
+<span class="material-symbols-outlined text-tertiary-container animate-pulse">chevron_right</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="group relative p-8 rounded-3xl bg-surface-container-low neon-border-tertiary glow-tertiary bg-surface-container-high transition-all">
+<div class="text-5xl font-black text-tertiary-container opacity-40 mb-4">04</div>
+<h3 class="font-headline text-xl font-bold mb-2 text-tertiary-container">Continuity</h3>
+<p class="text-sm text-on-surface-variant">Dedicated account managers ensure long-term stability and quality of care metrics.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-24 px-8 overflow-hidden">
+<div class="max-w-screen-xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl font-bold mb-4">Trusted by the Authorities</h2>
+<p class="text-on-surface-variant">Join 200+ healthcare systems that prioritize luminescent precision in their staffing strategy.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="glass-panel p-8 rounded-2xl neon-border-tertiary shadow-[0_0_30px_rgba(0,242,255,0.05)] hover:translate-y-[-8px] transition-all duration-300">
+<div class="flex gap-1 mb-6 text-tertiary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-lg mb-8 leading-relaxed">"The level of transparency and credentialing speed at Neon Pulse is unlike anything we've seen in standard agencies."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Professional headshot of a female hospital administrator in a modern office, soft lighting, professional attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGiClrgjSkBqx0pAliuJ50XAiqvPpDM1eb6C0ZeeTzOsh91jFu7FKotWqdw0ZUZuVawtz6tbMIT6xfp6X0z9LKe8dSM7fL0FBfetsYwKvdCvFhYGLrpoFCxTmnmBeobztM-A2FoPv4LFyLBKBdVEc_KrbbsmvVw8jDBYQ7NX9d9fbYb6mLAOYU1Dwvg64G49py2BJOJ-SOeX_B5ZGQyeCpbR5dxhIzcF_MTuKFwUWbtr3Yjd_kce1rsJWauSRr26M0R_AZ3fbfYoM"/>
+<div>
+<div class="font-bold">Dr. Sarah Chen</div>
+<div class="text-xs text-on-surface-variant">Director of Operations, Metro General</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-panel p-8 rounded-2xl neon-border-tertiary shadow-[0_0_30px_rgba(0,242,255,0.05)] hover:translate-y-[-8px] transition-all duration-300">
+<div class="flex gap-1 mb-6 text-tertiary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-lg mb-8 leading-relaxed">"Our fill rates increased by 40% in the first quarter. Their interface makes shift management effortless for my staff."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Professional headshot of a male nursing director in a high-tech medical facility, calm confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFYhhrV6k-s-5di2Vp9KcgSG_f4BV8MFqI-X0nnlPS-qq2gbtJPNr1iGuLHfaMiqcNX1AtncI4bLca92r2VEkSS2YWhKjFkv8IlIpCoR1_zzr1h3Hn4McyQ-QX0W1hXDO34ZXEx3DQeuTjCiBTYowsfW68_7Dmw7gEuSe8HrgrridhM2i_9m-hFKasJbhO2Dve88jQ49Mez2Xbt3-S0kL92m8xs2e6bwvqmacm8V1Pu40XHxnSjRBRmRLZhzDlMky_PgLQpHMgrcM"/>
+<div>
+<div class="font-bold">Marcus Sterling</div>
+<div class="text-xs text-on-surface-variant">Chief Nursing Officer, Alpine Clinics</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-panel p-8 rounded-2xl neon-border-tertiary shadow-[0_0_30px_rgba(0,242,255,0.05)] hover:translate-y-[-8px] transition-all duration-300">
+<div class="flex gap-1 mb-6 text-tertiary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-lg mb-8 leading-relaxed">"When critical shifts go unfilled, it's our patients who suffer. Neon Pulse ensures we are always ready to serve."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a medical professional female doctor in a futuristic hospital setting with soft blue background lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb6b4uyesSpZpRPPAJ08g_HD20ruqxJpfNSI08wX_yBGLdjgJcAmiPBdwXkQeaAg8XrDslVxOhsbw3iKoxCI9uKc_GZGywn5JThY3F3G2IK6_bzKyBU9x5a5bWdZUGBLB4Pyer2FeOIJW7BRlMuQsekgcpi7_iHDVZxpAQaI_RIqoiRgVKItQSm3AlZcng23iyyhEdsEiKas37JvTxQ82DZg2AFgv51Iri2VCsJoAQAnxdiHGX4cmRkCbFQwdVAS7Tu1CYJyh70Ec"/>
+<div>
+<div class="font-bold">Elena Rodriguez</div>
+<div class="text-xs text-on-surface-variant">Regional HR Manager, HealthFirst</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-24 px-8 bg-surface-container-low relative overflow-hidden">
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<h2 class="font-headline text-5xl font-bold mb-8">Request a <br/><span class="text-tertiary-container">Staffing Audit.</span></h2>
+<p class="text-on-surface-variant mb-12 text-lg">Tell us about your facility's specific challenges. Our team will prepare a custom staffing projection and technology audit within 24 hours.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/10 flex items-center justify-center border border-tertiary-container/30">
+<span class="material-symbols-outlined text-tertiary-container">check_circle</span>
+</div>
+<span class="font-medium">No-obligation facility review</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/10 flex items-center justify-center border border-tertiary-container/30">
+<span class="material-symbols-outlined text-tertiary-container">check_circle</span>
+</div>
+<span class="font-medium">Direct line to a regional specialist</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/10 flex items-center justify-center border border-tertiary-container/30">
+<span class="material-symbols-outlined text-tertiary-container">check_circle</span>
+</div>
+<span class="font-medium">Custom platform onboarding demo</span>
+</div>
+</div>
+</div>
+<div class="glass-panel p-10 rounded-3xl neon-border shadow-2xl relative z-10">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Full Name</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-tertiary-container focus:ring-0 transition-all text-on-surface p-3" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Work Email</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-tertiary-container focus:ring-0 transition-all text-on-surface p-3" placeholder="john@hospital.org" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Facility Name</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-tertiary-container focus:ring-0 transition-all text-on-surface p-3" placeholder="Central Medical Center" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Primary Staffing Need</label>
+<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-tertiary-container focus:ring-0 transition-all text-on-surface p-3 appearance-none">
+<option>Emergency Medicine</option>
+<option>ICU / Critical Care</option>
+<option>Surgical Services</option>
+<option>General Nursing</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Message</label>
+<textarea class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-tertiary-container focus:ring-0 transition-all text-on-surface p-3 resize-none" placeholder="How can we help you achieve full coverage?" rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-tertiary-container to-secondary-container text-on-secondary font-bold rounded-xl glow-tertiary active:scale-95 transition-all mt-4">
+                            Submit Request
+                        </button>
+</form>
+</div>
+<!-- Decorative background elements -->
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-tertiary-container opacity-5 rounded-full blur-[120px] pointer-events-none"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-[#ffffff]/05 bg-[#111318] flex flex-col items-center gap-6 px-4 font-['Manrope'] text-sm tracking-wide">
+<div class="flex gap-8 mb-4">
+<a class="text-[#e2e2e8]/40 hover:text-[#e2e2e8] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#e2e2e8]/40 hover:text-[#e2e2e8] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#e2e2e8]/40 hover:text-[#e2e2e8] transition-colors" href="#">Contact Support</a>
+</div>
+<div class="font-['Space_Grotesk'] font-bold text-[#ffb1c4] text-xl">Neon Pulse Medical</div>
+<p class="text-[#e2e2e8]/40">© 2024 Neon Pulse Medical. The Luminescent Authority.</p>
+</footer>
+</body></html>
