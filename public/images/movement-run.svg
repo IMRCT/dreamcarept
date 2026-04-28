@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="900" viewBox="0 0 1900 900" role="img" aria-labelledby="title">
+  <title id="title">Movement and recovery running illustration</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1900" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#F5F1FB"/><stop offset=".5" stop-color="#FAD9E8"/><stop offset="1" stop-color="#FBE7B8"/></linearGradient>
+    <linearGradient id="path" x1="152" y1="686" x2="1783" y2="739" gradientUnits="userSpaceOnUse"><stop stop-color="#E04E8B"/><stop offset=".55" stop-color="#A24BCC"/><stop offset="1" stop-color="#F5C56A"/></linearGradient>
+  </defs>
+  <rect width="1900" height="900" fill="url(#sky)"/>
+  <circle cx="1570" cy="150" r="190" fill="#fff" opacity=".38"/>
+  <path d="M0 682c308-90 617-132 927-127 324 5 648 66 973 184v161H0V682Z" fill="#fff" opacity=".58"/>
+  <path d="M160 716c394-86 765-99 1112-41 164 27 317 67 460 120" stroke="url(#path)" stroke-width="56" stroke-linecap="round" fill="none"/>
+  <path d="M820 257c-23 118-18 222 15 311M1030 258c42 107 54 210 34 308" stroke="#0F1B33" stroke-width="54" stroke-linecap="round" opacity=".22"/>
+  <path d="M755 594c-92 23-175 63-249 120M1086 586c112 23 208 67 290 132" stroke="#8B2FB7" stroke-width="44" stroke-linecap="round" opacity=".7"/>
+  <path d="M820 234h244" stroke="#E04E8B" stroke-width="82" stroke-linecap="round"/>
+</svg>

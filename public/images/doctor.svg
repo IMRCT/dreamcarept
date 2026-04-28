@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200" role="img" aria-labelledby="title">
+  <title id="title">Doctor of Physical Therapy portrait illustration</title>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="104" x2="891" y2="1118" gradientUnits="userSpaceOnUse"><stop stop-color="#F5F1FB"/><stop offset=".6" stop-color="#FAD9E8"/><stop offset="1" stop-color="#FBE7B8"/></linearGradient>
+    <linearGradient id="coat" x1="260" y1="703" x2="790" y2="1140" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#F0E6F9"/></linearGradient>
+  </defs>
+  <rect width="1000" height="1200" fill="url(#bg)"/>
+  <circle cx="780" cy="230" r="170" fill="#fff" opacity=".36"/>
+  <circle cx="180" cy="980" r="260" fill="#A24BCC" opacity=".12"/>
+  <path d="M500 116c145 0 242 106 242 264 0 128-88 242-242 242S258 508 258 380c0-158 97-264 242-264Z" fill="#0F1B33"/>
+  <path d="M659 440c0 112-71 202-159 202s-159-90-159-202 71-202 159-202 159 90 159 202Z" fill="#F5BBD2"/>
+  <path d="M298 368c91-109 237-132 400 6-5-130-81-220-199-220-123 0-202 92-201 214Z" fill="#0F1B33"/>
+  <path d="M285 692h430c92 0 166 74 166 166v342H119V858c0-92 74-166 166-166Z" fill="url(#coat)"/>
+  <path d="M410 708l90 153 90-153" fill="#8B2FB7" opacity=".88"/>
+  <path d="M272 845h456M272 928h342" stroke="#8B2FB7" stroke-width="22" stroke-linecap="round" opacity=".22"/>
+  <path d="M376 484c30 34 69 51 118 51s88-17 118-51" stroke="#0F1B33" stroke-width="14" stroke-linecap="round" fill="none" opacity=".28"/>
+</svg>

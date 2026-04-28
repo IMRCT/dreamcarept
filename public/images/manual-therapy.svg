@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title">
+  <title id="title">Hands-on therapy illustration</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#F0E6F9"/><stop offset=".52" stop-color="#FAF4FA"/><stop offset="1" stop-color="#FBE7B8"/></linearGradient>
+    <linearGradient id="line" x1="202" y1="266" x2="1003" y2="676" gradientUnits="userSpaceOnUse"><stop stop-color="#E04E8B"/><stop offset="1" stop-color="#8B2FB7"/></linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <circle cx="1000" cy="180" r="170" fill="#fff" opacity=".42"/>
+  <circle cx="240" cy="720" r="230" fill="#A24BCC" opacity=".12"/>
+  <rect x="192" y="533" width="812" height="120" rx="60" fill="#fff" opacity=".82"/>
+  <path d="M276 515c105-76 247-102 397-52 105 35 202 30 292-12" stroke="url(#line)" stroke-width="74" stroke-linecap="round" fill="none"/>
+  <path d="M330 367c81 53 170 86 267 92" stroke="#F2B7CE" stroke-width="94" stroke-linecap="round" fill="none"/>
+  <path d="M616 391c96 12 189-8 280-57" stroke="#F8C4D9" stroke-width="78" stroke-linecap="round" fill="none"/>
+  <path d="M318 262l118 94M457 231l97 151M609 213l51 168M769 238l-37 159" stroke="#0F1B33" stroke-width="22" stroke-linecap="round" opacity=".18"/>
+  <path d="M260 693h680" stroke="#0F1B33" stroke-width="18" stroke-linecap="round" opacity=".1"/>
+</svg>

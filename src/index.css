@@ -1,25 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
-
 :root {
-  --bg: #0f1217;
-  --surface: #111318;
-  --surface-low: #171b22;
-  --surface-high: #282c33;
-  --text: #e2e2e8;
-  --muted: #b9cacb;
-  --muted-2: #849495;
-  --rose: #ffb1c4;
-  --violet: #9d05ff;
-  --soft-violet: #dfb7ff;
-  --cyan: #00f2ff;
-  --font-body: 'Manrope', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
-  color-scheme: dark;
+  /* Brand palette — deep navy ink + vivid purple primary on lavender canvas
+     (Pete Health-inspired) with warm sun yellow as a third accent. */
+  --bg: #FFFFFF;
+  --bg-2: #F4F0FA;
+  --surface: #FFFFFF;
+  --surface-soft: #F5F1FB;
+  --surface-warm: #FAF4FA;
+
+  --ink: #0F1B33;
+  --ink-2: #1A2745;
+  --muted: #5C6480;
+  --muted-2: #8990AA;
+
+  --primary: #8B2FB7;          /* vivid purple */
+  --primary-2: #A24BCC;         /* lighter purple */
+  --primary-3: #DCC6EE;         /* lavender wash */
+  --primary-4: #F0E6F9;         /* lavender canvas */
+
+  --accent: #E04E8B;           /* pink-magenta CTA companion */
+  --accent-2: #ED7AAF;
+  --accent-soft: #FAD9E8;
+
+  --sun: #F5C56A;              /* warm yellow */
+  --sun-soft: #FBE7B8;
+
+  --line: #E1DAEF;
+  --line-strong: #C5B8DD;
+
+  --shadow-xs: 0 6px 16px rgba(15, 27, 51, 0.06);
+  --shadow-sm: 0 14px 36px rgba(15, 27, 51, 0.08);
+  --shadow-md: 0 28px 60px rgba(15, 27, 51, 0.12);
+  --shadow-lg: 0 40px 90px rgba(15, 27, 51, 0.18);
+
+  --radius-xs: 0.6rem;
+  --radius-sm: 0.9rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
+  --radius-xl: 2.25rem;
+  --radius-pill: 999px;
+
+  --font-display: 'Fraunces', 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0.1, 0.3, 1);
+
+  color-scheme: light;
   font-family: var(--font-body);
   font-size: 16px;
-  font-synthesis: none;
-  line-height: 1.5;
   font-weight: 400;
+  line-height: 1.55;
+  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,10 +70,12 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top left, rgba(255, 177, 196, 0.08), transparent 28%),
-    radial-gradient(circle at top right, rgba(157, 5, 255, 0.12), transparent 24%),
-    linear-gradient(180deg, #111318, #0c0e12 28%, #101318 100%);
-  color: var(--text);
+    radial-gradient(1100px 600px at 12% -10%, rgba(220, 198, 238, 0.55), transparent 60%),
+    radial-gradient(900px 500px at 110% 8%, rgba(224, 78, 139, 0.18), transparent 55%),
+    radial-gradient(700px 500px at 50% 110%, rgba(245, 197, 106, 0.12), transparent 60%),
+    var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
 }
 
 body,
@@ -63,6 +96,13 @@ input,
 select,
 textarea {
   font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
 img,
@@ -73,4 +113,22 @@ svg {
 
 #root {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
