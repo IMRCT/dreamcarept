@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import FallbackImage from '../components/FallbackImage'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
-import { CTAArt, HeroTherapy } from '../components/Illustrations'
+import { CTAArt } from '../components/Illustrations'
 import { BRAND, CONDITIONS, SERVICES } from '../data/site'
 
 const PILLARS = [
@@ -89,7 +89,7 @@ export default function HomePage() {
             <Reveal delay={2} className="hero__visual">
               <div className="hero__blob" aria-hidden="true" />
               <div className="hero__photo" role="img" aria-label="Doctor of Physical Therapy with a client during a one-on-one care session">
-                <HeroTherapy />
+                <FallbackImage src="/images/hero-therapy-session.png" fallback="/images/hero-care.svg" alt="" aria-hidden="true" />
               </div>
 
               <div className="hero__badge hero__badge--top">

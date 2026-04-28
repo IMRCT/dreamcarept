@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import FallbackImage from '../components/FallbackImage'
 import Reveal from '../components/Reveal'
 import { StoryArt } from '../components/Illustrations'
 
@@ -90,7 +91,9 @@ export default function PatientStoriesPage() {
           <div className="grid grid--3">
             {STORIES.map((s, i) => (
               <Reveal key={s.name} delay={(i % 3) + 1} className="story-card">
-                <div className="story-card__art"><StoryArt tone={s.tone} /></div>
+                <div className="story-card__art">
+                  <FallbackImage src="/images/patient-story-card.png" fallback="/images/wellness-stretch.svg" alt="" aria-hidden="true" />
+                </div>
                 <div className="story-card__body">
                   <h4>{s.condition}</h4>
                   <p><strong>Duration:</strong> {s.duration}</p>

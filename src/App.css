@@ -674,7 +674,7 @@
   box-shadow: var(--shadow-lg);
   animation: floatY 8s ease-in-out infinite;
   background:
-    url('/images/hero-care.svg') center / cover no-repeat,
+    url('/images/hero-therapy-session.png') center / cover no-repeat,
     linear-gradient(150deg, var(--primary-3), #F5DDF0 65%, #E2A4D8);
   z-index: 1;
 }

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
+import FallbackImage from '../components/FallbackImage'
 import Reveal from '../components/Reveal'
-import Icon from '../components/Icon'
 
 const QUOTES = [
   { quote: 'I had nagging back pain for two years and tried everything. Three weeks with Dr. Ashkani and the difference is night and day. He found the actual cause — not just chased the pain.', name: 'Maya R.', role: 'Chronic low back pain', tone: 'mint' },
@@ -31,14 +31,7 @@ export default function TestimonialsPage() {
               </p>
             </div>
             <div className="inner-hero__art">
-              <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-                <defs><linearGradient id="trev" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#F5DDF0" /><stop offset="1" stopColor="#DCC6EE" /></linearGradient></defs>
-                <rect width="400" height="320" fill="url(#trev)" />
-                {[0,1,2,3,4].map((i) => (
-                  <path key={i} d="M0 0 l8 18 l20 2 l-15 13 l5 20 l-18 -10 l-18 10 l5 -20 l-15 -13 l20 -2 z" fill="#F5C56A" stroke="#8B2FB7" strokeWidth="1.5" transform={`translate(${80 + i * 50} ${130}) scale(1.1)`} />
-                ))}
-                <text x="200" y="240" textAnchor="middle" fontFamily="serif" fontSize="22" fill="#8B2FB7">Trusted by clients across LA</text>
-              </svg>
+              <FallbackImage src="/images/testimonials-hero.png" fallback="/images/patient-story-card.png" alt="Five-star testimonial illustration with speech bubble and heart icon" />
             </div>
           </Reveal>
         </div>

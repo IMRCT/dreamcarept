@@ -28,7 +28,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="inner-hero__art">
-              <FallbackImage src="/images/manual-therapy.svg" fallback="/images/manual-therapy.svg" alt="Hands-on manual therapy session" />
+              <FallbackImage src="/images/services-hero.png" fallback="/images/manual-therapy.svg" alt="Physical therapy session with a client seated on an exercise ball" />
             </div>
           </Reveal>
         </div>
