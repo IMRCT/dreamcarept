@@ -684,6 +684,7 @@
 }
 
 .hero-video__copy .h1 {
+  font-size: clamp(2rem, 4vw, 3.35rem);
   color: #FFFFFF;
   text-shadow: 0 20px 42px rgba(15, 27, 51, 0.38);
 }
