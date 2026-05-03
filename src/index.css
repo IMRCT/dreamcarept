@@ -39,8 +39,8 @@
   --radius-xl: 2.25rem;
   --radius-pill: 999px;
 
-  --font-display: 'Fraunces', 'Georgia', 'Times New Roman', serif;
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-soft: cubic-bezier(0.4, 0.1, 0.3, 1);

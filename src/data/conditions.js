@@ -2,9 +2,9 @@
 
 export const CONDITION_PAGES = {
   'back-pain': {
-    eyebrow: 'Back Pain',
-    title: 'Lower back, sciatica, neck and post-accident — solved at the root.',
-    intro: 'We treat sciatica, lower back, thoracic and cervical pain — including whiplash and post-accident injuries. The vast majority of cases improve without procedures when the underlying movement and load patterns are addressed.',
+    eyebrow: 'Back and Neck Pain',
+    title: 'Whiplash injuries, post-discectomy and disc replacement rehabilitation.',
+    intro: 'We treat back and neck pain together when the whole spine and nervous system need coordinated care, including whiplash injuries, post-discectomy recovery and disc replacement rehabilitation.',
     callout: { stat: '80%+', label: 'of back pain cases can be managed without any procedure when assessed and treated correctly.' },
     artKind: 'spine',
     sections: [
@@ -64,8 +64,8 @@ export const CONDITION_PAGES = {
 
   'shoulder-pain': {
     eyebrow: 'Shoulder Pain',
-    title: 'Rotator cuff, SLAP tears and post-op shoulder care.',
-    intro: 'Whether you are working through a non-surgical rotator cuff strain or rebuilding after labral repair, we focus on pain control, restoring mobility, building stability and returning you to the activities and hobbies you care about.',
+    title: 'Post-operative recovery after reverse shoulder replacement.',
+    intro: 'Shoulder rehabilitation is built around surgical precautions, pain control, mobility and a gradual return to daily use, with focused care after reverse shoulder replacement.',
     callout: { stat: '5 goals', label: 'pain management, mobility, strength, stability and full functional return — every program covers all five.' },
     artKind: 'shoulder',
     sections: [
@@ -121,8 +121,8 @@ export const CONDITION_PAGES = {
 
   'knee-pain': {
     eyebrow: 'Knee Pain',
-    title: 'Meniscus, osteoarthritis, ACL and sports injuries.',
-    intro: 'Comprehensive physical therapy for knee pain, injuries and rehabilitation. Tailored treatment plans designed to alleviate pain, enhance mobility and get you back to the activities you love.',
+    title: 'Arthritis, meniscus, ACL and osteoarthritis degeneration.',
+    intro: 'Support for arthritis, meniscus and ACL conditions, and osteoarthritis degeneration to help you move with less pain and more confidence.',
     callout: { stat: '5 phases', label: 'evaluation, customized plan, progress tracking, gradual improvement, patient empowerment.' },
     artKind: 'knee',
     sections: [
@@ -179,9 +179,9 @@ export const CONDITION_PAGES = {
   },
 
   'ankle-injuries': {
-    eyebrow: 'Ankle Injuries',
-    title: 'Sprain recovery, fractures and chronic ankle instability.',
-    intro: 'Comprehensive care for ankle sprains and injuries — recovering strength, stability and confidence from initial assessment through long-term maintenance.',
+    eyebrow: 'Ankle & Foot Injuries',
+    title: 'Sprains, instability and post-injury recovery.',
+    intro: 'Rehabilitation for ankle and foot sprains, instability, and post-injury recovery, with progressive strengthening and return-to-function care.',
     callout: { stat: '3 phases', label: 'early protection, intermediate strengthening and advanced return — paced to your tissue healing.' },
     artKind: 'ankle',
     sections: [
@@ -235,9 +235,9 @@ export const CONDITION_PAGES = {
   },
 
   vestibular: {
-    eyebrow: 'Vestibular & Concussion',
-    title: 'Dizziness, vertigo and post-concussion recovery.',
-    intro: 'Specialized physical therapy for vestibular disorders and post-concussion syndrome. Personalized, evidence-based programs that restore balance, reduce dizziness and build back your confidence in movement.',
+    eyebrow: 'Vestibular & Concussion Care',
+    title: 'Dizziness, balance issues, headaches and return-to-function.',
+    intro: 'Specialized care for dizziness, balance issues, headaches, and return-to-function after concussion, with personalized vestibular and activity progression.',
     callout: { stat: 'Certified', label: 'vestibular and post-concussion training from the New York Concussion Corner Academy.' },
     artKind: 'vestibular',
     sections: [
@@ -294,8 +294,8 @@ export const CONDITION_PAGES = {
 
   'hip-pain': {
     eyebrow: 'Hip Pain',
-    title: 'Femoroacetabular impingement and total hip rehab.',
-    intro: 'Hip pain affects daily activities and overall quality of life. We treat femoroacetabular impingement (FAI) and rehabilitate after total hip arthroplasty (THA) — restoring strength, mobility and confidence.',
+    title: 'Hip impingement and movement restoration.',
+    intro: 'Hip pain can limit walking, stairs, work and activity. We treat hip impingement and restore strength, mobility and confidence with personalized rehabilitation.',
     callout: { stat: '2 paths', label: 'non-surgical conservative care and post-surgical rehabilitation — both led by a Doctor of PT.' },
     artKind: 'hip',
     sections: [
@@ -350,5 +350,146 @@ export const CONDITION_PAGES = {
       },
     ],
     closing: 'Two distinct rehab paths — conservative and post-surgical — both delivered one-on-one by a Doctor of Physical Therapy.',
+  },
+
+  'balance-fall-prevention': {
+    eyebrow: 'Balance & Fall Prevention',
+    title: 'Gait and stairs training for safer movement at home.',
+    intro: 'Balance and fall prevention care improves stability, confidence and independence through practical training for walking, stairs, transfers and daily movement at home.',
+    callout: { stat: 'Home focused', label: 'training is built around the real surfaces, stairs and routines you use every day.' },
+    artKind: 'vestibular',
+    sections: [
+      {
+        key: 'assessment',
+        label: 'Assessment',
+        title: 'Identify what is affecting balance and confidence.',
+        body: 'We assess gait, strength, coordination, vestibular contribution, endurance and home safety factors to understand why falls or near-falls are happening.',
+        items: [
+          'Gait, balance and transfer screening',
+          'Stairs, turning and obstacle navigation assessment',
+          'Strength and mobility testing',
+          'Home safety and fall-risk review',
+        ],
+      },
+      {
+        key: 'training',
+        label: 'Gait & stairs',
+        title: 'Practice the movements that matter most at home.',
+        body: 'Therapy includes progressive walking, stairs and balance drills that build confidence in the exact environments where patients need to function.',
+        items: [
+          'Gait training for safer walking patterns',
+          'Stair training with step-by-step progression',
+          'Balance drills across realistic home scenarios',
+          'Assistive-device education when needed',
+        ],
+      },
+      {
+        key: 'prevention',
+        label: 'Prevention',
+        title: 'Reduce fall risk and support long-term independence.',
+        body: 'We combine strengthening, coordination and practical education so patients can move with more control and less fear.',
+        items: [
+          'Lower-body strengthening and endurance work',
+          'Coordination and reaction training',
+          'Fall-recovery education and caregiver guidance',
+          'Home exercise plan for ongoing stability',
+        ],
+      },
+    ],
+    closing: 'Better balance is built through consistent, practical training in the places where daily life happens.',
+  },
+
+  'post-surgical-rehabilitation': {
+    eyebrow: 'Post-Surgical Rehabilitation',
+    title: 'Evidence-based recovery after knee, hip and shoulder replacement.',
+    intro: 'Post-surgical rehabilitation supports recovery after total knee, total hip and shoulder replacement using evidence-based protocols adapted to your surgeon instructions and home environment.',
+    callout: { stat: 'Protocol led', label: 'care follows surgical precautions while progressing mobility, strength and function.' },
+    artKind: 'knee',
+    sections: [
+      {
+        key: 'early',
+        label: 'Early recovery',
+        title: 'Protect healing tissue while restoring safe movement.',
+        body: 'Early sessions focus on pain control, swelling management, safe transfers and the first mobility milestones after surgery.',
+        items: [
+          'Surgeon protocol and precaution review',
+          'Safe bed, chair and bathroom transfers',
+          'Pain, swelling and range-of-motion support',
+          'Walking and assistive-device progression',
+        ],
+      },
+      {
+        key: 'strength',
+        label: 'Strength',
+        title: 'Rebuild strength with clear progression.',
+        body: 'As healing allows, therapy progresses strength, range of motion, gait and functional tasks needed for independence.',
+        items: [
+          'Total knee and total hip strengthening progression',
+          'Shoulder replacement mobility and activation work',
+          'Gait retraining and stair practice',
+          'Functional strengthening for daily activities',
+        ],
+      },
+      {
+        key: 'return',
+        label: 'Return',
+        title: 'Move from recovery to confident daily function.',
+        body: 'The goal is not only healing but returning to daily life with safer mechanics, better endurance and more confidence.',
+        items: [
+          'Home and work activity simulation',
+          'Balance and endurance progression',
+          'Education for long-term joint protection',
+          'Coordination with physician recommendations',
+        ],
+      },
+    ],
+    closing: 'Post-surgical care works best when the protocol is clear, the progression is personal and the environment is familiar.',
+  },
+
+  'hand-upper-extremity-therapy': {
+    eyebrow: 'Hand & Upper Extremity Therapy',
+    title: 'At-home care for hand, wrist and arm function.',
+    intro: 'Hand and upper extremity therapy supports hand, wrist and arm conditions, including post-operative rehabilitation, to improve function and daily use at home.',
+    callout: { stat: 'Daily function', label: 'therapy targets the tasks patients need most, from dressing and cooking to work and self-care.' },
+    artKind: 'shoulder',
+    sections: [
+      {
+        key: 'mobility',
+        label: 'Mobility',
+        title: 'Restore comfortable motion in the hand, wrist and arm.',
+        body: 'We address stiffness, swelling, pain and limited motion with gentle progression matched to tissue healing and tolerance.',
+        items: [
+          'Hand, wrist and arm mobility progression',
+          'Post-operative range-of-motion support',
+          'Swelling and pain-management education',
+          'Scar and soft-tissue mobility as appropriate',
+        ],
+      },
+      {
+        key: 'strength',
+        label: 'Strength',
+        title: 'Rebuild grip, coordination and upper-extremity control.',
+        body: 'Strength and coordination work is progressed toward daily activities, work tasks and independence at home.',
+        items: [
+          'Grip and pinch strengthening',
+          'Fine motor coordination practice',
+          'Wrist, elbow and shoulder integration',
+          'Functional reaching and carrying tasks',
+        ],
+      },
+      {
+        key: 'function',
+        label: 'Function',
+        title: 'Make daily tasks easier and more comfortable.',
+        body: 'Therapy is built around practical use: dressing, cooking, hygiene, typing, household tasks and safe return to normal routines.',
+        items: [
+          'Task-specific home training',
+          'Adaptive strategies for daily routines',
+          'Home exercise program for continued progress',
+          'Patient and caregiver education',
+        ],
+      },
+    ],
+    closing: 'Small improvements in hand and arm function can make a major difference in independence and quality of life.',
   },
 }

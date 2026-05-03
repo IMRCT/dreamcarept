@@ -5,8 +5,8 @@ export const BRAND = {
   full: 'DreamCare PT, Sport and Wellness',
   tagline: 'DreamCare. You Deserve It.',
   doctor: 'Dr. Ashkan Ashkani, PT, DPT, CMTPT, COMT',
-  phone: '(706) 300-5710',
-  phoneRaw: '+17063005710',
+  phone: '+1 (310) 916-8581',
+  phoneRaw: '+13109168581',
   email: 'info@dreamcarept.com',
   address: '13425 Ventura Blvd, Ste 102',
   city: 'Sherman Oaks, CA',
@@ -19,12 +19,15 @@ export const BRAND = {
 }
 
 export const CONDITIONS = [
-  { slug: 'back-pain',         label: 'Back Pain',                     icon: 'spine',   short: 'Sciatica, lower back, thoracic, cervical and post-accident care.' },
-  { slug: 'shoulder-pain',     label: 'Shoulder Pain',                 icon: 'shoulder', short: 'Rotator cuff, SLAP tears, post-op and non-surgical recovery.' },
-  { slug: 'knee-pain',         label: 'Knee Pain',                     icon: 'knee',    short: 'Meniscus, osteoarthritis, ACL and sport-related injuries.' },
-  { slug: 'ankle-injuries',    label: 'Ankle Injuries',                icon: 'ankle',   short: 'Sprains, fractures, chronic instability and return-to-play.' },
-  { slug: 'vestibular',        label: 'Vestibular & Concussion',       icon: 'vestibular', short: 'Dizziness, vertigo, balance work and post-concussion care.' },
-  { slug: 'hip-pain',          label: 'Hip Pain',                      icon: 'hip',     short: 'FAI, total hip arthroplasty rehab and movement restoration.' },
+  { slug: 'back-pain',         label: 'Back and Neck Pain',               icon: 'spine',      short: 'Whiplash injuries and post-discectomy and disc replacement rehabilitation.' },
+  { slug: 'shoulder-pain',     label: 'Shoulder Pain',                    icon: 'shoulder',   short: 'Post-operative rehabilitation after reverse shoulder replacement.' },
+  { slug: 'knee-pain',         label: 'Knee Pain',                        icon: 'knee',       short: 'Support for arthritis, meniscus, ACL and osteoarthritis degeneration to help you move with less pain.' },
+  { slug: 'hip-pain',          label: 'Hip Pain',                         icon: 'hip',        short: 'Hip impingement.' },
+  { slug: 'ankle-injuries',    label: 'Ankle & Foot Injuries',            icon: 'ankle',      short: 'Rehabilitation for sprains, instability, and post-injury recovery.' },
+  { slug: 'vestibular',        label: 'Vestibular & Concussion Care',     icon: 'vestibular', short: 'Help with dizziness, balance issues, headaches, and return-to-function after concussion.' },
+  { slug: 'balance-fall-prevention', label: 'Balance & Fall Prevention',  icon: 'pulse',      short: 'Gait and stairs training to improve stability, confidence, and reduce fall risk at home.' },
+  { slug: 'post-surgical-rehabilitation', label: 'Post-Surgical Rehabilitation', icon: 'tools', short: 'Recovery programs after total knee, total hip, and shoulder replacement using evidence-based protocols.' },
+  { slug: 'hand-upper-extremity-therapy', label: 'Hand & Upper Extremity Therapy (At Home)', icon: 'hands', short: 'Care for hand, wrist, post-operative rehabilitation and arm conditions to improve function and daily use.' },
 ]
 
 export const SERVICES = [
