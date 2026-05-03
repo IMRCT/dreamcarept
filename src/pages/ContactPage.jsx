@@ -10,7 +10,7 @@ export default function ContactPage() {
           <Reveal className="inner-hero__grid">
             <div>
               <p className="eyebrow">Contact DreamCare</p>
-              <h1 className="h1">Talk to a doctor of physical therapy — <em>directly</em>.</h1>
+              <h1 className="h1">Talk <em>directly</em> with a doctor of physical therapy.</h1>
               <p className="lead" style={{ marginTop: '1.4rem' }}>
                 Questions about your symptoms, insurance or whether PT is the right fit?
                 Reach out and we'll get back to you the same business day.
@@ -65,7 +65,7 @@ export default function ContactPage() {
                 <div>
                   <strong>Hours</strong>
                   {BRAND.hours.map((h) => (
-                    <span key={h.day}>{h.day} — {h.time}</span>
+                    <span key={h.day}>{h.day}, {h.time}</span>
                   ))}
                 </div>
               </div>

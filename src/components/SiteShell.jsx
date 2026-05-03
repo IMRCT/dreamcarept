@@ -14,7 +14,7 @@ function BrandLockup({ variant = 'header' }) {
     <Link
       className={`brand${isFooter ? ' brand--footer' : ''}`}
       to="/"
-      aria-label={`${BRAND.full} — home`}
+      aria-label={`${BRAND.full} home`}
     >
       <FallbackImage
         className="brand__logo"

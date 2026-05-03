@@ -11,7 +11,7 @@ export default function BookPage() {
           <Reveal className="inner-hero__grid">
             <div>
               <p className="eyebrow">Book an Appointment</p>
-              <h1 className="h1">A 45-minute eval with a <em>Doctor of PT</em> — book online.</h1>
+              <h1 className="h1">Book a 45-minute eval with a <em>Doctor of PT</em>.</h1>
               <p className="lead" style={{ marginTop: '1.4rem' }}>
                 Tell us a little about your goals and we'll confirm a time within one
                 business day. New clients usually start with a comprehensive evaluation
@@ -104,14 +104,14 @@ export default function BookPage() {
                 <div className="ico"><Icon name="user" size={18} /></div>
                 <div>
                   <strong>One-on-one</strong>
-                  <span>direct care with a Doctor of PT — no hand-offs</span>
+                  <span>direct care with a Doctor of PT, no hand-offs</span>
                 </div>
               </div>
               <div className="contact-row">
                 <div className="ico"><Icon name="check" size={18} /></div>
                 <div>
                   <strong>No referral required</strong>
-                  <span>for many plans — call first to confirm</span>
+                  <span>for many plans, call first to confirm</span>
                 </div>
               </div>
               <div className="contact-row">
@@ -131,7 +131,7 @@ export default function BookPage() {
           <Reveal className="cta-banner">
             <div>
               <p className="eyebrow">Prefer to talk first?</p>
-              <h2 className="h2">Call us — we pick <em>up the phone</em>.</h2>
+              <h2 className="h2">Call us. We pick <em>up the phone</em>.</h2>
               <p>Most callers reach a person, not a queue. We'll answer questions and help you pick the right starting visit.</p>
               <div className="btn-row">
                 <a href={`tel:${BRAND.phoneRaw}`} className="btn btn--primary">

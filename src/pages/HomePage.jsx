@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import FallbackImage from '../components/FallbackImage'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
@@ -49,12 +49,12 @@ const INSURANCE_LOGOS = [
 const STEPS = [
   { title: 'Reach out', body: 'Call, message or book online. We confirm your goals and schedule the right evaluation slot.' },
   { title: 'Comprehensive eval', body: '45 minutes with a Doctor of Physical Therapy. Movement screen, history, posture and treatment direction.' },
-  { title: 'Personalized plan', body: 'A progression built around your real life — sport, work, recovery and home environment.' },
+  { title: 'Personalized plan', body: 'A progression built around your real life, sport, work, recovery and home environment.' },
   { title: 'Recover & build', body: 'Hands-on care, exercise progression and root-cause work, session by session.' },
 ]
 
 const QUOTES = [
-  { quote: 'After my knee surgery I was back walking the dog in three weeks. Dr. Ashkani actually listens — every visit feels custom.', name: 'Recovery client', role: 'Post-op total knee' },
+  { quote: 'After my knee surgery I was back walking the dog in three weeks. Dr. Ashkani actually listens. Every visit feels custom.', name: 'Recovery client', role: 'Post-op total knee' },
   { quote: 'I had vertigo for months and saw four other providers. The vestibular evaluation here changed everything in two sessions.', name: 'Vestibular patient', role: 'Sherman Oaks' },
   { quote: 'The 1-on-1 time is unreal. No bouncing between PTs, no waiting on a table. Real hands-on work, real progression.', name: 'Sport client', role: 'Return to running' },
 ]
@@ -177,13 +177,13 @@ export default function HomePage() {
             <Reveal className="hero__copy hero-video__copy">
               <p className="eyebrow">Home health physical therapy</p>
               <h1 className="h1">
-                One-on-one PT that treats the <em>root cause</em> — not the symptom.
+                One-on-one PT that treats the <em>root cause</em>, not just the symptom.
               </h1>
 
               <p className="lead" style={{ marginTop: '1.4rem' }}>
-                DreamCare is a doctor-led, holistic and evidence-based practice in
-                Sherman Oaks. Quality over quantity — focused, personalized care
-                designed to restore function and prevent future injury.
+                Dreamcare is a physical therapists-led practice grounded in a
+                holistic approach that recognizes the deep connection between
+                mind, body, and Soul.
               </p>
 
               <div className="btn-row">
@@ -192,7 +192,7 @@ export default function HomePage() {
                 </Link>
                 <Link to="/services" className="btn btn--ghost">See all treatments</Link>
               </div>
-              <p className="hero-video__tagline">DreamCare. You deserve it.</p>
+              <p className="hero-video__tagline">You deserve it.</p>
             </Reveal>
           </div>
         </div>
@@ -336,7 +336,7 @@ export default function HomePage() {
               <p className="eyebrow">Sport · Wellness</p>
               <h2 className="h2">Move <em>better</em>. Recover <em>smarter</em>.</h2>
               <p className="body-text" style={{ marginTop: '1.25rem' }}>
-                DreamCare is built for active people — runners, lifters, weekend
+                DreamCare is built for active people, runners, lifters, weekend
                 warriors and anyone working their way back. Programs blend
                 manual therapy, mobility work and progressive loading designed
                 around your real activity.
@@ -409,7 +409,7 @@ export default function HomePage() {
             <h2 className="h2">We accept nearly <em>all major insurance</em>.</h2>
             <p className="lead" style={{ marginInline: 'auto', marginTop: '1.25rem' }}>
               Some plans accepted without your doctor's referral. Save time and skip the
-              wait — call us first to confirm coverage.
+              wait. Call us first to confirm coverage.
             </p>
           </Reveal>
 

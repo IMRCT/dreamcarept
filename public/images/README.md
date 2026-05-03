@@ -14,7 +14,7 @@ Drop the five DreamCare photos into this folder using exactly these filenames:
 
 The site references these paths as `/images/<filename>` (Vite serves anything in
 `public/` from the site root). Once the five files are dropped in, every photo
-slot on the site fills automatically — no code changes required.
+slot on the site fills automatically. No code changes required.
 
 JPG or PNG both work. Recommended sizes:
 

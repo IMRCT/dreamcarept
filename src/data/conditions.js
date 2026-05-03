@@ -1,4 +1,4 @@
-// Detailed condition page content — one record per /conditions/:slug route.
+// Detailed condition page content, one record per /conditions/:slug route.
 
 export const CONDITION_PAGES = {
   'back-pain': {
@@ -12,7 +12,7 @@ export const CONDITION_PAGES = {
         key: 'assessment',
         label: 'Assessment',
         title: 'A thorough orthopedic and neurological evaluation.',
-        body: 'We begin by gathering medical history, pain patterns, range-of-motion restrictions and imaging results — then layer in postural, movement and neurological testing to find the actual source of your pain.',
+        body: 'We begin by gathering medical history, pain patterns, range-of-motion restrictions and imaging results. We then layer in postural, movement and neurological testing to find the actual source of your pain.',
         items: [
           'Medical history, pain mapping and imaging review (MRI, CT, X-ray)',
           'Postural analysis for upper- and lower-cross syndromes',
@@ -24,7 +24,7 @@ export const CONDITION_PAGES = {
         key: 'exercise',
         label: 'Exercise & loading',
         title: 'Targeted strengthening, stabilization and mobility.',
-        body: 'Programs are progressive and pain-respecting — built around the deep stabilizers (multifidus, transversus abdominis), hip flexors, hamstrings and the kinetic chain that supports your spine.',
+        body: 'Programs are progressive, pain-respecting and built around the deep stabilizers (multifidus, transversus abdominis), hip flexors, hamstrings and the kinetic chain that supports your spine.',
         items: [
           'Core strengthening: planks, bridges, dead bugs, leg raises',
           'Spinal stabilization targeting multifidus and transversus abdominis',
@@ -37,7 +37,7 @@ export const CONDITION_PAGES = {
         key: 'manual',
         label: 'Manual therapy',
         title: 'Hands-on techniques to restore segmental motion.',
-        body: 'Manual therapy is selected based on irritability and tissue response — high-velocity manipulation when appropriate, slower mobilization for acute or inflamed cases.',
+        body: 'Manual therapy is selected based on irritability and tissue response: high-velocity manipulation when appropriate, slower mobilization for acute or inflamed cases.',
         items: [
           'HVLA (high-velocity, low-amplitude) thrust manipulation',
           'Joint mobilization for acute pain and inflammation',
@@ -49,7 +49,7 @@ export const CONDITION_PAGES = {
         key: 'prevention',
         label: 'Prevention',
         title: 'Habits that keep your back resilient long after discharge.',
-        body: 'The work continues outside the clinic — ergonomics, lifting mechanics, stress management and movement habits that protect your spine for the long term.',
+        body: 'The work continues outside the clinic through ergonomics, lifting mechanics, stress management and movement habits that protect your spine for the long term.',
         items: [
           'Workstation, sitting and standing ergonomics',
           'Correct lifting mechanics with core engagement',
@@ -59,21 +59,21 @@ export const CONDITION_PAGES = {
         ],
       },
     ],
-    closing: 'Most back pain is mechanical — and mechanical problems respond to the right movement, load and manual care.',
+    closing: 'Most back pain is mechanical. Mechanical problems respond to the right movement, load and manual care.',
   },
 
   'shoulder-pain': {
     eyebrow: 'Shoulder Pain',
     title: 'Post-operative recovery after reverse shoulder replacement.',
     intro: 'Shoulder rehabilitation is built around surgical precautions, pain control, mobility and a gradual return to daily use, with focused care after reverse shoulder replacement.',
-    callout: { stat: '5 goals', label: 'pain management, mobility, strength, stability and full functional return — every program covers all five.' },
+    callout: { stat: '5 goals', label: 'pain management, mobility, strength, stability and full functional return. Every program covers all five.' },
     artKind: 'shoulder',
     sections: [
       {
         key: 'pain',
         label: 'Pain management',
         title: 'Calming an irritated shoulder, layer by layer.',
-        body: 'We begin by reducing the load on inflamed tissue — using hands-on techniques, soft-tissue work and selective modalities — so you can move and progress.',
+        body: 'We begin by reducing the load on inflamed tissue with hands-on techniques, soft-tissue work and selective modalities so you can move and progress.',
         items: [
           'Hands-on soft tissue and joint mobilization',
           'Cupping and IASTM as indicated',
@@ -96,7 +96,7 @@ export const CONDITION_PAGES = {
         key: 'strength',
         label: 'Strength & stability',
         title: 'Targeted muscle rehabilitation for a stable shoulder.',
-        body: 'Rotator cuff, scapular stabilizers and the entire kinetic chain — strength built progressively so the joint can handle real demands.',
+        body: 'Rotator cuff, scapular stabilizers and the entire kinetic chain are strengthened progressively so the joint can handle real demands.',
         items: [
           'Rotator cuff isolation and integration',
           'Scapular stabilizer progression',
@@ -108,7 +108,7 @@ export const CONDITION_PAGES = {
         key: 'function',
         label: 'Functional return',
         title: 'Confidence in daily activities and hobbies.',
-        body: 'We rehearse the tasks that matter — overhead work, throwing, swimming, parenting, lifting — so the shoulder feels reliable, not fragile.',
+        body: 'We rehearse the tasks that matter: overhead work, throwing, swimming, parenting and lifting, so the shoulder feels reliable, not fragile.',
         items: [
           'Sport- and work-specific functional drills',
           'Gradual return-to-activity progression',
@@ -116,7 +116,7 @@ export const CONDITION_PAGES = {
         ],
       },
     ],
-    closing: 'Personalized assessments, customized plans and gradual progression — paced to your individual improvement, not a generic protocol.',
+    closing: 'Personalized assessments, customized plans and gradual progression are paced to your individual improvement, not a generic protocol.',
   },
 
   'knee-pain': {
@@ -130,7 +130,7 @@ export const CONDITION_PAGES = {
         key: 'meniscus',
         label: 'Meniscus injuries',
         title: 'Calm the joint, then progressively reload it.',
-        body: 'A staged approach to reduce pain, restore joint motion and build strength around the joint — with progressive functional rehab once the tissue tolerates it.',
+        body: 'A staged approach reduces pain, restores joint motion and builds strength around the joint, with progressive functional rehab once the tissue tolerates it.',
         items: [
           'Diagnostic evaluation and irritability assessment',
           'Manual therapy for pain reduction and joint mobility',
@@ -154,7 +154,7 @@ export const CONDITION_PAGES = {
         key: 'acl',
         label: 'ACL & sports',
         title: 'Pre- and post-op programs for athletes.',
-        body: 'From pre-op conditioning to post-surgical milestones, proprioceptive training and sport-specific return — our programs meet athletes where they are.',
+        body: 'From pre-op conditioning to post-surgical milestones, proprioceptive training and sport-specific return, these programs meet athletes where they are.',
         items: [
           'Pre-operative conditioning and movement prep',
           'Post-operative rehabilitation with progressive exercise',
@@ -166,7 +166,7 @@ export const CONDITION_PAGES = {
         key: 'why',
         label: 'Why DreamCare',
         title: 'Specialization, evidence and care that connects.',
-        body: 'Knee rehab benefits from a deeply specialized approach — and a therapist who is on the same page as your surgeon, trainer and team.',
+        body: 'Knee rehab benefits from a deeply specialized approach and a therapist who is on the same page as your surgeon, trainer and team.',
         items: [
           'Specialization in knee rehabilitation',
           'Individualized, evidence-based care',
@@ -175,14 +175,14 @@ export const CONDITION_PAGES = {
         ],
       },
     ],
-    closing: 'A holistic, personalized integrative approach to knee rehabilitation — built on your medical history, lifestyle and goals.',
+    closing: 'A holistic, personalized integrative approach to knee rehabilitation, built on your medical history, lifestyle and goals.',
   },
 
   'ankle-injuries': {
     eyebrow: 'Ankle & Foot Injuries',
     title: 'Sprains, instability and post-injury recovery.',
     intro: 'Rehabilitation for ankle and foot sprains, instability, and post-injury recovery, with progressive strengthening and return-to-function care.',
-    callout: { stat: '3 phases', label: 'early protection, intermediate strengthening and advanced return — paced to your tissue healing.' },
+    callout: { stat: '3 phases', label: 'early protection, intermediate strengthening and advanced return, each paced to your tissue healing.' },
     artKind: 'ankle',
     sections: [
       {
@@ -192,7 +192,7 @@ export const CONDITION_PAGES = {
         body: 'The ankle is a complex joint with vulnerable ligaments. We start with a clear understanding of what was injured, how badly and what stage of healing you are in.',
         items: [
           'Sprain grading from mild to severe with ligament impact',
-          'Differentiating sprains from fractures — and when urgent care is needed',
+          'Differentiating sprains from fractures and knowing when urgent care is needed',
           'Identifying chronic instability from recurring sprains',
         ],
       },
@@ -202,7 +202,7 @@ export const CONDITION_PAGES = {
         title: 'Protect, calm and start moving.',
         body: 'In the first phase we control swelling, protect the joint and start safe weight-bearing and motion as soon as the tissue tolerates it.',
         items: [
-          'R.I.C.E. protocol — rest, ice, compression, elevation',
+          'R.I.C.E. protocol: rest, ice, compression, elevation',
           'Protected weight-bearing progression',
           'Rigid taping and kinesio-taping support',
           'Gentle range-of-motion exercises',
@@ -223,7 +223,7 @@ export const CONDITION_PAGES = {
         key: 'advanced',
         label: 'Advanced',
         title: 'Return to sport and high-impact activity.',
-        body: 'For athletes and active adults, we build a graduated return — sport-specific drills, change of direction, jumping, cutting and long-term durability.',
+        body: 'For athletes and active adults, we build a graduated return with sport-specific drills, change of direction, jumping, cutting and long-term durability.',
         items: [
           'Sport-specific training and return-to-play criteria',
           'Gradual return to high-impact activities',
@@ -245,7 +245,7 @@ export const CONDITION_PAGES = {
         key: 'eval',
         label: 'Evaluation',
         title: 'A thorough vestibular and balance assessment.',
-        body: 'We begin with a 45-minute evaluation that screens vestibular function, balance, oculomotor control and post-concussion symptoms — so the program targets your actual triggers.',
+        body: 'We begin with a 45-minute evaluation that screens vestibular function, balance, oculomotor control and post-concussion symptoms, so the program targets your actual triggers.',
         items: [
           'Vestibular and oculomotor screening',
           'Balance and gait assessment',
@@ -257,7 +257,7 @@ export const CONDITION_PAGES = {
         key: 'vestibular',
         label: 'Vestibular rehab',
         title: 'Restore balance and reduce dizziness.',
-        body: 'Evidence-based exercises that retrain the vestibular system — gaze stabilization, habituation, balance progression and graded movement.',
+        body: 'Evidence-based exercises retrain the vestibular system through gaze stabilization, habituation, balance progression and graded movement.',
         items: [
           'Gaze stabilization exercises',
           'Balance training across surfaces and conditions',
@@ -269,7 +269,7 @@ export const CONDITION_PAGES = {
         key: 'concussion',
         label: 'Concussion care',
         title: 'A graded path back to thinking, moving and living.',
-        body: 'Post-concussion recovery blends cognitive work, vestibular rehab and a gradual reintroduction to physical activity — paced so you don\'t flare symptoms.',
+        body: 'Post-concussion recovery blends cognitive work, vestibular rehab and a gradual reintroduction to physical activity, all paced so you don\'t flare symptoms.',
         items: [
           'Cognitive exercises for memory and concentration',
           'Gradual reintroduction to physical activities',
@@ -281,7 +281,7 @@ export const CONDITION_PAGES = {
         key: 'outcomes',
         label: 'Outcomes',
         title: 'What recovery feels like.',
-        body: 'The goal isn\'t just fewer symptoms — it\'s confidence in movement again. Walking, driving, working out and turning your head without anxiety.',
+        body: 'The goal isn\'t just fewer symptoms. It is confidence in movement again: walking, driving, working out and turning your head without anxiety.',
         items: [
           'Enhanced balance and coordination',
           'Reduced dizziness, vertigo and motion sickness',
@@ -289,14 +289,14 @@ export const CONDITION_PAGES = {
         ],
       },
     ],
-    closing: 'Take the first step toward a healthier, more balanced life — schedule a vestibular and concussion rehabilitation evaluation.',
+    closing: 'Take the first step toward a healthier, more balanced life. Schedule a vestibular and concussion rehabilitation evaluation.',
   },
 
   'hip-pain': {
     eyebrow: 'Hip Pain',
     title: 'Hip impingement and movement restoration.',
     intro: 'Hip pain can limit walking, stairs, work and activity. We treat hip impingement and restore strength, mobility and confidence with personalized rehabilitation.',
-    callout: { stat: '2 paths', label: 'non-surgical conservative care and post-surgical rehabilitation — both led by a Doctor of PT.' },
+    callout: { stat: '2 paths', label: 'non-surgical conservative care and post-surgical rehabilitation, both led by a Doctor of PT.' },
     artKind: 'hip',
     sections: [
       {
@@ -340,7 +340,7 @@ export const CONDITION_PAGES = {
         key: 'manage',
         label: 'Long-term care',
         title: 'Strategies that protect the hip for years.',
-        body: 'Whether you had surgery or not, the management plan continues — strength, mobility, weight management and pain strategies that keep the hip happy.',
+        body: 'Whether you had surgery or not, the management plan continues through strength, mobility, weight management and pain strategies that keep the hip happy.',
         items: [
           'Lifestyle modifications and weight management',
           'Hip-strengthening and mobility maintenance',
@@ -349,7 +349,7 @@ export const CONDITION_PAGES = {
         ],
       },
     ],
-    closing: 'Two distinct rehab paths — conservative and post-surgical — both delivered one-on-one by a Doctor of Physical Therapy.',
+    closing: 'Two distinct rehab paths, conservative and post-surgical, are both delivered one-on-one by a Doctor of Physical Therapy.',
   },
 
   'balance-fall-prevention': {

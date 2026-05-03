@@ -53,7 +53,7 @@ export default function ConditionPage({
                 <p className="body-text" style={{ marginTop: '1.25rem' }}>
                   Every plan begins with a Doctor of Physical Therapy. We assess medical history,
                   movement patterns and current limitations, then build a progression that targets
-                  the root cause — not just the symptom.
+                  the root cause instead of just the symptom.
                 </p>
               </div>
             </Reveal>

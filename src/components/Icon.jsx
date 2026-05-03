@@ -1,4 +1,4 @@
-// Inline SVG icon library — single source for all icons across the site.
+// Inline SVG icon library, single source for all icons across the site.
 // All icons render at currentColor, sized via width/height props.
 
 const STROKE = {

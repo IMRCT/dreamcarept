@@ -14,7 +14,7 @@ const HIGHLIGHTS = [
 ]
 
 const PHILOSOPHY = [
-  { title: 'Care that comes to the client', body: 'Whether in-clinic or via telehealth, sessions are shaped around the patient — their goals, their body and their real-life environment.' },
+  { title: 'Care that comes to the client', body: 'Whether in-clinic or via telehealth, sessions are shaped around the patient, including their goals, their body and their real-life environment.' },
   { title: 'Recovery with purpose', body: 'We focus on helping people move better after surgery, injury and through the day-to-day work of recovery.' },
   { title: 'Sport and wellness support', body: 'Active adults, weekend warriors and wellness-focused clients all get programs that meet them at their level.' },
 ]
@@ -29,7 +29,7 @@ export default function AboutPage() {
               <p className="eyebrow">About DreamCare</p>
               <h1 className="h1">A doctor-led practice built on <em>quality, time</em> and outcomes.</h1>
               <p className="lead" style={{ marginTop: '1.4rem' }}>
-                DreamCare is the work of Dr. Ashkan Ashkani — orthopedic and sports
+                DreamCare is led by Dr. Ashkan Ashkani, an orthopedic and sports
                 physical therapist, clinical instructor, and international Olympics team
                 consultant. Every visit is one-on-one, every plan is built from
                 evidence and every program treats the root cause.
@@ -51,7 +51,7 @@ export default function AboutPage() {
         <div className="shell shell--tight">
           <Reveal className="section-head">
             <p className="eyebrow">Meet Dr. Ashkan Ashkani</p>
-            <h2 className="h2">PT, DPT, CMTPT, COMT — and a thirteen-year obsession with <em>movement done right</em>.</h2>
+            <h2 className="h2">PT, DPT, CMTPT and COMT, with a thirteen-year obsession with <em>movement done right</em>.</h2>
           </Reveal>
 
           <Reveal className="body-text" delay={1} style={{ fontSize: '1.05rem' }}>
@@ -126,10 +126,10 @@ export default function AboutPage() {
             {[
               { icon: 'home', title: 'In-clinic and telehealth visits', body: 'Comprehensive care from our Sherman Oaks studio or fully remote sessions for clients across California.' },
               { icon: 'pulse', title: 'Post-surgical physical therapy', body: 'Rebuilding strength, mobility and confidence after total knee, total hip, ACL and shoulder surgeries.' },
-              { icon: 'trophy', title: 'Sport rehabilitation', body: 'Return-to-activity work for athletes — sport-specific progression, performance rebuilds and prevention.' },
+              { icon: 'trophy', title: 'Sport rehabilitation', body: 'Return-to-activity work for athletes through sport-specific progression, performance rebuilds and prevention.' },
               { icon: 'brain', title: 'Vestibular and concussion care', body: 'Gaze stabilization, balance training and graded return for dizziness, vertigo and post-concussion symptoms.' },
               { icon: 'hands', title: 'Mobility, balance & fall prevention', body: 'Programs for older adults and anyone working on stability, confidence and safer daily movement.' },
-              { icon: 'spark', title: 'Strength & wellness', body: 'Movement training for daily life — building durability, posture and movement quality long-term.' },
+              { icon: 'spark', title: 'Strength & wellness', body: 'Movement training for daily life that builds durability, posture and movement quality long-term.' },
             ].map((item, i) => (
               <Reveal key={item.title} delay={(i % 2) + 1} className="card" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <div style={{ width: 48, height: 48, borderRadius: 14, background: 'var(--primary)', color: '#F5EFFB', display: 'grid', placeItems: 'center', flex: 'none' }}>
@@ -154,7 +154,7 @@ export default function AboutPage() {
               <h2 className="h2">Manual therapy is <em>core</em> to every visit.</h2>
               <p className="body-text" style={{ marginTop: '1.25rem' }}>
                 Soft-tissue release, joint mobilization, IASTM, cupping and
-                trigger-point work — selected based on what your body actually
+                trigger-point work, selected based on what your body actually
                 needs that day. Manual care creates the window for movement
                 and exercise to do their job.
               </p>

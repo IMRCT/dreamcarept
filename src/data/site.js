@@ -11,8 +11,8 @@ export const BRAND = {
   address: '13425 Ventura Blvd, Ste 102',
   city: 'Sherman Oaks, CA',
   hours: [
-    { day: 'Mon – Fri', time: '8:00 am – 6:00 pm' },
-    { day: 'Saturday', time: '8:00 am – 6:00 pm' },
+    { day: 'Mon to Fri', time: '8:00 am to 6:00 pm' },
+    { day: 'Saturday', time: '8:00 am to 6:00 pm' },
     { day: 'Sunday', time: 'Closed' },
   ],
   serviceAreas: ['Sherman Oaks', 'Beverly Hills', 'Encino', 'Santa Monica', 'West LA', 'San Fernando Valley'],

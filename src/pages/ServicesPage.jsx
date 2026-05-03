@@ -16,7 +16,7 @@ export default function ServicesPage() {
               <h1 className="h1">Doctor-led care, <em>transparent pricing</em>, no shortcuts.</h1>
               <p className="lead" style={{ marginTop: '1.4rem' }}>
                 Every session is one-on-one with Dr. Ashkani. Treatments combine manual therapy,
-                exercise progression, vestibular and BFR techniques — selected based on what your
+                exercise progression, vestibular and BFR techniques, all selected based on what your
                 body actually needs.
               </p>
               <div className="btn-row">
@@ -74,7 +74,7 @@ export default function ServicesPage() {
               <p className="eyebrow">Insurance & access</p>
               <h2 className="h2">We accept <em>nearly all major</em> insurance plans.</h2>
               <p className="lead" style={{ marginTop: '1.25rem' }}>
-                Some plans accepted without a doctor's referral — call us first and we'll
+                Some plans are accepted without a doctor's referral. Call us first and we'll
                 check coverage so you can skip the wait.
               </p>
               <div className="btn-row">
@@ -106,7 +106,7 @@ export default function ServicesPage() {
           <div className="steps-list">
             {[
               { t: 'Check-in & re-assess', b: 'Each visit starts with a quick re-assessment so we track real progress, not guesses.' },
-              { t: 'Manual therapy', b: 'Hands-on work — soft tissue release, joint mobilization, cupping, IASTM as indicated.' },
+              { t: 'Manual therapy', b: 'Hands-on work including soft tissue release, joint mobilization, cupping and IASTM as indicated.' },
               { t: 'Exercise progression', b: 'Strength, mobility and neuromuscular work paced to where your body is today.' },
               { t: 'Home program', b: 'Clear, simple between-session work that fits into your real schedule.' },
             ].map((step, i) => (
@@ -127,7 +127,7 @@ export default function ServicesPage() {
             <div>
               <p className="eyebrow">Not sure what fits?</p>
               <h2 className="h2">Start with a <em>comprehensive evaluation</em>.</h2>
-              <p>45 minutes with Dr. Ashkani — assessment, treatment direction and a clear next step.</p>
+              <p>45 minutes with Dr. Ashkani: assessment, treatment direction and a clear next step.</p>
               <div className="btn-row">
                 <Link to="/book" className="btn btn--primary">Book evaluation</Link>
                 <Link to="/contact" className="btn btn--cream">Ask a question</Link>

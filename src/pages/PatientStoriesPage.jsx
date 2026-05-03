@@ -17,7 +17,7 @@ const STORIES = [
   {
     name: 'David K.',
     age: 67,
-    condition: 'Total knee replacement — left',
+    condition: 'Total knee replacement, left knee',
     duration: '10 weeks',
     summary: 'Right knee replaced two years ago elsewhere with a slow recovery. Wanted a different experience for the left.',
     plan: 'Aggressive but pain-respecting ROM work, quad reactivation with NMES, BFR for safer strength, gait retraining.',
@@ -30,7 +30,7 @@ const STORIES = [
     condition: 'Post-concussion syndrome with vertigo',
     duration: '5 weeks',
     summary: 'Bike accident, post-concussion symptoms persisted for 4 months. Dizziness with screen use and head turns.',
-    plan: 'Vestibular rehab — gaze stabilization, habituation, cervical mobility. Graded return to screen and work tasks.',
+    plan: 'Vestibular rehab with gaze stabilization, habituation and cervical mobility. Graded return to screen and work tasks.',
     outcome: 'Driving comfortably again at week 2. Symptom-free at work by week 5.',
     tone: 'coral',
   },
@@ -57,7 +57,7 @@ const STORIES = [
   {
     name: 'Joel M.',
     age: 34,
-    condition: 'FAI hip arthroscopy — right',
+    condition: 'FAI hip arthroscopy, right hip',
     duration: '12 weeks',
     summary: 'Cam-type FAI with labral repair. Active CrossFitter, anxious about returning to lifting.',
     plan: 'Phased post-op protocol, hip stability and motor control, glute progression, sport-specific lifts in late phase.',
@@ -74,10 +74,10 @@ export default function PatientStoriesPage() {
           <Reveal className="inner-hero__grid">
             <div>
               <p className="eyebrow">Patient stories</p>
-              <h1 className="h1">Real recoveries — start to <em>finish</em>.</h1>
+              <h1 className="h1">Real recoveries from start to <em>finish</em>.</h1>
               <p className="lead" style={{ marginTop: '1.4rem' }}>
                 Six clients who came in stuck and walked out moving. Each story
-                shows the diagnosis, the plan and the outcome — so you can see how
+                shows the diagnosis, the plan and the outcome, so you can see how
                 doctor-led PT actually works.
               </p>
             </div>
@@ -120,7 +120,7 @@ export default function PatientStoriesPage() {
             <div>
               <p className="eyebrow">Your story is next</p>
               <h2 className="h2">Doctor-led care, built around <em>you</em>.</h2>
-              <p>Tell us where you're stuck — we'll build the plan to get you out of it.</p>
+              <p>Tell us where you're stuck. We'll build the plan to get you out of it.</p>
               <div className="btn-row">
                 <Link to="/book" className="btn btn--primary">Book Appointment</Link>
                 <Link to="/contact" className="btn btn--cream">Talk to us first</Link>

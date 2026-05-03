@@ -11,7 +11,7 @@ const GROUPS = [
       { q: 'Do I need a doctor\'s referral to start physical therapy?', a: 'In many cases, no. California is a direct-access state and we accept many plans without a referral. Call us first and we\'ll verify your specific coverage so you can skip the waiting room and start sooner.' },
       { q: 'What happens at my first visit?', a: 'A 45-minute one-on-one comprehensive evaluation with Dr. Ashkani. We review your history and imaging, run a movement and orthopedic assessment, do an initial hands-on treatment and walk you out with a clear plan.' },
       { q: 'How long is each session?', a: 'New-client evaluations are 45 minutes. Follow-up sessions are typically 30 minutes of focused 1-on-1 work, with longer 1 hour 15 minute slots reserved for post-surgical and complex rehabilitation cases.' },
-      { q: 'How many visits will I need?', a: 'It depends on the condition and stage. Acute issues may resolve in 4–6 visits. Post-surgical and chronic cases typically run 8–14 visits. We re-assess constantly and stop when you\'re ready to manage independently.' },
+      { q: 'How many visits will I need?', a: 'It depends on the condition and stage. Acute issues may resolve in 4 to 6 visits. Post-surgical and chronic cases typically run 8 to 14 visits. We re-assess constantly and stop when you\'re ready to manage independently.' },
     ],
   },
   {
@@ -26,19 +26,19 @@ const GROUPS = [
   {
     title: 'Specialty care',
     items: [
-      { q: 'Do you treat post-surgical patients?', a: 'Yes — total knee, total hip, ACL reconstruction, rotator cuff repair, hip arthroscopy and more. We coordinate directly with your surgical team and follow protocol while pushing you progressively.' },
+      { q: 'Do you treat post-surgical patients?', a: 'Yes, including total knee, total hip, ACL reconstruction, rotator cuff repair, hip arthroscopy and more. We coordinate directly with your surgical team and follow protocol while pushing you progressively.' },
       { q: 'Can you help with vertigo or dizziness?', a: 'Yes. Dr. Ashkani is certified in vestibular rehabilitation and post-concussion care from the New York Concussion Corner Academy. The 45-minute vestibular evaluation is the right starting point.' },
       { q: 'Do you work with athletes?', a: 'Absolutely. Dr. Ashkani is FIFA-certified and an Olympic team consultant who has worked with gold-medal weightlifting athletes. We build sport-specific return-to-play programs across all activity levels.' },
-      { q: 'Do you offer telehealth visits?', a: 'Yes — full 45-minute virtual evaluations and follow-up sessions for clients across California. Telehealth works especially well for movement coaching, exercise progression and post-surgical check-ins.' },
+      { q: 'Do you offer telehealth visits?', a: 'Yes. We offer full 45-minute virtual evaluations and follow-up sessions for clients across California. Telehealth works especially well for movement coaching, exercise progression and post-surgical check-ins.' },
     ],
   },
   {
     title: 'During & after care',
     items: [
-      { q: 'Will I work with the same therapist every visit?', a: 'Yes. You see Dr. Ashkani every session — no aides, no rotating providers. That continuity is core to how we treat the root cause.' },
-      { q: 'What should I wear and bring?', a: 'Comfortable clothing you can move in — athletic shorts or leggings that allow access to the area being treated. Bring relevant imaging reports if you have them, and your insurance card on the first visit.' },
-      { q: 'Will I have homework between sessions?', a: 'Yes — but it will be focused and realistic. We\'d rather you do 10 minutes of the right work daily than 45 minutes you\'ll skip. Programs adapt to your real schedule.' },
-      { q: 'Where is the clinic and what are your hours?', a: `${BRAND.address}, ${BRAND.city}. We're open Monday through Saturday, 8am – 6pm, and closed Sunday.` },
+      { q: 'Will I work with the same therapist every visit?', a: 'Yes. You see Dr. Ashkani every session with no aides and no rotating providers. That continuity is core to how we treat the root cause.' },
+      { q: 'What should I wear and bring?', a: 'Comfortable clothing you can move in, such as athletic shorts or leggings that allow access to the area being treated. Bring relevant imaging reports if you have them, and your insurance card on the first visit.' },
+      { q: 'Will I have homework between sessions?', a: 'Yes, but it will be focused and realistic. We\'d rather you do 10 minutes of the right work daily than 45 minutes you\'ll skip. Programs adapt to your real schedule.' },
+      { q: 'Where is the clinic and what are your hours?', a: `${BRAND.address}, ${BRAND.city}. We're open Monday through Saturday, 8am to 6pm, and closed Sunday.` },
     ],
   },
 ]
@@ -97,7 +97,7 @@ export default function FAQPage() {
             <div>
               <p className="eyebrow">Still have questions?</p>
               <h2 className="h2">We answer the <em>phone</em>.</h2>
-              <p>Call or send a message — we'll respond the same business day.</p>
+              <p>Call or send a message. We'll respond the same business day.</p>
               <div className="btn-row">
                 <a href={`tel:${BRAND.phoneRaw}`} className="btn btn--primary">
                   <Icon name="phone" size={16} /> {BRAND.phone}
