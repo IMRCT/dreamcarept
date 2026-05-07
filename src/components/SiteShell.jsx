@@ -105,6 +105,7 @@ function MobileDrawer({ open, onClose }) {
           { label: 'Home', to: '/' },
           { label: 'About', to: '/about' },
           { label: 'Services', to: '/services' },
+          { label: 'Our Team', to: '/our-team' },
           { label: 'Contact', to: '/contact' },
           { label: 'Testimonials', to: '/testimonials' },
           { label: 'Patient Stories', to: '/patient-stories' },
@@ -201,6 +202,7 @@ export default function SiteShell() {
             <div className="footer-col">
               <h5>Practice</h5>
               <Link to="/about">About Dr. Ashkani</Link>
+              <Link to="/our-team">Our Team</Link>
               <Link to="/services">Services & Pricing</Link>
               <Link to="/book">Book a Visit</Link>
               <Link to="/contact">Contact</Link>

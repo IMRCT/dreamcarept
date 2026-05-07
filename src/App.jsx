@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import SiteShell from './components/SiteShell'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
+import OurTeamPage from './pages/OurTeamPage'
 import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
 import BookPage from './pages/BookPage'
@@ -17,6 +18,7 @@ export default function App() {
       <Route element={<SiteShell />}>
         <Route index element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/our-team" element={<OurTeamPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/book" element={<BookPage />} />

@@ -1,31 +1,31 @@
 :root {
-  /* Brand palette, deep navy ink + vivid purple primary on lavender canvas
-     (Pete Health-inspired) with warm sun yellow as a third accent. */
+  /* Brand palette, deep navy ink + blue-violet primary on a cool clinical canvas
+     with warm sun yellow as a supporting accent. */
   --bg: #FFFFFF;
-  --bg-2: #F4F0FA;
+  --bg-2: #F3F6FF;
   --surface: #FFFFFF;
-  --surface-soft: #F5F1FB;
-  --surface-warm: #FAF4FA;
+  --surface-soft: #F5F7FF;
+  --surface-warm: #F6F4FF;
 
   --ink: #0F1B33;
   --ink-2: #1A2745;
   --muted: #5C6480;
   --muted-2: #8990AA;
 
-  --primary: #8B2FB7;          /* vivid purple */
-  --primary-2: #A24BCC;         /* lighter purple */
-  --primary-3: #DCC6EE;         /* lavender wash */
-  --primary-4: #F0E6F9;         /* lavender canvas */
+  --primary: #123D73;          /* deep clinical blue */
+  --primary-2: #5A4BDA;         /* blue-violet */
+  --primary-3: #DCE8FF;         /* cool blue-lavender wash */
+  --primary-4: #EEF4FF;         /* blue-lavender canvas */
 
-  --accent: #E04E8B;           /* pink-magenta CTA companion */
-  --accent-2: #ED7AAF;
-  --accent-soft: #FAD9E8;
+  --accent: #5667F5;           /* vibrant blue-purple CTA companion */
+  --accent-2: #7B5CF6;
+  --accent-soft: #E4E8FF;
 
   --sun: #F5C56A;              /* warm yellow */
   --sun-soft: #FBE7B8;
 
-  --line: #E1DAEF;
-  --line-strong: #C5B8DD;
+  --line: #D8E2F6;
+  --line-strong: #AEBCE3;
 
   --shadow-xs: 0 6px 16px rgba(15, 27, 51, 0.06);
   --shadow-sm: 0 14px 36px rgba(15, 27, 51, 0.08);
@@ -70,8 +70,8 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(1100px 600px at 12% -10%, rgba(220, 198, 238, 0.55), transparent 60%),
-    radial-gradient(900px 500px at 110% 8%, rgba(224, 78, 139, 0.18), transparent 55%),
+    radial-gradient(1100px 600px at 12% -10%, rgba(220, 232, 255, 0.78), transparent 60%),
+    radial-gradient(900px 500px at 110% 8%, rgba(86, 103, 245, 0.16), transparent 55%),
     radial-gradient(700px 500px at 50% 110%, rgba(245, 197, 106, 0.12), transparent 60%),
     var(--bg);
   color: var(--ink);

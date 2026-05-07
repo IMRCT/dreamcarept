@@ -1,5 +1,4 @@
-﻿import { Link } from 'react-router-dom'
-import FallbackImage from '../components/FallbackImage'
+import { Link } from 'react-router-dom'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
 import { CTAArt } from '../components/Illustrations'
@@ -7,30 +6,16 @@ import { BRAND, CONDITIONS } from '../data/site'
 
 const PILLARS = [
   {
-    icon: 'user',
-    tag: 'Doctor-Led',
     title: 'Individualized treatment',
-    body: 'Every treatment plan is customized to each patient\'s goals, condition, and lifestyle and home. By delivering care directly in the home, we create a more comfortable, convenient, and functional recovery experience focused on long-term results and improved quality of life and experience gym and physical therapy at your home or work.',
+    body: 'Every treatment plan is customized to your goals, condition, lifestyle and home environment. By bringing care directly to you, recovery becomes more comfortable, practical and focused on long-term function.',
   },
   {
-    icon: 'shield',
-    tag: 'Evidence-Based',
     title: 'Rehabilitation services',
-    items: [
-      'Manual therapy and joint mobilization and manipulation',
-      'Personalized exercise progression with your stage of function',
-      'Evidence-Based pre- and post-operative rehabilitation protocol for total knee, shoulder, hip and ankle replacements',
-      'Vestibular and concussion rehabilitation',
-      'Orthopedic and sports injury rehabilitation',
-      'Neurological rehabilitation and gait and balance training',
-      'Balance training and fall risk prevention',
-    ],
+    body: 'Sessions can include manual therapy, joint mobilization, personalized exercise progression, vestibular and concussion rehabilitation, orthopedic and sports injury care, neurological rehabilitation, gait training and fall-risk prevention.',
   },
   {
-    icon: 'heart',
-    tag: 'Whole-Person',
     title: 'Supportive Care You Can Trust',
-    body: 'Our team provides hands-on care, clear guidance, and open communication to help patients feel comfortable and confident throughout recovery at home.\n\nWe strive to make therapy simple, supportive, and focused on helping you move better and live more independently.',
+    body: 'Our team provides hands-on care, clear guidance and open communication to help you feel confident throughout recovery. Therapy stays simple, supportive and focused on helping you move better and live more independently.',
   },
 ]
 
@@ -46,57 +31,60 @@ const INSURANCE_LOGOS = [
   { name: 'And More!', kind: 'text' },
 ]
 
-const STEPS = [
-  { title: 'Reach out', body: 'Call, message or book online. We confirm your goals and schedule the right evaluation slot.' },
-  { title: 'Comprehensive eval', body: '45 minutes with a Doctor of Physical Therapy. Movement screen, history, posture and treatment direction.' },
-  { title: 'Personalized plan', body: 'A progression built around your real life, sport, work, recovery and home environment.' },
-  { title: 'Recover & build', body: 'Hands-on care, exercise progression and root-cause work, session by session.' },
-]
-
-const QUOTES = [
-  { quote: 'After my knee surgery I was back walking the dog in three weeks. Dr. Ashkani actually listens. Every visit feels custom.', name: 'Recovery client', role: 'Post-op total knee' },
-  { quote: 'I had vertigo for months and saw four other providers. The vestibular evaluation here changed everything in two sessions.', name: 'Vestibular patient', role: 'Sherman Oaks' },
-  { quote: 'The 1-on-1 time is unreal. No bouncing between PTs, no waiting on a table. Real hands-on work, real progression.', name: 'Sport client', role: 'Return to running' },
+const PATIENT_STORIES = [
+  { name: 'Recovery client', role: 'Post-op total knee', condition: 'Knee replacement', quote: 'After surgery I was nervous about walking again. The plan was clear, hands-on and steady every week.', outcome: 'Walking the dog in 3 weeks' },
+  { name: 'Vestibular patient', role: 'Sherman Oaks', condition: 'Vertigo and balance', quote: 'I had dizziness for months and tried several providers. The vestibular evaluation finally connected the dots.', outcome: 'Driving comfortably again' },
+  { name: 'Sport client', role: 'Return to running', condition: 'Running injury', quote: 'The 1-on-1 time felt different. No waiting around, no generic program, just real progression.', outcome: 'Back to training pain-free' },
+  { name: 'Maya R.', role: 'Low back pain', condition: 'Back and sciatica', quote: 'My home setup and movement habits were part of the issue. The program fixed both.', outcome: 'No flare-ups for 6 months' },
+  { name: 'David K.', role: 'Total knee rehab', condition: 'Post-surgical care', quote: 'The visits respected pain but still pushed progress. I felt stronger every session.', outcome: 'Off the cane in 5 weeks' },
+  { name: 'Priya S.', role: 'Concussion recovery', condition: 'Vestibular rehab', quote: 'Screen time and head turns used to trigger symptoms. The exercises were precise and manageable.', outcome: 'Back to full workdays' },
+  { name: 'Marcus T.', role: 'Tennis player', condition: 'Rotator cuff repair', quote: 'The shoulder plan matched my surgical protocol and my goal of playing tennis again.', outcome: 'Returned to court confidently' },
+  { name: 'Hannah L.', role: 'Trail runner', condition: 'Ankle instability', quote: 'I stopped trusting my ankle on uneven ground. Balance and strength work changed that.', outcome: 'Running trails without taping' },
+  { name: 'Joel M.', role: 'Hip arthroscopy', condition: 'Hip impingement', quote: 'I wanted to lift again without guessing. The progression made each phase feel safe.', outcome: 'Back to full workouts' },
+  { name: 'Ana V.', role: 'Sports rehab', condition: 'Shoulder pain', quote: 'Every session was focused and practical. I understood what to do and why it mattered.', outcome: 'Pain-free overhead movement' },
+  { name: 'Sam P.', role: 'Telehealth client', condition: 'Home exercise guidance', quote: 'Even virtually, the plan felt personal. We adjusted exercises around my space and equipment.', outcome: 'Consistent progress at home' },
+  { name: 'Lena B.', role: 'Posture and neck pain', condition: 'Neck pain', quote: 'The desk changes and mobility work made my pain stop coming back every afternoon.', outcome: 'Long workdays without pain' },
+  { name: 'Omar N.', role: 'Balance training', condition: 'Fall prevention', quote: 'The visits made my home feel safer and gave me confidence moving around again.', outcome: 'More stable daily walking' },
+  { name: 'Grace C.', role: 'Hip replacement', condition: 'Post-op hip rehab', quote: 'Care at home made recovery easier. We practiced the movements I actually needed daily.', outcome: 'Stairs felt normal again' },
+  { name: 'Eli W.', role: 'Weekend athlete', condition: 'Knee pain', quote: 'The program rebuilt strength without irritating my knee. It finally felt organized.', outcome: 'Back to weekend games' },
+  { name: 'Nina F.', role: 'Hand and wrist', condition: 'Wrist recovery', quote: 'Small details mattered. The exercises helped me use my hand again without guarding.', outcome: 'Returned to daily tasks' },
+  { name: 'Cal R.', role: 'Balance and gait', condition: 'Gait training', quote: 'The home visits helped us practice where I was actually struggling, not just in a clinic hallway.', outcome: 'Walking with more confidence' },
+  { name: 'Tara J.', role: 'Shoulder replacement', condition: 'Post-op shoulder', quote: 'The progression was calm and consistent. I knew what milestones we were working toward.', outcome: 'Better reach and less pain' },
+  { name: 'Ben A.', role: 'Back to lifting', condition: 'Low back rehab', quote: 'We rebuilt the basics first, then lifting started feeling possible again.', outcome: 'Returned to strength training' },
+  { name: 'Sophia M.', role: 'Home health PT', condition: 'Mobility and strength', quote: 'Having therapy at home removed the stress of travel and made the plan easier to follow.', outcome: 'More independent at home' },
 ]
 
 const HOME_RECOVERY_STEPS = [
   {
     icon: 'mail',
     title: 'Referral or direct access',
-    body: 'Your doctor can send a referral, and in many cases we can also guide you through direct access requirements.',
+    body: 'Your doctor can send a referral, or we can help you understand whether direct access is available for your plan.',
   },
   {
     icon: 'user',
     title: 'Get matched with a PT',
-    body: 'We match you with a licensed physical therapist who fits your needs, goals, schedule and location.',
+    body: 'We match you with a licensed physical therapist based on your condition, goals, schedule and location.',
   },
   {
     icon: 'check',
-    title: 'Simple intake forms',
-    body: 'We help you complete the essentials so insurance, safety and care details are ready before treatment begins.',
+    title: 'Complete simple forms',
+    body: 'We guide the intake process so insurance, medical history and care details are ready before treatment begins.',
   },
   {
     icon: 'home',
     title: 'Receive care at home',
-    body: 'Your therapist comes to your home or preferred location and builds a plan around your real environment.',
+    body: 'Your therapist comes to your home or preferred setting and builds treatment around your real environment.',
   },
   {
     icon: 'shield',
     title: 'Evidence-based treatment',
-    body: 'One-on-one care follows proven protocols, clinical reasoning and progressions matched to your condition.',
+    body: 'One-on-one care follows clinical reasoning, proven methods and progressions matched to your recovery stage.',
   },
   {
     icon: 'heart',
-    title: 'Return to function faster',
-    body: 'The goal is better movement, strength, confidence and a safer return to the activities you love.',
+    title: 'Return to function',
+    body: 'The goal is better movement, strength and confidence for a safer return to the activities you love.',
   },
-]
-
-const HOME_RECOVERY_BENEFITS = [
-  { icon: 'home', label: 'Convenient at home' },
-  { icon: 'user', label: 'One-on-one attention' },
-  { icon: 'shield', label: 'Evidence-based approach' },
-  { icon: 'heart', label: 'Focused on you' },
 ]
 
 const HOME_FAQS = [
@@ -177,22 +165,20 @@ export default function HomePage() {
             <Reveal className="hero__copy hero-video__copy">
               <p className="eyebrow">Home health physical therapy</p>
               <h1 className="h1">
-                One-on-one PT that treats the <em>root cause</em>, not just the symptom.
+                One-on-one PT that treats the <em>root cause</em>, not just the symptom
               </h1>
 
               <p className="lead" style={{ marginTop: '1.4rem' }}>
-                Dreamcare is a physical therapists-led practice grounded in a
-                holistic approach that recognizes the deep connection between
-                mind, body, and Soul.
+                Dreamcare PT is a physical therapists-led holistic and evidenvce-based
+                practice in California. Quality over quantity. personalized care in your home, designed to restore function and prevent further injuries
               </p>
 
               <div className="btn-row">
                 <Link to="/book" className="btn btn--primary">
                   Book an Appointment <Icon name="arrowUpRight" size={16} />
                 </Link>
-                <Link to="/services" className="btn btn--ghost">See all treatments</Link>
               </div>
-              <p className="hero-video__tagline">You deserve it.</p>
+              <p className="hero-video__tagline" style={{ fontSize: '1.2em' }}>You deserve it</p>
             </Reveal>
           </div>
         </div>
@@ -227,42 +213,20 @@ export default function HomePage() {
             <p className="eyebrow">Why DreamCare</p>
             <h2 className="h2">Care that actually feels <em>personal</em>.</h2>
             <p className="lead" style={{ marginTop: '1.25rem' }}>
-              Personalized Physical Therapy protocol and rehabilitation services in the
-              Comfort of Your Home or your work
-              <br /><br />
+              
               We provide one-on-one home health physical therapy focused on helping
-              patients move pain-free, recover faster, and regain independence and
+              you move pain-free, recover faster, and regain independence and
               function through compassionate, evidence-based care.
             </p>
           </Reveal>
 
           <div className="grid grid--3">
-            {PILLARS.map((p, i) => {
-              const hasItems = Array.isArray(p.items)
-
-              return (
-                <Reveal
-                  key={p.title}
-                  delay={i + 1}
-                  className={`card service-card${i === 0 ? ' service-card--doctor-led' : ''}${i === 1 ? ' service-card--evidence-based' : ''}${i === 2 ? ' service-card--supportive' : ''}`}
-                >
-                  <div className="service-card__icon"><Icon name={p.icon} size={26} /></div>
-                  <span className="service-card__tag">{p.tag}</span>
-                  <h3>{p.title}</h3>
-                  {hasItems ? (
-                    <ul className="service-card__body service-card__list">
-                      {p.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="service-card__body">
-                      {p.body}
-                    </p>
-                  )}
-                </Reveal>
-              )
-            })}
+            {PILLARS.map((p, i) => (
+              <Reveal key={p.title} delay={i + 1} className="card care-card">
+                <h3>{p.title}</h3>
+                <p>{p.body}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -270,18 +234,22 @@ export default function HomePage() {
       {/* CONDITIONS */}
       <section className="section section--mint">
         <div className="shell shell--wide">
-          <Reveal className="section-head section-head--split">
-            <div>
-              <p className="eyebrow">Conditions we treat</p>
-              <h2 className="h2">Targeted programs for the <em>most common</em> orthopedic issues.</h2>
-            </div>
-            <Link to="/services" className="btn btn--ghost">All services →</Link>
+          <Reveal className="section-head section-head--center">
+            <p className="eyebrow">Conditions we treat</p>
+            <h2 className="h2">Care for movement, pain, balance and recovery.</h2>
           </Reveal>
 
           <div className="cond-grid">
             {CONDITIONS.map((c, i) => (
               <Reveal key={c.slug} delay={(i % 3) + 1}>
-                <Link to={`/conditions/${c.slug}`} className="cond-card">
+                <Link
+                  to={`/conditions/${c.slug}`}
+                  className={`cond-card${c.tileImage ? ' cond-card--photo' : ''}`}
+                  style={c.tileImage ? {
+                    '--cond-image': `url(${c.tileImage})`,
+                    '--cond-position': c.tilePosition ?? 'center',
+                  } : undefined}
+                >
                   <div className="cond-card__icon"><Icon name={c.icon} size={22} /></div>
                   <div className="cond-card__body">
                     <h4>{c.label}</h4>
@@ -292,83 +260,31 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+
+          <Reveal delay={1} className="section-action">
+            <Link to="/services" className="btn btn--ghost">Services details</Link>
+          </Reveal>
         </div>
       </section>
 
-      {/* DOCTOR */}
-      <section className="section">
-        <div className="shell shell--wide">
-          <div className="doctor-block">
-            <Reveal className="doctor-portrait">
-              <FallbackImage src="/images/doctor-photo.jpg" fallback="/images/doctor.svg" alt="Dr. Ashkan Ashkani, Doctor of Physical Therapy" />
-              <div className="doctor-stamp">
-                <div className="ico"><Icon name="trophy" size={18} /></div>
-                <div>
-                  <strong>Dr. Ashkan Ashkani</strong>
-                  <span>PT, DPT, CMTPT, COMT</span>
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal delay={1}>
-              <p className="eyebrow">Meet your therapist</p>
-              <h2 className="h2">An orthopedic and sports PT trusted by <em>elite teams</em> and everyday athletes.</h2>
-              <p className="body-text" style={{ marginTop: '1.25rem' }}>
-                Dr. Ashkan Ashkani is a Doctor of Physical Therapy with 13+ years of clinical
-                experience. Nationally and internationally recognized in orthopedic and sports PT,
-                he has worked with gold-medal weightlifting athletes, served as an Olympic team
-                consultant and mentored DPT students from Columbia, USC and the University of
-                Pittsburgh.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* WELLNESS SPLIT (real photo) */}
-      <section className="section">
-        <div className="shell shell--wide">
-          <div className="split-photo">
-            <Reveal className="split-photo__art">
-              <FallbackImage src="/images/wellness-stretch.svg" fallback="/images/wellness-stretch.svg" alt="Athlete stretching during a wellness recovery session" />
-            </Reveal>
-            <Reveal delay={1}>
-              <p className="eyebrow">Sport · Wellness</p>
-              <h2 className="h2">Move <em>better</em>. Recover <em>smarter</em>.</h2>
-              <p className="body-text" style={{ marginTop: '1.25rem' }}>
-                DreamCare is built for active people, runners, lifters, weekend
-                warriors and anyone working their way back. Programs blend
-                manual therapy, mobility work and progressive loading designed
-                around your real activity.
-              </p>
-              <ul className="cred-list">
-                <li>Sport-specific return-to-play</li>
-                <li>Mobility & flexibility work</li>
-                <li>Strength rebuilds with BFR</li>
-                <li>Performance & posture coaching</li>
-              </ul>
-              <div className="btn-row">
-                <Link to="/services" className="btn btn--ink">Explore services</Link>
-                <Link to="/book" className="btn btn--ghost">Book a session</Link>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* STEPS */}
-      <section className="section">
+      {/* RECOVERY PATH */}
+      <section className="section section--path-home">
         <div className="shell shell--wide">
           <Reveal className="section-head section-head--center">
-            <p className="eyebrow">How it works</p>
-            <h2 className="h2">Your <em>path</em> from first call to lasting recovery.</h2>
+            <p className="eyebrow">Your path to recovery at home</p>
+            <h2 className="h2">Simple steps. <em>Personalized care.</em> Better outcomes.</h2>
+            <p className="lead" style={{ marginInline: 'auto', marginTop: '1.15rem' }}>
+              From the first call to functional progress, each step is clear,
+              coordinated and built around care where you live.
+            </p>
           </Reveal>
 
-          <div className="steps-list">
-            {STEPS.map((step, i) => (
-              <Reveal key={step.title} delay={(i % 4) + 1} className="step">
-                <div className="step__num">{String(i + 1).padStart(2, '0')}</div>
-                <h4 className="h4">{step.title}</h4>
+          <div className="path-home__grid">
+            {HOME_RECOVERY_STEPS.map((step, i) => (
+              <Reveal key={step.title} delay={(i % 3) + 1} className="path-home__card">
+                <div className="path-home__number">{i + 1}</div>
+                <div className="path-home__icon"><Icon name={step.icon} size={26} /></div>
+                <h3>{step.title}</h3>
                 <p>{step.body}</p>
               </Reveal>
             ))}
@@ -377,27 +293,38 @@ export default function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="section section--mint">
+      <section className="section section--mint section--patient-stories">
         <div className="shell shell--wide">
-          <Reveal className="section-head">
-            <p className="eyebrow">In their words</p>
-            <h2 className="h2">Stories from clients who <em>stuck with it</em>.</h2>
+          <Reveal className="section-head section-head--wide-title patient-stories__head">
+            <p className="eyebrow">Patient stories</p>
+            <h2 className="h2">Real progress, one <em>home visit</em> at a time.</h2>
+            <p className="lead" style={{ marginTop: '1.1rem' }}>
+              A growing library of recovery snapshots, moving gently so each story
+              stays easy to scan without crowding the page.
+            </p>
           </Reveal>
 
-          <div className="grid grid--3">
-            {QUOTES.map((q, i) => (
-              <Reveal key={q.quote} delay={(i % 3) + 1} className="quote-card">
-                <p>{q.quote}</p>
-                <div className="quote-card__author">
-                  <span className="quote-card__avatar">{q.name.split(' ').map((w) => w[0]).slice(0,2).join('')}</span>
-                  <div>
-                    <strong>{q.name}</strong>
-                    <span>{q.role}</span>
+          <Reveal delay={1} className="patient-story-marquee">
+            <div className="patient-story-track patient-story-track--auto">
+              {[...PATIENT_STORIES, ...PATIENT_STORIES].map((story, i) => (
+                <article
+                  key={`${story.name}-${i}`}
+                  className="patient-story-card patient-story-card--slide"
+                  aria-hidden={i >= PATIENT_STORIES.length}
+                >
+                  <div className="patient-story-card__top">
+                    <span className="patient-story-card__avatar">{story.name.split(' ').map((w) => w[0]).slice(0, 2).join('')}</span>
+                    <span>{story.condition}</span>
                   </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+                  <p className="patient-story-card__quote">{story.quote}</p>
+                  <div className="patient-story-card__person">
+                    <strong>{story.name}</strong>
+                    <span>{story.role}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -440,45 +367,6 @@ export default function HomePage() {
             We provide personalized, compassionate care designed to restore function,
             help you return to daily life and sport activities, and reduce the risk of
             future injuries.
-          </Reveal>
-        </div>
-      </section>
-
-      {/* RECOVERY PATH */}
-      <section className="section section--path-home">
-        <div className="shell shell--wide">
-          <Reveal className="section-head section-head--center">
-            <p className="eyebrow">Your path to recovery at home</p>
-            <h2 className="h2">Simple steps. <em>Personalized care.</em> Better outcomes.</h2>
-            <p className="lead" style={{ marginInline: 'auto', marginTop: '1.15rem' }}>
-              From the first call to functional progress, we keep the process clear,
-              coordinated and centered around care where you live.
-            </p>
-          </Reveal>
-
-          <div className="path-home__grid">
-            {HOME_RECOVERY_STEPS.map((step, i) => (
-              <Reveal key={step.title} delay={(i % 3) + 1} className="path-home__card">
-                <div className="path-home__number">{i + 1}</div>
-                <div className="path-home__icon"><Icon name={step.icon} size={26} /></div>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={2} className="path-home__promise">
-            <div>
-              <strong>Compassionate care. Expert therapists.</strong>
-              <span>Better recovery, right where you are.</span>
-            </div>
-            <div className="path-home__benefits">
-              {HOME_RECOVERY_BENEFITS.map((benefit) => (
-                <span key={benefit.label}>
-                  <Icon name={benefit.icon} size={18} /> {benefit.label}
-                </span>
-              ))}
-            </div>
           </Reveal>
         </div>
       </section>
