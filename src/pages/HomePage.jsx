@@ -145,7 +145,7 @@ const HOME_FAQS = [
   {
     question: 'What areas do you serve?',
     answer: [
-      'We provide home health physical therapy across multiple locations in California and adjust scheduling based on your address for convenience and coverage.',
+      'Sherman Oaks is our center point. We serve nearby cities and neighborhoods within about a 20-mile range, and we adjust scheduling based on your address for convenience and coverage.',
     ],
   },
 ]
@@ -415,14 +415,20 @@ export default function HomePage() {
           <Reveal>
             <p className="eyebrow" style={{ justifyContent: 'center' }}>Where we serve</p>
             <h2 className="h2" style={{ marginBottom: '2rem' }}>
-              Our home is Sherman Oaks. Our patients come from <em>across LA</em>.
+              Centered in Sherman Oaks. Serving nearby cities within a <em>20-mile range</em>.
             </h2>
-            <div className="locations">
-              {BRAND.serviceAreas.map((area) => (
-                <span key={area} className="location-pill">
-                  <Icon name="pin" size={14} /> {area}
-                </span>
-              ))}
+            <div className="locations locations--marquee" aria-label="Cities and neighborhoods served within 20 miles of Sherman Oaks">
+              <div className="locations__track">
+                {[0, 1].map((set) => (
+                  <div className="locations__set" key={set} aria-hidden={set === 1}>
+                    {BRAND.serviceAreas.map((area) => (
+                      <span key={`${set}-${area}`} className="location-pill">
+                        <Icon name="pin" size={14} /> {area}
+                      </span>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
