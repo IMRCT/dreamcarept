@@ -749,7 +749,7 @@
 .home-hero__copy .h1 {
   max-width: 620px;
   color: var(--ink);
-  font-size: clamp(2.25rem, 2.85vw, 3.18rem);
+  font-size: clamp(2rem, 2.55vw, 2.85rem);
   line-height: 1.06;
   font-weight: 800;
 }
@@ -3716,7 +3716,7 @@
 }
 
 .section--path-home .section-head .h2 {
-  font-size: clamp(2rem, 3.25vw, 2.65rem);
+  font-size: clamp(1.8rem, 2.925vw, 2.385rem);
   line-height: 1.1;
 }
 
