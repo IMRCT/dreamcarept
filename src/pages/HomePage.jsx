@@ -36,10 +36,6 @@ const INSURANCE_LOGOS = [
   { name: 'And More!', kind: 'text' },
 ]
 
-const INSURANCE_ACCESS_LOGOS = INSURANCE_LOGOS.filter((logo) => (
-  logo.name !== 'Medicare' && logo.name !== 'And More!'
-))
-
 const HERO_PHONE = BRAND.phone.replace('+1 ', '')
 
 const HERO_FEATURES = [
@@ -314,13 +310,6 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <div className="home-hero__outcome" aria-hidden="true">
-            <Icon name="user" size={34} />
-            <span>
-              <strong>Compassionate Care.</strong>
-              <small>Better Outcomes.</small>
-            </span>
-          </div>
         </div>
       </section>
 
@@ -542,15 +531,25 @@ export default function HomePage() {
             </p>
           </Reveal>
 
-          <Reveal delay={1} className="insurance-access__logos" aria-label="Insurance and provider networks">
-            {INSURANCE_ACCESS_LOGOS.map((logo) => (
-              <span
-                className={`insurance-access__logo${logo.size ? ` insurance-access__logo--${logo.size}` : ''}`}
-                key={logo.name}
-              >
-                <img src={logo.src} alt={logo.name} loading="lazy" />
-              </span>
-            ))}
+          <Reveal delay={1} className="insurance-slider insurance-slider--access" aria-label="Insurance and provider networks">
+            <div className="insurance-slider__track">
+              {[0, 1].map((set) => (
+                <div className="insurance-slider__set" key={set} aria-hidden={set === 1}>
+                  {INSURANCE_LOGOS.map((logo) => (
+                    <span
+                      className={`insurance-logo${logo.size ? ` insurance-logo--${logo.size}` : ''}${logo.kind === 'text' ? ' insurance-logo--text' : ''}`}
+                      key={`${set}-${logo.name}`}
+                    >
+                      {logo.src ? (
+                        <img src={logo.src} alt={logo.name} loading="lazy" />
+                      ) : (
+                        logo.name
+                      )}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
           </Reveal>
 
           <Reveal delay={1} className="insurance-access__divider" aria-hidden="true">

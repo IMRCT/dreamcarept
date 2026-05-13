@@ -747,9 +747,9 @@
 }
 
 .home-hero__copy .h1 {
-  max-width: 560px;
+  max-width: 620px;
   color: var(--ink);
-  font-size: clamp(2.65rem, 3.35vw, 3.72rem);
+  font-size: clamp(2.25rem, 2.85vw, 3.18rem);
   line-height: 1.06;
   font-weight: 800;
 }
@@ -991,8 +991,8 @@
   }
 
   .home-hero__copy .h1 {
-    max-width: 12.5ch;
-    font-size: clamp(2.28rem, 10vw, 3.35rem);
+    max-width: 14ch;
+    font-size: clamp(2rem, 8.8vw, 2.78rem);
   }
 
   .home-hero__copy .lead {
