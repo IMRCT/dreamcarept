@@ -149,8 +149,15 @@ export default function SiteShell() {
   const [drawerOpen, setDrawerOpen] = useState(false)
 
   useEffect(() => {
+    if (location.hash) {
+      requestAnimationFrame(() => {
+        document.querySelector(location.hash)?.scrollIntoView({ block: 'start' })
+      })
+      return
+    }
+
     window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' })
-  }, [location.pathname])
+  }, [location.pathname, location.hash])
 
   return (
     <div className="app-frame">
@@ -182,20 +189,21 @@ export default function SiteShell() {
         <Outlet />
       </main>
 
-      <footer className="site-footer">
+      <footer className="site-footer" id="footer">
         <div className="shell shell--wide">
           <div className="footer-grid">
             <div className="footer-brand">
               <BrandLockup variant="footer" />
               <p>
                 One-on-one physical therapy led by a Doctor of Physical Therapy.
-                Holistic, evidence-based care designed to treat the root cause.
+                Holistic, evidence-based care designed to treat the root cause
+                and help you move, feel, and live better.
               </p>
-              <div className="socials" style={{ marginTop: '1.4rem' }}>
-                <a href="#" aria-label="Facebook"><Icon name="heart" size={16} /></a>
-                <a href="#" aria-label="Instagram"><Icon name="sparkles" size={16} /></a>
-                <a href="#" aria-label="LinkedIn"><Icon name="user" size={16} /></a>
-                <a href="#" aria-label="Yelp"><Icon name="star" size={16} /></a>
+              <div className="footer-brand__badges" aria-label="DreamCare practice values">
+                <span><Icon name="heart" size={25} />Compassionate Care</span>
+                <span><Icon name="sparkles" size={25} />Evidence Based</span>
+                <span><Icon name="user" size={25} />Doctor Led</span>
+                <span><Icon name="shield" size={25} />Your Safety Matters</span>
               </div>
             </div>
 
@@ -204,28 +212,65 @@ export default function SiteShell() {
               <Link to="/about">About Dr. Ashkani</Link>
               <Link to="/our-team">Our Team</Link>
               <Link to="/services">Services & Pricing</Link>
+              <Link to="/#recovery-path">How It Works</Link>
+              <Link to="/#insurance-access">Insurances</Link>
+              <Link to="/services">Private Pay</Link>
               <Link to="/book">Book a Visit</Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">Contact Us</Link>
             </div>
 
             <div className="footer-col">
-              <h5>Conditions</h5>
+              <h5>Conditions We Treat</h5>
               {CONDITIONS.map((c) => (
                 <Link key={c.slug} to={`/conditions/${c.slug}`}>{c.label}</Link>
               ))}
             </div>
 
-            <div className="footer-col">
-              <h5>Visit</h5>
-              <span>{BRAND.address}</span>
-              <span>{BRAND.city}</span>
-              <a href={`tel:${BRAND.phoneRaw}`}>{BRAND.phone}</a>
-              <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>
+            <div className="footer-col footer-col--contact">
+              <h5>We Come To You</h5>
+              <span className="footer-contact-row">
+                <Icon name="pin" size={20} />
+                <span>Serving Southern California<br />Los Angeles County<br />Orange County<br />San Diego County<br />and surrounding communities</span>
+              </span>
+              <a className="footer-contact-row" href={`tel:${BRAND.phoneRaw}`}>
+                <Icon name="phone" size={20} />
+                <span>{BRAND.phone}</span>
+              </a>
+              <a className="footer-contact-row" href={`mailto:${BRAND.email}`}>
+                <Icon name="mail" size={20} />
+                <span>{BRAND.email}</span>
+              </a>
+              <a className="footer-contact-row" href="https://dreamcarept.com">
+                <Icon name="globe" size={20} />
+                <span>dreamcarept.com</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-comfort">
+            <div className="footer-comfort__icon" aria-hidden="true">
+              <Icon name="home" size={44} />
+            </div>
+            <div>
+              <strong>Care where you're comfortable</strong>
+              <p>
+                All visits are completed in the comfort of your home or preferred
+                setting so therapy is practical, personalized, and convenient.
+              </p>
+            </div>
+            <div className="footer-comfort__cta">
+              <span><Icon name="phone" size={22} /></span>
+              <div>
+                <strong>Ready to get started?</strong>
+                <p>We're here to help you feel your best.</p>
+              </div>
+              <Link to="/book" className="btn btn--primary">Book Appointment</Link>
             </div>
           </div>
 
           <div className="site-footer__bottom">
             <span>© {new Date().getFullYear()} DreamCare Physical Therapy, Sport and Wellness.</span>
+            <span className="site-footer__copyright">&copy; {new Date().getFullYear()} DreamCare Physical Therapy, Sport and Wellness. All rights reserved.</span>
             <span>Quality over quantity. Doctor-led care, root-cause focused.</span>
           </div>
         </div>

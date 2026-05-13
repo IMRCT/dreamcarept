@@ -1,21 +1,26 @@
 import { Link } from 'react-router-dom'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
-import { CTAArt } from '../components/Illustrations'
 import { BRAND, CONDITIONS } from '../data/site'
 
 const PILLARS = [
   {
-    title: 'Individualized treatment',
-    body: 'Every treatment plan is customized to your goals, condition, lifestyle and home environment. By bringing care directly to you, recovery becomes more comfortable, practical and focused on long-term function.',
+    icon: 'user',
+    tone: 'teal',
+    title: 'Individualized Treatment',
+    body: 'Care plans tailored to your goals, lifestyle, and recovery needs, all from the comfort of your home.',
   },
   {
-    title: 'Rehabilitation services',
-    body: 'Sessions can include manual therapy, joint mobilization, personalized exercise progression, vestibular and concussion rehabilitation, orthopedic and sports injury care, neurological rehabilitation, gait training and fall-risk prevention.',
+    icon: 'rehab',
+    tone: 'violet',
+    title: 'Rehabilitation Services',
+    body: 'Orthopedic rehab, balance training, mobility recovery, neurological care, and personalized exercise programs.',
   },
   {
+    icon: 'careHands',
+    tone: 'teal',
     title: 'Supportive Care You Can Trust',
-    body: 'Our team provides hands-on care, clear guidance and open communication to help you feel confident throughout recovery. Therapy stays simple, supportive and focused on helping you move better and live more independently.',
+    body: 'Hands-on, compassionate care focused on helping you move better, feel stronger, and stay independent.',
   },
 ]
 
@@ -30,6 +35,92 @@ const INSURANCE_LOGOS = [
   { name: 'TRICARE', src: '/images/insurance/tricare.png', size: 'tall' },
   { name: 'And More!', kind: 'text' },
 ]
+
+const INSURANCE_ACCESS_LOGOS = INSURANCE_LOGOS.filter((logo) => (
+  logo.name !== 'Medicare' && logo.name !== 'And More!'
+))
+
+const HERO_PHONE = BRAND.phone.replace('+1 ', '')
+
+const HERO_FEATURES = [
+  {
+    icon: 'shield',
+    title: 'Licensed & Insured',
+    body: 'Trusted Professionals',
+  },
+  {
+    icon: 'home',
+    title: 'In-Home Convenience',
+    body: 'Care at Your Doorstep',
+  },
+  {
+    icon: 'user',
+    title: 'Personalized Treatment',
+    body: '1-on-1 with Your PT',
+  },
+]
+
+const HERO_TRUST = [
+  {
+    icon: 'star',
+    title: '5-Star Patient Rating',
+    body: 'Based on patient reviews',
+  },
+  {
+    icon: 'pin',
+    title: 'Serving Southern California',
+    body: '& Surrounding Areas',
+  },
+  {
+    icon: 'shield',
+    title: 'Medicare & Insurance',
+    body: 'Accepted',
+  },
+  {
+    icon: 'clock',
+    title: 'Same-Day Appointments',
+    body: 'Available',
+  },
+]
+
+const CONDITION_CARD_COPY = {
+  'back-pain': {
+    title: 'Back & Neck Pain',
+    body: 'Relieve pain and restore mobility caused by injury, posture, or everyday strain.',
+  },
+  'shoulder-pain': {
+    title: 'Shoulder Pain',
+    body: 'Rehabilitation after surgery or injury to help you regain strength and movement.',
+  },
+  'knee-pain': {
+    title: 'Knee Pain',
+    body: 'Support for arthritis, ACL injuries, meniscus tears and post-surgical recovery.',
+  },
+  'hip-pain': {
+    title: 'Hip Pain',
+    body: 'Relieve hip pain, improve mobility, and return to the activities you enjoy.',
+  },
+  'ankle-injuries': {
+    title: 'Ankle & Foot Injuries',
+    body: 'Recover from sprains, instability and injuries to get back on your feet.',
+  },
+  vestibular: {
+    title: 'Vestibular & Concussion Care',
+    body: 'Treatment for dizziness, concussions, and balance problems.',
+  },
+  'balance-fall-prevention': {
+    title: 'Balance & Fall Prevention',
+    body: 'Improve stability and confidence to reduce your risk of falls.',
+  },
+  'post-surgical-rehabilitation': {
+    title: 'Post-Surgical Rehabilitation',
+    body: 'Guided recovery after joint replacement or other surgeries.',
+  },
+  'hand-upper-extremity-therapy': {
+    title: 'Hand & Wrist Therapy',
+    body: 'Improve strength, mobility and function after injury or surgery.',
+  },
+}
 
 const PATIENT_STORIES = [
   { name: 'Recovery client', role: 'Post-op total knee', condition: 'Knee replacement', quote: 'After surgery I was nervous about walking again. The plan was clear, hands-on and steady every week.', outcome: 'Walking the dog in 3 weeks' },
@@ -54,133 +145,196 @@ const PATIENT_STORIES = [
   { name: 'Sophia M.', role: 'Home health PT', condition: 'Mobility and strength', quote: 'Having therapy at home removed the stress of travel and made the plan easier to follow.', outcome: 'More independent at home' },
 ]
 
-const HOME_RECOVERY_STEPS = [
+const PATIENT_STORY_TRUST = [
   {
-    icon: 'mail',
-    title: 'Referral or direct access',
-    body: 'Your doctor can send a referral, or we can help you understand whether direct access is available for your plan.',
+    icon: 'shield',
+    title: 'Licensed & Insured',
+    body: 'Your care is provided by licensed professionals you can trust.',
   },
   {
     icon: 'user',
-    title: 'Get matched with a PT',
-    body: 'We match you with a licensed physical therapist based on your condition, goals, schedule and location.',
-  },
-  {
-    icon: 'check',
-    title: 'Complete simple forms',
-    body: 'We guide the intake process so insurance, medical history and care details are ready before treatment begins.',
+    title: 'One-on-One Care',
+    body: 'You work directly with your therapist every step of the way.',
   },
   {
     icon: 'home',
-    title: 'Receive care at home',
-    body: 'Your therapist comes to your home or preferred setting and builds treatment around your real environment.',
-  },
-  {
-    icon: 'shield',
-    title: 'Evidence-based treatment',
-    body: 'One-on-one care follows clinical reasoning, proven methods and progressions matched to your recovery stage.',
+    title: 'Care at Home',
+    body: 'Convenient, comfortable care in the place you know best.',
   },
   {
     icon: 'heart',
-    title: 'Return to function',
-    body: 'The goal is better movement, strength and confidence for a safer return to the activities you love.',
+    title: 'Focused on Results',
+    body: 'Personalized treatment plans designed around your goals.',
+  },
+]
+
+const STORY_RATING = [1, 2, 3, 4, 5]
+
+const HOME_RECOVERY_STEPS = [
+  {
+    icon: 'phone',
+    image: '/images/recovery/get-started.jpg',
+    title: 'Get Started',
+    body: 'Call us or submit a request to discuss your goals, symptoms and location.',
+  },
+  {
+    icon: 'user',
+    image: '/images/recovery/get-matched.jpg',
+    title: 'Get Matched With a PT',
+    body: 'We connect you with a licensed physical therapist based on your needs and schedule.',
+  },
+  {
+    icon: 'home',
+    image: '/images/recovery/receive-care.jpg',
+    title: 'Receive Care at Home',
+    body: 'Personalized one-on-one treatment delivered in the comfort of your home and built around your life.',
   },
 ]
 
 const HOME_FAQS = [
   {
-    question: 'Do I need a referral or prescription to start physical therapy?',
+    icon: 'clipboard',
+    question: 'Do I need a referral to start physical therapy?',
     answer: [
-      'In many cases, you can start physical therapy through direct access, meaning you may not need a referral for your first visit depending on your insurance and condition.',
-      'For Medicare patients, a physician plan of care is required and will be coordinated after your evaluation. For PPO and some HMO plans, we will verify requirements and help guide you through the process.',
+      'In many cases, you can begin physical therapy through direct access without needing a referral for your first visit, depending on your insurance plan and condition.',
+      'For Medicare patients, a physician plan of care is required and will be coordinated after your evaluation. If additional authorization is needed, our team will help guide you through the process.',
     ],
   },
   {
+    icon: 'shield',
     question: 'Does insurance cover home health physical therapy?',
     answer: [
-      'Yes. We are in-network with Medicare Part B and many PPO insurance plans, and selected HMO plans.',
-      'Coverage depends on your specific plan, and we will verify your benefits before you begin treatment. You are typically responsible only for your copay, deductible, or coinsurance, depending on your insurance policy.',
+      'Yes. DreamCare PT is in-network with Medicare Part B, many PPO insurance plans, and selected HMO plans.',
+      'Coverage varies by plan, and our team will verify your benefits before treatment begins and help you understand any out-of-pocket costs.',
     ],
   },
   {
-    question: 'What if I do not have insurance?',
+    icon: 'user',
+    question: 'Will I work with the same therapist each visit?',
     answer: [
-      'We offer a self-pay option of $130 per visit for a 40-minute one-on-one session.',
-      'A small marketplace fee may apply, which supports scheduling systems, safety compliance, and access to licensed therapists.',
+      'Yes. We prioritize continuity of care, and in most cases you will work with the same physical therapist throughout your treatment.',
+      'If scheduling adjustments are ever needed, another licensed clinician may step in while following your established plan of care.',
     ],
   },
   {
-    question: 'Can I always see the same physical therapist?',
+    icon: 'home',
+    question: 'Where does treatment take place?',
     answer: [
-      'Yes, we prioritize continuity of care. In most cases, you will see the same physical therapist throughout your treatment.',
-      'In rare cases, such as scheduling conflicts, another licensed clinician may provide care while maintaining your treatment plan.',
+      'All visits take place in the comfort of your home or preferred setting.',
+      'Receiving care in your own environment allows therapy to feel more practical, personalized, and connected to your daily routine.',
     ],
   },
   {
-    question: 'Where will my appointments take place?',
+    icon: 'clock',
+    question: 'How quickly can I get started?',
     answer: [
-      'All visits are completed in the comfort of your home or preferred location. This allows therapy to be more functional, practical, and convenient for your daily life.',
+      'Scheduling and insurance verification can usually be completed within a short time.',
+      'Once everything is confirmed, we will match you with a physical therapist and schedule your first in-home visit as soon as possible.',
     ],
   },
   {
-    question: 'How quickly can I start?',
-    answer: [
-      'Insurance verification and scheduling can typically be completed within a short time. Once confirmed, we will match you with a therapist and schedule your first visit.',
-    ],
-  },
-  {
-    question: 'Why choose home health physical therapy instead of a clinic?',
-    answer: [
-      'Home-based care allows you to receive treatment in your real environment, focusing on everyday movement, safety, and function.',
-      'This approach reduces travel, improves convenience, and allows therapy to directly address your home and lifestyle needs.',
-      'Our goal is to provide focused, one-on-one care without distractions, so your recovery stays consistent and efficient.',
-    ],
-  },
-  {
-    question: 'Do you help with insurance and physician coordination?',
-    answer: [
-      'Yes. We handle insurance verification, communicate with your physician when needed, and help coordinate your plan of care to ensure compliance and continuity of treatment.',
-    ],
-  },
-  {
+    icon: 'pin',
     question: 'What areas do you serve?',
     answer: [
-      'Sherman Oaks is our center point. We serve nearby cities and neighborhoods within about a 20-mile range, and we adjust scheduling based on your address for convenience and coverage.',
+      'DreamCare PT proudly serves patients across Southern California, including Los Angeles County, Orange County, San Diego, and surrounding communities.',
+      'If you are unsure whether we service your area, feel free to contact us and our team will be happy to assist you.',
     ],
   },
+  {
+    icon: 'dollar',
+    question: 'Do you offer private-pay options?',
+    answer: [
+      'Yes. We offer private-pay physical therapy sessions for patients without insurance coverage.',
+      'Self-pay visits are $130 for a 40-minute one-on-one session delivered in the comfort of your home. Additional fees may apply depending on location and scheduling needs.',
+    ],
+  },
+]
+
+const SERVICE_AREAS_HOME = [
+  { icon: 'palm', title: 'Los Angeles County' },
+  { icon: 'coast', title: 'Orange County' },
+  { icon: 'bridge', title: 'San Diego County' },
+  { icon: 'pin', title: 'Surrounding Communities' },
+]
+
+const FINAL_CTA_FEATURES = [
+  { icon: 'home', title: 'In-Home Convenience' },
+  { icon: 'user', title: 'One-on-One Care' },
+  { icon: 'shield', title: 'Licensed Professionals' },
+  { icon: 'heart', title: 'Personalized Treatment' },
 ]
 
 export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="section section--hero section--hero-video">
-        <div className="hero-video" aria-label="DreamCare home health physical therapy">
-          <video className="hero-video__media" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-            <source src="/videos/home-hero-recovery.mp4" type="video/mp4" />
-          </video>
-          <div className="hero-video__tint" aria-hidden="true" />
+      <section className="home-hero" aria-label="DreamCare home health physical therapy">
+        <img
+          className="home-hero__image"
+          src="/images/home-hero-dreamcare.jpeg"
+          alt=""
+          aria-hidden="true"
+        />
+        <div className="home-hero__wash" aria-hidden="true" />
 
-          <div className="shell shell--wide hero-video__content">
-            <Reveal className="hero__copy hero-video__copy">
-              <p className="eyebrow">Home health physical therapy</p>
-              <h1 className="h1">
-                One-on-one PT that treats the <em>root cause</em>, not just the symptom
-              </h1>
+        <div className="shell shell--wide home-hero__content">
+          <Reveal className="home-hero__copy">
+            <p className="eyebrow">Home health physical therapy</p>
+            <h1 className="h1">
+              One-on-one PT that treats the <em>root cause</em>, not just the symptom.
+            </h1>
 
-              <p className="lead" style={{ marginTop: '1.4rem' }}>
-                Dreamcare PT is a physical therapists-led holistic and evidenvce-based
-                practice in California. Quality over quantity. personalized care in your home, designed to restore function and prevent further injuries
-              </p>
+            <p className="lead">
+              Dreamcare PT is a physical therapists-led, evidence-based practice
+              providing personalized care in the comfort of your home. We help
+              restore function, reduce pain, and prevent future injuries.
+            </p>
 
-              <div className="btn-row">
-                <Link to="/book" className="btn btn--primary">
-                  Book an Appointment <Icon name="arrowUpRight" size={16} />
-                </Link>
-              </div>
-              <p className="hero-video__tagline" style={{ fontSize: '1.2em' }}>You deserve it</p>
-            </Reveal>
+            <div className="btn-row home-hero__actions">
+              <Link to="/book" className="btn btn--primary">
+                <Icon name="calendar" size={16} /> Book an Appointment
+              </Link>
+              <a href={`tel:${BRAND.phoneRaw}`} className="btn btn--call">
+                <Icon name="phone" size={16} /> Call {HERO_PHONE}
+              </a>
+            </div>
+
+            <div className="home-hero__features" aria-label="DreamCare care promises">
+              {HERO_FEATURES.map((item) => (
+                <div className="home-hero__feature" key={item.title}>
+                  <span className="home-hero__feature-icon">
+                    <Icon name={item.icon} size={28} />
+                  </span>
+                  <span>
+                    <strong>{item.title}</strong>
+                    <small>{item.body}</small>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          <div className="home-hero__outcome" aria-hidden="true">
+            <Icon name="user" size={34} />
+            <span>
+              <strong>Compassionate Care.</strong>
+              <small>Better Outcomes.</small>
+            </span>
           </div>
+        </div>
+      </section>
+
+      <section className="hero-trust-bar" aria-label="DreamCare trust highlights">
+        <div className="shell shell--wide hero-trust-bar__grid">
+          {HERO_TRUST.map((item) => (
+            <div className="hero-trust-bar__item" key={item.title}>
+              <Icon name={item.icon} size={30} />
+              <span>
+                <strong>{item.title}</strong>
+                <small>{item.body}</small>
+              </span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -207,23 +361,26 @@ export default function HomePage() {
       </div>
 
       {/* PILLARS */}
-      <section className="section">
+      <section className="section section--why-home" id="why-dreamcare">
         <div className="shell shell--wide">
-          <Reveal className="section-head">
+          <Reveal className="section-head section-head--why-home">
             <p className="eyebrow">Why DreamCare</p>
             <h2 className="h2">Care that actually feels <em>personal</em>.</h2>
-            <p className="lead" style={{ marginTop: '1.25rem' }}>
-              
+            <p className="lead">
               We provide one-on-one home health physical therapy focused on helping
               you move pain-free, recover faster, and regain independence and
               function through compassionate, evidence-based care.
             </p>
           </Reveal>
 
-          <div className="grid grid--3">
+          <div className="grid grid--3 why-home__grid">
             {PILLARS.map((p, i) => (
               <Reveal key={p.title} delay={i + 1} className="card care-card">
+                <div className={`care-card__icon care-card__icon--${p.tone}`}>
+                  <Icon name={p.icon} size={38} />
+                </div>
                 <h3>{p.title}</h3>
+                <span className={`care-card__rule care-card__rule--${p.tone}`} aria-hidden="true" />
                 <p>{p.body}</p>
               </Reveal>
             ))}
@@ -232,50 +389,57 @@ export default function HomePage() {
       </section>
 
       {/* CONDITIONS */}
-      <section className="section section--mint">
+      <section className="section section--conditions-home" id="conditions-home">
         <div className="shell shell--wide">
-          <Reveal className="section-head section-head--center">
+          <Reveal className="section-head section-head--center section-head--conditions-home">
             <p className="eyebrow">Conditions we treat</p>
-            <h2 className="h2">Care for movement, pain, balance and recovery.</h2>
+            <h2 className="h2">Care for movement, pain, balance and <em>recovery.</em></h2>
           </Reveal>
 
           <div className="cond-grid">
-            {CONDITIONS.map((c, i) => (
-              <Reveal key={c.slug} delay={(i % 3) + 1}>
-                <Link
-                  to={`/conditions/${c.slug}`}
-                  className={`cond-card${c.tileImage ? ' cond-card--photo' : ''}`}
-                  style={c.tileImage ? {
-                    '--cond-image': `url(${c.tileImage})`,
-                    '--cond-position': c.tilePosition ?? 'center',
-                  } : undefined}
-                >
-                  <div className="cond-card__icon"><Icon name={c.icon} size={22} /></div>
-                  <div className="cond-card__body">
-                    <h4>{c.label}</h4>
-                    <p>{c.short}</p>
-                  </div>
-                  <div className="cond-card__arrow"><Icon name="arrow" size={14} /></div>
-                </Link>
-              </Reveal>
-            ))}
+            {CONDITIONS.map((c, i) => {
+              const card = CONDITION_CARD_COPY[c.slug] ?? { title: c.label, body: c.short }
+
+              return (
+                <Reveal key={c.slug} delay={(i % 3) + 1}>
+                  <Link
+                    to={`/conditions/${c.slug}`}
+                    className={`cond-card${c.tileImage ? ' cond-card--photo' : ''}`}
+                    style={c.tileImage ? {
+                      '--cond-image': `url(${c.tileImage})`,
+                      '--cond-position': c.tilePosition ?? 'center',
+                    } : undefined}
+                  >
+                    {c.tileImage ? <div className="cond-card__media" aria-hidden="true" /> : null}
+                    <div className="cond-card__body">
+                      <div className="cond-card__icon"><Icon name={c.icon} size={18} /></div>
+                      <h4>{card.title}</h4>
+                      <p>{card.body}</p>
+                    </div>
+                    <div className="cond-card__arrow"><Icon name="arrow" size={13} /></div>
+                  </Link>
+                </Reveal>
+              )
+            })}
           </div>
 
           <Reveal delay={1} className="section-action">
-            <Link to="/services" className="btn btn--ghost">Services details</Link>
+            <Link to="/services" className="btn btn--ghost">
+              Services details <Icon name="arrow" size={16} />
+            </Link>
           </Reveal>
         </div>
       </section>
 
       {/* RECOVERY PATH */}
-      <section className="section section--path-home">
+      <section className="section section--path-home" id="recovery-path">
         <div className="shell shell--wide">
           <Reveal className="section-head section-head--center">
             <p className="eyebrow">Your path to recovery at home</p>
             <h2 className="h2">Simple steps. <em>Personalized care.</em> Better outcomes.</h2>
             <p className="lead" style={{ marginInline: 'auto', marginTop: '1.15rem' }}>
-              From the first call to functional progress, each step is clear,
-              coordinated and built around care where you live.
+              From the first call to functional progress, we make recovery
+              simple, convenient and built around you.
             </p>
           </Reveal>
 
@@ -283,43 +447,81 @@ export default function HomePage() {
             {HOME_RECOVERY_STEPS.map((step, i) => (
               <Reveal key={step.title} delay={(i % 3) + 1} className="path-home__card">
                 <div className="path-home__number">{i + 1}</div>
-                <div className="path-home__icon"><Icon name={step.icon} size={26} /></div>
+                <div className="path-home__media">
+                  <img src={step.image} alt="" loading="lazy" />
+                </div>
+                <div className="path-home__icon"><Icon name={step.icon} size={27} /></div>
                 <h3>{step.title}</h3>
+                <span className="path-home__rule" aria-hidden="true" />
                 <p>{step.body}</p>
               </Reveal>
             ))}
           </div>
+
+          <Reveal delay={1} className="section-action path-home__action">
+            <Link to="/book" className="btn btn--primary">
+              <Icon name="calendar" size={18} /> Book an Appointment
+            </Link>
+          </Reveal>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="section section--mint section--patient-stories">
+      <section className="section section--patient-stories" id="patient-stories-home">
         <div className="shell shell--wide">
-          <Reveal className="section-head section-head--wide-title patient-stories__head">
+          <Reveal className="section-head section-head--center patient-stories__head">
             <p className="eyebrow">Patient stories</p>
             <h2 className="h2">Real progress, one <em>home visit</em> at a time.</h2>
             <p className="lead" style={{ marginTop: '1.1rem' }}>
-              A growing library of recovery snapshots, moving gently so each story
-              stays easy to scan without crowding the page.
+              Hear from our patients who are moving better, feeling stronger,
+              and living with more confidence.
             </p>
           </Reveal>
 
-          <Reveal delay={1} className="patient-story-marquee">
-            <div className="patient-story-track patient-story-track--auto">
+          <Reveal delay={1} className="patient-story-marquee patient-story-marquee--feature">
+            <div className="patient-story-track patient-story-track--feature">
               {[...PATIENT_STORIES, ...PATIENT_STORIES].map((story, i) => (
                 <article
                   key={`${story.name}-${i}`}
-                  className="patient-story-card patient-story-card--slide"
+                  className="patient-story-card patient-story-card--feature"
                   aria-hidden={i >= PATIENT_STORIES.length}
                 >
-                  <div className="patient-story-card__top">
-                    <span className="patient-story-card__avatar">{story.name.split(' ').map((w) => w[0]).slice(0, 2).join('')}</span>
-                    <span>{story.condition}</span>
+                  <div className="patient-story-card__photo" aria-hidden="true">
+                    <span>
+                      <Icon name="user" size={42} />
+                    </span>
                   </div>
-                  <p className="patient-story-card__quote">{story.quote}</p>
-                  <div className="patient-story-card__person">
-                    <strong>{story.name}</strong>
-                    <span>{story.role}</span>
+                  <div className="patient-story-card__content">
+                    <span className="patient-story-card__quote-mark" aria-hidden="true" />
+                    <p className="patient-story-card__quote">{story.quote}</p>
+                    <span className="patient-story-card__rule" aria-hidden="true" />
+                    <span className="patient-story-card__rating" aria-label="5 out of 5 rating">
+                      {STORY_RATING.map((star) => (
+                        <Icon key={star} name="star" size={17} />
+                      ))}
+                    </span>
+                    <div className="patient-story-card__person">
+                      <strong>{story.name}</strong>
+                      <span>{story.condition}</span>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={2} className="patient-stories-trust">
+            <h3>Care you can trust.</h3>
+            <span className="patient-stories-trust__rule" aria-hidden="true" />
+            <div className="patient-stories-trust__grid">
+              {PATIENT_STORY_TRUST.map((item) => (
+                <article className="patient-stories-trust__item" key={item.title}>
+                  <span className="patient-stories-trust__icon" aria-hidden="true">
+                    <Icon name={item.icon} size={34} />
+                  </span>
+                  <div>
+                    <h4>{item.title}</h4>
+                    <p>{item.body}</p>
                   </div>
                 </article>
               ))}
@@ -329,62 +531,64 @@ export default function HomePage() {
       </section>
 
       {/* INSURANCE / TRUST */}
-      <section className="section section--tight">
+      <section className="section section--insurance-access" id="insurance-access">
         <div className="shell shell--wide">
           <Reveal className="section-head section-head--center">
             <p className="eyebrow">Insurance & access</p>
-            <h2 className="h2">We accept nearly <em>all major insurance</em>.</h2>
+            <h2 className="h2">In-network with many <em>major insurance</em> plans.</h2>
             <p className="lead" style={{ marginInline: 'auto', marginTop: '1.25rem' }}>
               Some plans accepted without your doctor's referral. Save time and skip the
               wait. Call us first to confirm coverage.
             </p>
           </Reveal>
 
-          <div className="insurance-slider" aria-label="Insurance and provider networks">
-            <div className="insurance-slider__track">
-              {[0, 1].map((set) => (
-                <div className="insurance-slider__set" key={set} aria-hidden={set === 1}>
-                  {INSURANCE_LOGOS.map((logo) => (
-                    <span
-                      className={`insurance-logo${logo.size ? ` insurance-logo--${logo.size}` : ''}${logo.kind === 'text' ? ' insurance-logo--text' : ''}`}
-                      key={`${set}-${logo.name}`}
-                    >
-                      {logo.src ? (
-                        <img src={logo.src} alt={logo.name} loading="lazy" />
-                      ) : (
-                        logo.name
-                      )}
-                    </span>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
+          <Reveal delay={1} className="insurance-access__logos" aria-label="Insurance and provider networks">
+            {INSURANCE_ACCESS_LOGOS.map((logo) => (
+              <span
+                className={`insurance-access__logo${logo.size ? ` insurance-access__logo--${logo.size}` : ''}`}
+                key={logo.name}
+              >
+                <img src={logo.src} alt={logo.name} loading="lazy" />
+              </span>
+            ))}
+          </Reveal>
 
-          <Reveal delay={1} className="insurance-note">
-            DreamCare PT is a physical therapist-led practice grounded in a holistic
-            approach that recognizes the deep connection between mind, body, and heart.
-            We provide personalized, compassionate care designed to restore function,
-            help you return to daily life and sport activities, and reduce the risk of
-            future injuries.
+          <Reveal delay={1} className="insurance-access__divider" aria-hidden="true">
+            <span />
+            <Icon name="shield" size={22} />
+            <span />
+          </Reveal>
+
+          <Reveal delay={2} className="insurance-access__note">
+            <span className="insurance-access__note-icon" aria-hidden="true">
+              <Icon name="home" size={40} />
+            </span>
+            <p>
+              DreamCare PT delivers one-on-one, evidence-based physical therapy
+              designed around <strong>your goals, lifestyle, and recovery.</strong>
+            </p>
           </Reveal>
         </div>
       </section>
 
       {/* HOME FAQ */}
-      <section className="section section--home-faq">
+      <section className="section section--home-faq" id="home-faq">
         <div className="shell shell--wide home-faq">
           <Reveal className="home-faq__intro">
             <p className="eyebrow">Questions before care</p>
             <h2 className="h2">Clear answers for <em>home health PT</em>.</h2>
             <p>
-              Coverage, referrals, scheduling and location details, organized so you can
-              understand the next step before your first visit.
+              Everything you need to know about insurance, appointments, and what
+              to expect before your first visit.
             </p>
             <div className="home-faq__contact">
-              <span>Need your plan checked?</span>
+              <span className="home-faq__contact-icon" aria-hidden="true">
+                <Icon name="help" size={34} />
+              </span>
+              <strong>Still have a question?</strong>
+              <span>We're here to help.</span>
               <a href={`tel:${BRAND.phoneRaw}`}>
-                <Icon name="phone" size={15} /> {BRAND.phone}
+                <Icon name="phone" size={16} /> {BRAND.phone}
               </a>
             </div>
           </Reveal>
@@ -392,8 +596,11 @@ export default function HomePage() {
           <div className="home-faq__list">
             {HOME_FAQS.map((item, i) => (
               <Reveal key={item.question} delay={(i % 3) + 1}>
-                <details className="home-faq__item" open={i === 0}>
+                <details className="home-faq__item">
                   <summary>
+                    <span className="home-faq__item-icon" aria-hidden="true">
+                      <Icon name={item.icon} size={25} />
+                    </span>
                     <span>{item.question}</span>
                     <Icon name="plus" size={18} />
                   </summary>
@@ -410,49 +617,75 @@ export default function HomePage() {
       </section>
 
       {/* LOCATIONS */}
-      <section className="section section--tight">
-        <div className="shell shell--wide" style={{ textAlign: 'center' }}>
-          <Reveal>
-            <p className="eyebrow" style={{ justifyContent: 'center' }}>Where we serve</p>
-            <h2 className="h2" style={{ marginBottom: '2rem' }}>
-              Centered in Sherman Oaks. Serving nearby cities within a <em>20-mile range</em>.
+      <section className="section section--service-areas" id="service-areas">
+        <div className="shell shell--wide">
+          <Reveal className="section-head section-head--center service-areas__head">
+            <p className="eyebrow">Where we serve</p>
+            <span className="service-areas__rule" aria-hidden="true" />
+            <h2 className="h2">
+              Proudly serving patients across <em>Southern California.</em>
             </h2>
-            <div className="locations locations--marquee" aria-label="Cities and neighborhoods served within 20 miles of Sherman Oaks">
-              <div className="locations__track">
-                {[0, 1].map((set) => (
-                  <div className="locations__set" key={set} aria-hidden={set === 1}>
-                    {BRAND.serviceAreas.map((area) => (
-                      <span key={`${set}-${area}`} className="location-pill">
-                        <Icon name="pin" size={14} /> {area}
-                      </span>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <p className="lead" style={{ marginInline: 'auto', marginTop: '1.1rem' }}>
+              We bring expert, one-on-one physical therapy directly to you,
+              in the comfort and convenience of your home.
+            </p>
+          </Reveal>
+
+          <Reveal delay={1} className="service-areas__cards">
+            {SERVICE_AREAS_HOME.map((area) => (
+              <article className="service-area-card" key={area.title}>
+                <span aria-hidden="true">
+                  <Icon name={area.icon} size={42} />
+                </span>
+                <h3>{area.title}</h3>
+              </article>
+            ))}
+          </Reveal>
+
+          <Reveal delay={2} className="service-areas__contact">
+            <Icon name="pin" size={22} />
+            <p>
+              Not sure if we service your area? <Link to="/contact">Contact our team</Link> and
+              we'll be happy to help.
+            </p>
           </Reveal>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section">
+      <section className="section section--final-cta" id="book-home">
         <div className="shell shell--wide">
           <Reveal className="cta-banner">
-            <div>
+            <div className="cta-banner__copy">
               <p className="eyebrow">Take the first step</p>
+              <span className="cta-banner__rule" aria-hidden="true" />
               <h2 className="h2">DreamCare. <em>You deserve it.</em></h2>
               <p>
-                Book a comprehensive evaluation with a Doctor of Physical Therapy and start a
-                care plan built around your goals.
+                Book a comprehensive evaluation with a Doctor of Physical Therapy and
+                start a care plan built around your goals.
               </p>
               <div className="btn-row">
-                <Link to="/book" className="btn btn--primary">Book Appointment</Link>
+                <Link to="/book" className="btn btn--primary">
+                  <Icon name="calendar" size={18} /> Book Appointment
+                </Link>
                 <a href={`tel:${BRAND.phoneRaw}`} className="btn btn--cream">
-                  <Icon name="phone" size={16} /> {BRAND.phone}
+                  <Icon name="phone" size={18} /> {BRAND.phone}
                 </a>
               </div>
             </div>
-            <div className="cta-banner__art"><CTAArt /></div>
+            <div className="cta-banner__art">
+              <img src="/images/cta/home-care-cta.jpg" alt="" aria-hidden="true" loading="lazy" />
+              <span className="cta-banner__home-line" aria-hidden="true" />
+            </div>
+          </Reveal>
+
+          <Reveal delay={1} className="final-cta-features">
+            {FINAL_CTA_FEATURES.map((feature) => (
+              <article className="final-cta-feature" key={feature.title}>
+                <span aria-hidden="true"><Icon name={feature.icon} size={35} /></span>
+                <h3>{feature.title}</h3>
+              </article>
+            ))}
           </Reveal>
         </div>
       </section>

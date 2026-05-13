@@ -1,31 +1,35 @@
 :root {
-  /* Brand palette, deep navy ink + blue-violet primary on a cool clinical canvas
-     with warm sun yellow as a supporting accent. */
+  /* Brand palette matched to the refreshed DreamCare hero:
+     deep navy text, bright teal care accents, and violet appointment CTAs. */
   --bg: #FFFFFF;
-  --bg-2: #F3F6FF;
+  --bg-2: #F6F8FF;
   --surface: #FFFFFF;
-  --surface-soft: #F5F7FF;
-  --surface-warm: #F6F4FF;
+  --surface-soft: #F7F9FF;
+  --surface-warm: #F8F5FF;
 
   --ink: #0F1B33;
-  --ink-2: #1A2745;
-  --muted: #5C6480;
-  --muted-2: #8990AA;
+  --ink-2: #202B4A;
+  --muted: #57627D;
+  --muted-2: #8D95AD;
 
-  --primary: #123D73;          /* deep clinical blue */
-  --primary-2: #5A4BDA;         /* blue-violet */
-  --primary-3: #DCE8FF;         /* cool blue-lavender wash */
-  --primary-4: #EEF4FF;         /* blue-lavender canvas */
+  --primary: #102144;          /* deep DreamCare navy */
+  --primary-2: #6D55F2;         /* appointment violet */
+  --primary-3: #E4EBFF;         /* cool blue-lavender wash */
+  --primary-4: #F1F5FF;         /* pale clinical canvas */
 
-  --accent: #5667F5;           /* vibrant blue-purple CTA companion */
-  --accent-2: #7B5CF6;
-  --accent-soft: #E4E8FF;
+  --accent: #5B63F3;           /* primary CTA violet-blue */
+  --accent-2: #7A55F1;
+  --accent-soft: #E8EBFF;
 
-  --sun: #F5C56A;              /* warm yellow */
-  --sun-soft: #FBE7B8;
+  --teal: #22C7C9;
+  --teal-2: #15B2B7;
+  --teal-soft: #DDF8F9;
 
-  --line: #D8E2F6;
-  --line-strong: #AEBCE3;
+  --sun: var(--teal);
+  --sun-soft: var(--teal-soft);
+
+  --line: #DEE6F7;
+  --line-strong: #B8C4E3;
 
   --shadow-xs: 0 6px 16px rgba(15, 27, 51, 0.06);
   --shadow-sm: 0 14px 36px rgba(15, 27, 51, 0.08);
@@ -70,9 +74,9 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(1100px 600px at 12% -10%, rgba(220, 232, 255, 0.78), transparent 60%),
-    radial-gradient(900px 500px at 110% 8%, rgba(86, 103, 245, 0.16), transparent 55%),
-    radial-gradient(700px 500px at 50% 110%, rgba(245, 197, 106, 0.12), transparent 60%),
+    radial-gradient(1100px 600px at 12% -10%, rgba(228, 235, 255, 0.82), transparent 60%),
+    radial-gradient(900px 500px at 110% 8%, rgba(109, 85, 242, 0.12), transparent 55%),
+    radial-gradient(700px 500px at 50% 110%, rgba(34, 199, 201, 0.12), transparent 60%),
     var(--bg);
   color: var(--ink);
   overflow-x: hidden;
