@@ -330,9 +330,7 @@ export default function HomePage() {
             <p className="eyebrow">Why DreamCare</p>
             <h2 className="h2">Care that actually feels <em>personal</em>.</h2>
             <p className="lead">
-              We provide one-on-one home health physical therapy focused on helping
-              you move pain-free, recover faster, and regain independence and
-              function through compassionate, evidence-based care.
+              Compassionate one-on-one physical therapy delivered in the comfort of your home.
             </p>
           </Reveal>
 
