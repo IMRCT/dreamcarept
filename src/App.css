@@ -5689,11 +5689,11 @@
 
 /* ---------- Requested homepage refinements ---------- */
 .h1 {
-  font-size: clamp(2.34rem, 5.04vw, 4.14rem);
+  font-size: clamp(2.11rem, 4.54vw, 3.73rem);
 }
 
 .h2 {
-  font-size: clamp(1.8rem, 3.24vw, 2.56rem);
+  font-size: clamp(1.62rem, 2.92vw, 2.3rem);
 }
 
 .brand__logo,
@@ -5715,7 +5715,7 @@
 
 .home-hero__copy .h1 {
   max-width: 600px;
-  font-size: clamp(2.02rem, 2.45vw, 2.72rem);
+  font-size: clamp(1.82rem, 2.21vw, 2.45rem);
   line-height: 1.08;
 }
 
@@ -5764,7 +5764,27 @@
 #patient-stories-home .patient-stories__head .h2,
 .section--insurance-access .section-head .h2,
 .section--service-areas .section-head .h2 {
-  font-size: clamp(1.8rem, 2.75vw, 2.3rem);
+  font-size: clamp(1.62rem, 2.48vw, 2.07rem);
+}
+
+.section-head .h2 {
+  font-size: clamp(1.6rem, 2.7vw, 2.21rem);
+}
+
+.section-head--wide-title .h2 {
+  font-size: clamp(1.58rem, 2.3vw, 1.96rem);
+}
+
+.section-head--why-home .h2 {
+  font-size: clamp(1.76rem, 2.57vw, 2.21rem);
+}
+
+.section-head--conditions-home .h2 {
+  font-size: clamp(1.8rem, 2.7vw, 2.21rem);
+}
+
+.section--path-home .section-head .h2 {
+  font-size: clamp(1.62rem, 2.63vw, 2.15rem);
 }
 
 .patient-story-marquee--feature {
@@ -5962,7 +5982,7 @@
 }
 
 .home-faq__intro .h2 {
-  font-size: clamp(1.72rem, 2.78vw, 2.28rem);
+  font-size: clamp(1.55rem, 2.5vw, 2.05rem);
 }
 
 .home-faq__intro p:not(.eyebrow) {
@@ -5985,7 +6005,7 @@
 }
 
 .section--final-cta .cta-banner h2 {
-  font-size: clamp(1.9rem, 3vw, 2.55rem);
+  font-size: clamp(1.71rem, 2.7vw, 2.3rem);
 }
 
 .site-footer .footer-grid {
@@ -6027,12 +6047,12 @@
 
 @media (max-width: 720px) {
   .h2 {
-    font-size: clamp(1.58rem, 7.65vw, 2.02rem);
+    font-size: clamp(1.42rem, 6.89vw, 1.82rem);
   }
 
   .home-hero__copy .h1 {
     max-width: 15ch;
-    font-size: clamp(1.82rem, 8vw, 2.5rem);
+    font-size: clamp(1.64rem, 7.2vw, 2.25rem);
   }
 
   .hero-trust-bar__grid {
