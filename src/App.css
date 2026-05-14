@@ -712,7 +712,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center ;
   filter: saturate(1.02) contrast(1.02);
 }
 
@@ -5685,4 +5685,384 @@
 
 .site-footer .site-footer__bottom > span:first-child:not(.site-footer__copyright) {
   display: none;
+}
+
+/* ---------- Requested homepage refinements ---------- */
+.h1 {
+  font-size: clamp(2.34rem, 5.04vw, 4.14rem);
+}
+
+.h2 {
+  font-size: clamp(1.8rem, 3.24vw, 2.56rem);
+}
+
+.brand__logo,
+.brand--footer .brand__logo,
+.site-footer .brand--footer .brand__logo {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.home-hero {
+  min-height: clamp(480px, 50vw, 590px);
+}
+
+.home-hero__content {
+  padding: clamp(2.9rem, 4.6vw, 4.4rem) 0 clamp(2.6rem, 4.4vw, 4rem);
+}
+
+.home-hero__copy .h1 {
+  max-width: 600px;
+  font-size: clamp(2.02rem, 2.45vw, 2.72rem);
+  line-height: 1.08;
+}
+
+.home-hero__actions {
+  margin-top: 1.45rem;
+}
+
+.home-hero__actions .btn {
+  min-height: 42px;
+  padding: 0.72rem 1.18rem;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+}
+
+.home-hero__actions .btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.hero-trust-bar {
+  padding: 1.1rem 0;
+}
+
+.hero-trust-bar__grid {
+  width: min(100% - 2.5rem, 940px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: center;
+}
+
+.hero-trust-bar__item:first-child {
+  border-left: 0;
+}
+
+.section-head--conditions-home {
+  margin-bottom: clamp(2.55rem, 4.2vw, 3.35rem);
+}
+
+.section--conditions-home .section-action .btn--primary {
+  min-width: min(100%, 250px);
+}
+
+.section--path-home .section-head {
+  margin-bottom: clamp(2.85rem, 4.6vw, 3.65rem);
+}
+
+#patient-stories-home .patient-stories__head .h2,
+.section--insurance-access .section-head .h2,
+.section--service-areas .section-head .h2 {
+  font-size: clamp(1.8rem, 2.75vw, 2.3rem);
+}
+
+.patient-story-marquee--feature {
+  position: relative;
+  max-width: 1240px;
+}
+
+.patient-story-marquee--feature::before,
+.patient-story-marquee--feature::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(22px, 3.2vw, 42px);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.patient-story-marquee--feature::before {
+  left: 0;
+  background: linear-gradient(90deg, #F9FBFF 0%, rgba(249, 251, 255, 0.86) 42%, rgba(249, 251, 255, 0) 100%);
+}
+
+.patient-story-marquee--feature::after {
+  right: 0;
+  background: linear-gradient(270deg, #F9FBFF 0%, rgba(249, 251, 255, 0.86) 42%, rgba(249, 251, 255, 0) 100%);
+}
+
+#patient-stories-home .patient-story-card--feature {
+  width: clamp(500px, calc((100vw - 5rem) / 2), 590px);
+  min-height: 270px;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(1.4rem, 2.4vw, 2rem);
+  padding: clamp(1.45rem, 2.5vw, 1.85rem);
+  border-radius: 14px;
+}
+
+.patient-story-card__quote-badge {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--primary-2);
+  background:
+    radial-gradient(circle at 72% 18%, rgba(34, 199, 201, 0.12), transparent 42%),
+    linear-gradient(145deg, #F8F9FF, #EFEAFF);
+  flex: none;
+}
+
+.patient-story-card__quote-badge .patient-story-card__quote-mark {
+  font-size: 3.4rem;
+  line-height: 0.78;
+}
+
+#patient-stories-home .patient-story-card__quote {
+  max-width: 26ch;
+  font-size: clamp(1.03rem, 1.35vw, 1.34rem);
+  line-height: 1.22;
+}
+
+#patient-stories-home .patient-story-card__person strong {
+  font-size: 1rem;
+}
+
+.patient-story-card__photo {
+  display: none;
+}
+
+.section--insurance-access {
+  padding: clamp(4.1rem, 5.4vw, 5.3rem) 0 clamp(4.5rem, 6vw, 5.8rem);
+}
+
+.section--insurance-access .section-head {
+  margin-bottom: clamp(2.4rem, 3.8vw, 3.2rem);
+}
+
+.insurance-access__divider {
+  margin: 0 auto clamp(1.8rem, 3.2vw, 2.55rem);
+}
+
+.insurance-access__logos {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.insurance-access__logo {
+  min-height: 86px;
+  padding: 0.85rem 1rem;
+}
+
+.insurance-access__logo--text {
+  color: #6D728A;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.insurance-access__marquee {
+  position: relative;
+  width: min(100%, 1180px);
+  margin-inline: auto;
+  overflow: hidden;
+  padding: 0.15rem 0.15rem 0.35rem;
+}
+
+.insurance-access__marquee::before,
+.insurance-access__marquee::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  width: clamp(42px, 8vw, 118px);
+  pointer-events: none;
+}
+
+.insurance-access__marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #F7FAFF 0%, rgba(247, 250, 255, 0.96) 34%, rgba(247, 250, 255, 0));
+}
+
+.insurance-access__marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #F7FAFF 0%, rgba(247, 250, 255, 0.96) 34%, rgba(247, 250, 255, 0));
+}
+
+.insurance-access__track {
+  display: flex;
+  width: max-content;
+  animation: insuranceAccessScroll 46s linear infinite;
+  will-change: transform;
+}
+
+.insurance-access__marquee:hover .insurance-access__track {
+  animation-play-state: paused;
+}
+
+.insurance-access__set {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.6rem, 1vw, 0.85rem);
+  flex-shrink: 0;
+  padding-right: clamp(0.6rem, 1vw, 0.85rem);
+}
+
+.insurance-access__marquee .insurance-access__logo {
+  flex: 0 0 clamp(150px, 13vw, 190px);
+  width: clamp(150px, 13vw, 190px);
+  min-height: 86px;
+}
+
+.insurance-access__marquee .insurance-access__logo img {
+  max-width: 150px;
+}
+
+@keyframes insuranceAccessScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.insurance-access__coverage-note {
+  margin: clamp(1.8rem, 3vw, 2.35rem) auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.72rem;
+  color: #57627D;
+}
+
+.insurance-access__coverage-note svg {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  color: var(--primary-2);
+}
+
+.insurance-access__coverage-note p {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.insurance-access__note,
+.insurance-access__note-icon {
+  display: none;
+}
+
+.home-faq__intro .h2 {
+  font-size: clamp(1.72rem, 2.78vw, 2.28rem);
+}
+
+.home-faq__intro p:not(.eyebrow) {
+  max-width: 34ch;
+}
+
+.home-faq__contact a {
+  min-width: 250px;
+  padding: 0.9rem 1.35rem;
+  gap: 0.58rem;
+}
+
+.home-faq__contact a svg {
+  width: 19px;
+  height: 19px;
+}
+
+.home-faq__contact a svg * {
+  stroke-width: 2.1;
+}
+
+.section--final-cta .cta-banner h2 {
+  font-size: clamp(1.9rem, 3vw, 2.55rem);
+}
+
+.site-footer .footer-grid {
+  padding-bottom: clamp(2.3rem, 4.5vw, 3.5rem);
+}
+
+.site-footer .site-footer__bottom {
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: 1.55rem max(1.25rem, calc((100vw - 1360px) / 2 + 1.25rem));
+  border-top: 1px solid rgba(222, 230, 247, 0.9);
+  background: #F7F9FF;
+  color: #6D728A;
+}
+
+.site-footer .site-footer__bottom a {
+  color: #57627D;
+  font-size: 0.82rem;
+}
+
+.site-footer .site-footer__bottom a:hover {
+  color: var(--primary-2);
+}
+
+@media (max-width: 980px) {
+  .hero-trust-bar__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-trust-bar__item,
+  .hero-trust-bar__item:nth-child(odd) {
+    border-left: 1px solid rgba(222, 230, 247, 0.95);
+  }
+
+  .hero-trust-bar__item:first-child {
+    border-left: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .h2 {
+    font-size: clamp(1.58rem, 7.65vw, 2.02rem);
+  }
+
+  .home-hero__copy .h1 {
+    max-width: 15ch;
+    font-size: clamp(1.82rem, 8vw, 2.5rem);
+  }
+
+  .hero-trust-bar__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-trust-bar__item,
+  .hero-trust-bar__item:nth-child(odd) {
+    border-left: 0;
+  }
+
+  #patient-stories-home .patient-story-card--feature {
+    width: min(calc(100vw - 2rem), 390px);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  #patient-stories-home .patient-story-card__quote,
+  #patient-stories-home .patient-story-card__person {
+    text-align: center;
+  }
+
+  .insurance-access__logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .insurance-access__coverage-note {
+    align-items: flex-start;
+    text-align: left;
+    justify-content: flex-start;
+  }
 }

@@ -6,9 +6,7 @@ import Icon from './Icon'
 
 function BrandLockup({ variant = 'header' }) {
   const isFooter = variant === 'footer'
-  // Footer drops in the light variant if available; falls back to the standard
-  // logo (CSS inverts it for contrast on the dark footer background).
-  const src = '/images/dreamcare-logo.jpg'
+  const src = '/images/dreamcare-logo-transparent.png'
   const fallback = '/images/dreamcare-logo.jpg'
   return (
     <Link
@@ -195,9 +193,8 @@ export default function SiteShell() {
             <div className="footer-brand">
               <BrandLockup variant="footer" />
               <p>
-                One-on-one physical therapy led by a Doctor of Physical Therapy.
-                Holistic, evidence-based care designed to treat the root cause
-                and help you move, feel, and live better.
+                One-on-one physical therapy designed to help you move better,
+                recover faster, and live with less pain.
               </p>
               <div className="footer-brand__badges" aria-label="DreamCare practice values">
                 <span><Icon name="heart" size={25} />Compassionate Care</span>
@@ -211,9 +208,9 @@ export default function SiteShell() {
               <h5>Practice</h5>
               <Link to="/about">About Dr. Ashkani</Link>
               <Link to="/our-team">Our Team</Link>
-              <Link to="/services">Services & Pricing</Link>
+              <Link to="/services">Services</Link>
               <Link to="/#recovery-path">How It Works</Link>
-              <Link to="/#insurance-access">Insurances</Link>
+              <Link to="/#insurance-access">Insurance</Link>
               <Link to="/services">Private Pay</Link>
               <Link to="/book">Book a Visit</Link>
               <Link to="/contact">Contact Us</Link>
@@ -227,10 +224,10 @@ export default function SiteShell() {
             </div>
 
             <div className="footer-col footer-col--contact">
-              <h5>We Come To You</h5>
+              <h5>Serving Southern California</h5>
               <span className="footer-contact-row">
                 <Icon name="pin" size={20} />
-                <span>Serving Southern California<br />Los Angeles County<br />Orange County<br />San Diego County<br />and surrounding communities</span>
+                <span>Los Angeles County<br />Orange County<br />San Diego County<br />and surrounding communities</span>
               </span>
               <a className="footer-contact-row" href={`tel:${BRAND.phoneRaw}`}>
                 <Icon name="phone" size={20} />
@@ -240,38 +237,14 @@ export default function SiteShell() {
                 <Icon name="mail" size={20} />
                 <span>{BRAND.email}</span>
               </a>
-              <a className="footer-contact-row" href="https://dreamcarept.com">
-                <Icon name="globe" size={20} />
-                <span>dreamcarept.com</span>
-              </a>
-            </div>
-          </div>
-
-          <div className="footer-comfort">
-            <div className="footer-comfort__icon" aria-hidden="true">
-              <Icon name="home" size={44} />
-            </div>
-            <div>
-              <strong>Care where you're comfortable</strong>
-              <p>
-                All visits are completed in the comfort of your home or preferred
-                setting so therapy is practical, personalized, and convenient.
-              </p>
-            </div>
-            <div className="footer-comfort__cta">
-              <span><Icon name="phone" size={22} /></span>
-              <div>
-                <strong>Ready to get started?</strong>
-                <p>We're here to help you feel your best.</p>
-              </div>
-              <Link to="/book" className="btn btn--primary">Book Appointment</Link>
             </div>
           </div>
 
           <div className="site-footer__bottom">
             <span>© {new Date().getFullYear()} DreamCare Physical Therapy, Sport and Wellness.</span>
-            <span className="site-footer__copyright">&copy; {new Date().getFullYear()} DreamCare Physical Therapy, Sport and Wellness. All rights reserved.</span>
-            <span>Quality over quantity. Doctor-led care, root-cause focused.</span>
+            <span className="site-footer__copyright">&copy; {new Date().getFullYear()} DreamCare PT. All rights reserved.</span>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Use</Link>
           </div>
         </div>
       </footer>

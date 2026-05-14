@@ -24,8 +24,8 @@ const PILLARS = [
   },
 ]
 
-const INSURANCE_LOGOS = [
-  { name: 'Medicare', src: '/images/insurance/medicare.svg' },
+const INSURANCE_ACCESS_LOGOS = [
+  { name: 'Medicare.gov', src: '/images/insurance/medicare.svg' },
   { name: 'Aetna', src: '/images/insurance/aetna.svg' },
   { name: 'Anthem Blue Cross Blue Shield', src: '/images/insurance/anthem-bcbs.svg' },
   { name: 'Cigna Healthcare', src: '/images/insurance/cigna-healthcare.svg' },
@@ -33,7 +33,7 @@ const INSURANCE_LOGOS = [
   { name: 'Humana', src: '/images/insurance/humana.svg' },
   { name: 'MultiPlan', src: '/images/insurance/multiplan.svg' },
   { name: 'TRICARE', src: '/images/insurance/tricare.png', size: 'tall' },
-  { name: 'And More!', kind: 'text' },
+  { name: 'Additional plans accepted', kind: 'text' },
 ]
 
 const HERO_PHONE = BRAND.phone.replace('+1 ', '')
@@ -57,11 +57,6 @@ const HERO_FEATURES = [
 ]
 
 const HERO_TRUST = [
-  {
-    icon: 'star',
-    title: '5-Star Patient Rating',
-    body: 'Based on patient reviews',
-  },
   {
     icon: 'pin',
     title: 'Serving Southern California',
@@ -327,28 +322,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* INSURANCE MARQUEE */}
-      <div className="insurance-slider insurance-slider--hero" aria-label="Insurance and provider networks">
-        <div className="insurance-slider__track">
-          {[0, 1].map((set) => (
-            <div className="insurance-slider__set" key={set} aria-hidden={set === 1}>
-              {INSURANCE_LOGOS.map((logo) => (
-                <span
-                  className={`insurance-logo${logo.size ? ` insurance-logo--${logo.size}` : ''}${logo.kind === 'text' ? ' insurance-logo--text' : ''}`}
-                  key={`${set}-${logo.name}`}
-                >
-                  {logo.src ? (
-                    <img src={logo.src} alt={logo.name} loading="lazy" />
-                  ) : (
-                    logo.name
-                  )}
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* PILLARS */}
       <section className="section section--why-home" id="why-dreamcare">
         <div className="shell shell--wide">
@@ -413,8 +386,8 @@ export default function HomePage() {
           </div>
 
           <Reveal delay={1} className="section-action">
-            <Link to="/services" className="btn btn--ghost">
-              Services details <Icon name="arrow" size={16} />
+            <Link to="/book" className="btn btn--primary">
+              <Icon name="calendar" size={18} /> Book an Appointment
             </Link>
           </Reveal>
         </div>
@@ -475,13 +448,10 @@ export default function HomePage() {
                   className="patient-story-card patient-story-card--feature"
                   aria-hidden={i >= PATIENT_STORIES.length}
                 >
-                  <div className="patient-story-card__photo" aria-hidden="true">
-                    <span>
-                      <Icon name="user" size={42} />
-                    </span>
-                  </div>
+                  <span className="patient-story-card__quote-badge" aria-hidden="true">
+                    <span className="patient-story-card__quote-mark" />
+                  </span>
                   <div className="patient-story-card__content">
-                    <span className="patient-story-card__quote-mark" aria-hidden="true" />
                     <p className="patient-story-card__quote">{story.quote}</p>
                     <span className="patient-story-card__rule" aria-hidden="true" />
                     <span className="patient-story-card__rating" aria-label="5 out of 5 rating">
@@ -531,17 +501,23 @@ export default function HomePage() {
             </p>
           </Reveal>
 
-          <Reveal delay={1} className="insurance-slider insurance-slider--access" aria-label="Insurance and provider networks">
-            <div className="insurance-slider__track">
-              {[0, 1].map((set) => (
-                <div className="insurance-slider__set" key={set} aria-hidden={set === 1}>
-                  {INSURANCE_LOGOS.map((logo) => (
+          <Reveal delay={1} className="insurance-access__divider" aria-hidden="true">
+            <span />
+            <Icon name="shield" size={22} />
+            <span />
+          </Reveal>
+
+          <Reveal delay={1} className="insurance-access__marquee" aria-label="Insurance and provider networks">
+            <div className="insurance-access__track">
+              {[0, 1].map((setIndex) => (
+                <div className="insurance-access__set" key={setIndex} aria-hidden={setIndex === 1}>
+                  {INSURANCE_ACCESS_LOGOS.map((logo) => (
                     <span
-                      className={`insurance-logo${logo.size ? ` insurance-logo--${logo.size}` : ''}${logo.kind === 'text' ? ' insurance-logo--text' : ''}`}
-                      key={`${set}-${logo.name}`}
+                      className={`insurance-access__logo${logo.size ? ` insurance-access__logo--${logo.size}` : ''}${logo.kind === 'text' ? ' insurance-access__logo--text' : ''}`}
+                      key={`${setIndex}-${logo.name}`}
                     >
                       {logo.src ? (
-                        <img src={logo.src} alt={logo.name} loading="lazy" />
+                        <img src={logo.src} alt={setIndex === 0 ? logo.name : ''} loading="eager" />
                       ) : (
                         logo.name
                       )}
@@ -552,20 +528,9 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <Reveal delay={1} className="insurance-access__divider" aria-hidden="true">
-            <span />
-            <Icon name="shield" size={22} />
-            <span />
-          </Reveal>
-
-          <Reveal delay={2} className="insurance-access__note">
-            <span className="insurance-access__note-icon" aria-hidden="true">
-              <Icon name="home" size={40} />
-            </span>
-            <p>
-              DreamCare PT delivers one-on-one, evidence-based physical therapy
-              designed around <strong>your goals, lifestyle, and recovery.</strong>
-            </p>
+          <Reveal delay={2} className="insurance-access__coverage-note">
+            <Icon name="check" size={20} />
+            <p>Coverage may vary by plan. Contact us and we'll help verify your benefits.</p>
           </Reveal>
         </div>
       </section>
@@ -577,8 +542,7 @@ export default function HomePage() {
             <p className="eyebrow">Questions before care</p>
             <h2 className="h2">Clear answers for <em>home health PT</em>.</h2>
             <p>
-              Everything you need to know about insurance, appointments, and what
-              to expect before your first visit.
+              Answers about insurance, appointments, and getting started with care at home.
             </p>
             <div className="home-faq__contact">
               <span className="home-faq__contact-icon" aria-hidden="true">
@@ -660,8 +624,8 @@ export default function HomePage() {
               <span className="cta-banner__rule" aria-hidden="true" />
               <h2 className="h2">DreamCare. <em>You deserve it.</em></h2>
               <p>
-                Book a comprehensive evaluation with a Doctor of Physical Therapy and
-                start a care plan built around your goals.
+                Book a one-on-one evaluation with a licensed Doctor of Physical Therapy
+                and begin a care plan built around your goals.
               </p>
               <div className="btn-row">
                 <Link to="/book" className="btn btn--primary">
