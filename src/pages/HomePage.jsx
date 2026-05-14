@@ -1,26 +1,27 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
 import { BRAND, CONDITIONS } from '../data/site'
 
 const PILLARS = [
   {
-    icon: 'user',
-    tone: 'teal',
-    title: 'Individualized Treatment',
-    body: 'Care plans tailored to your goals, lifestyle, and recovery needs, all from the comfort of your home.',
+    image: '/images/why-home/slide-1.jpeg',
+    title: 'One-on-one care in the comfort of your home',
+    body: 'Personalized physical therapy designed around your goals, lifestyle, and recovery.',
+    button: 'Book Appointment',
+    to: '/book',
   },
   {
-    icon: 'rehab',
-    tone: 'violet',
-    title: 'Rehabilitation Services',
-    body: 'Orthopedic rehab, balance training, mobility recovery, neurological care, and personalized exercise programs.',
+    image: '/images/why-home/slide-2.jpeg',
+    title: 'Movement, recovery, and confidence restored',
+    body: 'Evidence-based treatment focused on reducing pain, improving mobility, and helping you return to daily life.',
+    button: 'Explore Services',
+    to: '/services',
   },
   {
-    icon: 'careHands',
-    tone: 'teal',
-    title: 'Supportive Care You Can Trust',
-    body: 'Hands-on, compassionate care focused on helping you move better, feel stronger, and stay independent.',
+    image: '/images/why-home/slide-3.jpeg',
+    title: 'Compassionate care that treats the root cause',
+    body: 'Doctor-led physical therapy focused on long-term results - not just temporary symptom relief.',
   },
 ]
 
@@ -41,18 +42,18 @@ const HERO_PHONE = BRAND.phone.replace('+1 ', '')
 const HERO_FEATURES = [
   {
     icon: 'shield',
-    title: 'Licensed & Insured',
-    body: 'Trusted Professionals',
+    title: 'Trusted Professionals',
+    body: '',
   },
   {
     icon: 'home',
     title: 'In-Home Convenience',
-    body: 'Care at Your Doorstep',
+    body: '',
   },
   {
     icon: 'user',
     title: 'Personalized Treatment',
-    body: '1-on-1 with Your PT',
+    body: '',
   },
 ]
 
@@ -272,7 +273,7 @@ export default function HomePage() {
           <Reveal className="home-hero__copy">
             <p className="eyebrow">Home health physical therapy</p>
             <h1 className="h1">
-              One-on-one PT that treats the <em>root cause</em>, not just the symptom.
+              One-on-one PT that treats the mind, body, soul, and the <em>root cause</em>
             </h1>
 
             <p className="lead">
@@ -335,18 +336,28 @@ export default function HomePage() {
             </p>
           </Reveal>
 
-          <div className="grid grid--3 why-home__grid">
-            {PILLARS.map((p, i) => (
-              <Reveal key={p.title} delay={i + 1} className="card care-card">
-                <div className={`care-card__icon care-card__icon--${p.tone}`}>
-                  <Icon name={p.icon} size={38} />
-                </div>
-                <h3>{p.title}</h3>
-                <span className={`care-card__rule care-card__rule--${p.tone}`} aria-hidden="true" />
-                <p>{p.body}</p>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={1} className="why-home__carousel" aria-label="DreamCare care highlights">
+            <div className="why-home__fade-stage">
+              {PILLARS.map((p) => (
+                <article
+                  className="why-home__photo-slide"
+                  key={p.title}
+                  style={{ '--slide-image': `url(${p.image})` }}
+                >
+                  <div className="why-home__slide-panel">
+                    <h3>{p.title}</h3>
+                    <span className="care-card__rule" aria-hidden="true" />
+                    <p>{p.body}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="why-home__dots" aria-hidden="true">
+              {PILLARS.map((p) => (
+                <span key={p.title} />
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 

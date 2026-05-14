@@ -63,7 +63,7 @@ export const CONDITIONS = [
     icon: 'spine',
     short: 'Whiplash and personal injuries, post-discectomy, disc replacement and scoliosis rehabilitation.',
     tileImage: '/images/condition-tiles/back-neck-pain.jpg',
-    tilePosition: '58% 50%',
+    tilePosition: '58% 35%',
   },
   {
     slug: 'shoulder-pain',
@@ -71,7 +71,7 @@ export const CONDITIONS = [
     icon: 'shoulder',
     short: 'Post-operative rehabilitation after reverse shoulder replacement.',
     tileImage: '/images/condition-tiles/shoulder-pain.jpg',
-    tilePosition: '56% 50%',
+    tilePosition: '56% 35%',
   },
   {
     slug: 'knee-pain',
@@ -79,7 +79,7 @@ export const CONDITIONS = [
     icon: 'knee',
     short: 'Support for osteoarthritis degeneration, meniscus and ACL to help you move and return to function with no pain.',
     tileImage: '/images/condition-tiles/knee-pain.jpg',
-    tilePosition: '50% 50%',
+    tilePosition: '50% 35%',
   },
   {
     slug: 'hip-pain',
@@ -87,7 +87,7 @@ export const CONDITIONS = [
     icon: 'hip',
     short: 'Hip impingement, growing pains, labral tears, and hip replacement rehabilitation.',
     tileImage: '/images/condition-tiles/hip-pain.jpg',
-    tilePosition: '50% 50%',
+    tilePosition: '50% 35%',
   },
   {
     slug: 'ankle-injuries',
@@ -95,7 +95,7 @@ export const CONDITIONS = [
     icon: 'ankle',
     short: 'Ankle sprains, instability and post injury recovery to return to sport.',
     tileImage: '/images/condition-tiles/ankle-foot-injuries.jpg',
-    tilePosition: '58% 50%',
+    tilePosition: '58% 35%',
   },
   {
     slug: 'vestibular',
@@ -103,7 +103,7 @@ export const CONDITIONS = [
     icon: 'vestibular',
     short: 'Help with dizziness BPPV, balance abnormalities, migraine headaches and rehabilitation post concussion.',
     tileImage: '/images/condition-tiles/vestibular-concussion-care.jpg',
-    tilePosition: '62% 50%',
+    tilePosition: '62% 35%',
   },
   {
     slug: 'balance-fall-prevention',
@@ -111,7 +111,7 @@ export const CONDITIONS = [
     icon: 'pulse',
     short: 'Gait analysis and balance training to improve stability, confidence to return to normal without risk of fall at home.',
     tileImage: '/images/condition-tiles/balance-fall-prevention.jpg',
-    tilePosition: '52% 50%',
+    tilePosition: '52% 35%',
   },
   {
     slug: 'post-surgical-rehabilitation',
@@ -119,7 +119,7 @@ export const CONDITIONS = [
     icon: 'tools',
     short: 'Rehabilitation before and after total knee, total hip, and shoulder replacement using evidence-based protocols.',
     tileImage: '/images/condition-tiles/post-surgical-rehabilitation.jpg',
-    tilePosition: '52% 50%',
+    tilePosition: '52% 35%',
   },
   {
     slug: 'hand-upper-extremity-therapy',
@@ -127,7 +127,7 @@ export const CONDITIONS = [
     icon: 'hands',
     short: 'Care for hand, wrist, post-operative rehabilitation and arm conditions to improve function and daily use.',
     tileImage: '/images/condition-tiles/hand-wrist-therapy.jpg',
-    tilePosition: '58% 50%',
+    tilePosition: '58% 35%',
   },
 ]
 
