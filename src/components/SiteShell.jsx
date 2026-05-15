@@ -227,7 +227,7 @@ export default function SiteShell() {
               <h5>Serving Southern California</h5>
               <span className="footer-contact-row">
                 <Icon name="pin" size={20} />
-                <span>Los Angeles County<br />Orange County<br />San Diego County<br />and surrounding communities</span>
+                <span>Los Angeles County<br />Orange County<br />San Diego County<br />San Fernando Valley</span>
               </span>
               <a className="footer-contact-row" href={`tel:${BRAND.phoneRaw}`}>
                 <Icon name="phone" size={20} />

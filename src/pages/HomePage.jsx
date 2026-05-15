@@ -61,7 +61,7 @@ const HERO_TRUST = [
   {
     icon: 'pin',
     title: 'Serving Southern California',
-    body: '& Surrounding Areas',
+    body: 'LA, OC, SD & SFV',
   },
   {
     icon: 'shield',
@@ -117,11 +117,11 @@ const CONDITION_CARD_COPY = {
 const PATIENT_STORIES = [
   { name: 'Recovery client', role: 'Post-op total knee', condition: 'Knee replacement', quote: 'After surgery I was nervous about walking again. The plan was clear, hands-on and steady every week.', outcome: 'Walking the dog in 3 weeks' },
   { name: 'Vestibular patient', role: 'Sherman Oaks', condition: 'Vertigo and balance', quote: 'I had dizziness for months and tried several providers. The vestibular evaluation finally connected the dots.', outcome: 'Driving comfortably again' },
-  { name: 'Sport client', role: 'Return to running', condition: 'Running injury', quote: 'The 1-on-1 time felt different. No waiting around, no generic program, just real progression.', outcome: 'Back to training pain-free' },
+  { name: 'Sport client', role: 'Return to running', condition: 'Running injury', quote: 'I liked having the full session focused on me. The plan felt personal and I started noticing progress pretty quickly.', outcome: 'Back to training pain-free' },
   { name: 'Maya R.', role: 'Low back pain', condition: 'Back and sciatica', quote: 'My home setup and movement habits were part of the issue. The program fixed both.', outcome: 'No flare-ups for 6 months' },
   { name: 'David K.', role: 'Total knee rehab', condition: 'Post-surgical care', quote: 'The visits respected pain but still pushed progress. I felt stronger every session.', outcome: 'Off the cane in 5 weeks' },
-  { name: 'Priya S.', role: 'Concussion recovery', condition: 'Vestibular rehab', quote: 'Screen time and head turns used to trigger symptoms. The exercises were precise and manageable.', outcome: 'Back to full workdays' },
-  { name: 'Marcus T.', role: 'Tennis player', condition: 'Rotator cuff repair', quote: 'The shoulder plan matched my surgical protocol and my goal of playing tennis again.', outcome: 'Returned to court confidently' },
+  { name: 'Priya S.', role: 'Concussion recovery', condition: 'Vestibular rehab', quote: 'I used to get dizzy just from turning my head too quickly or spending too much time on screens. The exercises were simple to follow and gradually helped me feel normal again.', outcome: 'Back to full workdays' },
+  { name: 'Marcus T.', role: 'Tennis player', condition: 'Rotator cuff repair', quote: 'After shoulder surgery, I was worried I wouldn’t get back to tennis the same way. The rehab plan was personalized, challenging in the right way, and helped me return with confidence.', outcome: 'Returned to court confidently' },
   { name: 'Hannah L.', role: 'Trail runner', condition: 'Ankle instability', quote: 'I stopped trusting my ankle on uneven ground. Balance and strength work changed that.', outcome: 'Running trails without taping' },
   { name: 'Joel M.', role: 'Hip arthroscopy', condition: 'Hip impingement', quote: 'I wanted to lift again without guessing. The progression made each phase feel safe.', outcome: 'Back to full workouts' },
   { name: 'Ana V.', role: 'Sports rehab', condition: 'Shoulder pain', quote: 'Every session was focused and practical. I understood what to do and why it mattered.', outcome: 'Pain-free overhead movement' },
@@ -133,14 +133,14 @@ const PATIENT_STORIES = [
   { name: 'Nina F.', role: 'Hand and wrist', condition: 'Wrist recovery', quote: 'Small details mattered. The exercises helped me use my hand again without guarding.', outcome: 'Returned to daily tasks' },
   { name: 'Cal R.', role: 'Balance and gait', condition: 'Gait training', quote: 'The home visits helped us practice where I was actually struggling, not just in a clinic hallway.', outcome: 'Walking with more confidence' },
   { name: 'Tara J.', role: 'Shoulder replacement', condition: 'Post-op shoulder', quote: 'The progression was calm and consistent. I knew what milestones we were working toward.', outcome: 'Better reach and less pain' },
-  { name: 'Ben A.', role: 'Back to lifting', condition: 'Low back rehab', quote: 'We rebuilt the basics first, then lifting started feeling possible again.', outcome: 'Returned to strength training' },
+  { name: 'Ben A.', role: 'Back to lifting', condition: 'Low back rehab', quote: 'We started with the basics and slowly built back up. After a while, lifting didn’t feel intimidating anymore.', outcome: 'Returned to strength training' },
   { name: 'Sophia M.', role: 'Home health PT', condition: 'Mobility and strength', quote: 'Having therapy at home removed the stress of travel and made the plan easier to follow.', outcome: 'More independent at home' },
 ]
 
 const PATIENT_STORY_TRUST = [
   {
     icon: 'shield',
-    title: 'Licensed & Insured',
+    title: 'Trusted Professionals',
     body: 'Your care is provided by licensed professionals you can trust.',
   },
   {
@@ -202,7 +202,7 @@ const HOME_FAQS = [
   },
   {
     icon: 'user',
-    question: 'Will I work with the same therapist each visit?',
+    question: 'Can I see the same physical therapist every session?',
     answer: [
       'Yes. We prioritize continuity of care, and in most cases you will work with the same physical therapist throughout your treatment.',
       'If scheduling adjustments are ever needed, another licensed clinician may step in while following your established plan of care.',
@@ -228,7 +228,7 @@ const HOME_FAQS = [
     icon: 'pin',
     question: 'What areas do you serve?',
     answer: [
-      'DreamCare PT proudly serves patients across Southern California, including Los Angeles County, Orange County, San Diego, and surrounding communities.',
+      'DreamCare PT proudly serves patients throughout Southern California, including Los Angeles County, Orange County, San Diego, and the San Fernando Valley.',
       'If you are unsure whether we service your area, feel free to contact us and our team will be happy to assist you.',
     ],
   },
@@ -237,16 +237,22 @@ const HOME_FAQS = [
     question: 'Do you offer private-pay options?',
     answer: [
       'Yes. We offer private-pay physical therapy sessions for patients without insurance coverage.',
-      'Self-pay visits are $130 for a 40-minute one-on-one session delivered in the comfort of your home. Additional fees may apply depending on location and scheduling needs.',
+      'Self-pay visits are $130 for a one-on-one session delivered in the comfort of your home. Additional fees may apply depending on location and scheduling needs.',
     ],
   },
+]
+
+const FAQ_TOPIC_ITEMS = [
+  { icon: 'shield', label: 'Insurance & coverage' },
+  { icon: 'calendar', label: 'Appointments & scheduling' },
+  { icon: 'home', label: 'Getting started with care at home' },
 ]
 
 const SERVICE_AREAS_HOME = [
   { icon: 'palm', title: 'Los Angeles County' },
   { icon: 'coast', title: 'Orange County' },
   { icon: 'bridge', title: 'San Diego County' },
-  { icon: 'pin', title: 'Surrounding Communities' },
+  { icon: 'pin', title: 'San Fernando Valley' },
 ]
 
 const FINAL_CTA_FEATURES = [
@@ -548,11 +554,19 @@ export default function HomePage() {
       <section className="section section--home-faq" id="home-faq">
         <div className="shell shell--wide home-faq">
           <Reveal className="home-faq__intro">
-            <p className="eyebrow">Questions before care</p>
+            <p className="eyebrow">FAQ</p>
             <h2 className="h2">Clear answers for <em>home health PT</em>.</h2>
-            <p>
-              Answers about insurance, appointments, and getting started with care at home.
-            </p>
+            <p className="home-faq__topics-label">Find answers about:</p>
+            <ul className="home-faq__topics" aria-label="FAQ topics">
+              {FAQ_TOPIC_ITEMS.map((item) => (
+                <li key={item.label}>
+                  <span aria-hidden="true">
+                    <Icon name={item.icon} size={24} />
+                  </span>
+                  <strong>{item.label}</strong>
+                </li>
+              ))}
+            </ul>
             <div className="home-faq__contact">
               <span className="home-faq__contact-icon" aria-hidden="true">
                 <Icon name="help" size={34} />

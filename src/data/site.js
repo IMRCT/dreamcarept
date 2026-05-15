@@ -7,7 +7,7 @@ export const BRAND = {
   doctor: 'Dr. Ashkan Ashkani, PT, DPT, CMTPT, COMT',
   phone: '+1 (310) 916-8581',
   phoneRaw: '+13109168581',
-  email: 'info@dreamcarept.com',
+  email: 'dreamcarept@gmail.com',
   address: '13425 Ventura Blvd, Ste 102',
   city: 'Sherman Oaks, CA',
   hours: [

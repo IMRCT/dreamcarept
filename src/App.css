@@ -5989,6 +5989,10 @@
   max-width: 1240px;
 }
 
+#patient-stories-home .patient-stories-trust {
+  margin-top: clamp(0.85rem, 1.45vw, 1.15rem);
+}
+
 .patient-story-marquee--feature::before,
 .patient-story-marquee--feature::after {
   content: '';
@@ -6011,18 +6015,21 @@
 }
 
 #patient-stories-home .patient-story-card--feature {
-  width: clamp(500px, calc((100vw - 5rem) / 2), 590px);
-  min-height: 270px;
+  width: clamp(450px, calc((100vw - 5rem) / 2), 560px);
+  min-height: 0;
+  height: 172px;
+  align-self: stretch;
   grid-template-columns: auto minmax(0, 1fr);
-  align-items: start;
-  gap: clamp(1.4rem, 2.4vw, 2rem);
-  padding: clamp(1.45rem, 2.5vw, 1.85rem);
+  grid-template-rows: auto;
+  align-items: center;
+  gap: clamp(0.85rem, 1.4vw, 1.15rem);
+  padding: clamp(0.78rem, 1.25vw, 0.98rem);
   border-radius: 14px;
 }
 
 .patient-story-card__quote-badge {
-  width: 64px;
-  height: 64px;
+  width: 46px;
+  height: 46px;
   display: grid;
   place-items: center;
   border-radius: 999px;
@@ -6034,18 +6041,42 @@
 }
 
 .patient-story-card__quote-badge .patient-story-card__quote-mark {
-  font-size: 3.4rem;
+  font-size: 2.45rem;
   line-height: 0.78;
 }
 
+#patient-stories-home .patient-story-card__content {
+  width: 100%;
+  align-content: center;
+  gap: 0.46rem;
+}
+
 #patient-stories-home .patient-story-card__quote {
-  max-width: 26ch;
-  font-size: clamp(1.03rem, 1.35vw, 1.34rem);
-  line-height: 1.22;
+  width: 100%;
+  max-width: none;
+  font-size: clamp(0.9rem, 1.02vw, 1.02rem);
+  line-height: 1.15;
+}
+
+#patient-stories-home .patient-story-card__rule {
+  margin: 0.18rem 0;
+}
+
+#patient-stories-home .patient-story-card__rating {
+  gap: 0.12rem;
+}
+
+#patient-stories-home .patient-story-card__rating svg {
+  width: 15px;
+  height: 15px;
 }
 
 #patient-stories-home .patient-story-card__person strong {
-  font-size: 1rem;
+  font-size: 0.9rem;
+}
+
+#patient-stories-home .patient-story-card__person span {
+  font-size: 0.76rem;
 }
 
 .patient-story-card__photo {
@@ -6201,6 +6232,60 @@
   stroke-width: 2.1;
 }
 
+.home-faq__topics-label {
+  margin: clamp(1.35rem, 2.4vw, 1.8rem) 0 0;
+  color: #6D728A;
+  font-size: clamp(0.98rem, 1.08vw, 1.06rem);
+  font-weight: 600;
+}
+
+.home-faq__topics {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.45rem);
+  margin: clamp(1.1rem, 2vw, 1.55rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-faq__topics li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  color: var(--ink);
+  font-size: clamp(0.98rem, 1.08vw, 1.06rem);
+  line-height: 1.35;
+}
+
+.home-faq__topics li > span {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 72% 18%, rgba(34, 199, 201, 0.12), transparent 42%),
+    linear-gradient(145deg, #F8F9FF, #EFEAFF);
+}
+
+.home-faq__topics strong {
+  font-weight: 700;
+}
+
+.home-faq__intro .home-faq__topics-label {
+  max-width: none;
+}
+
+.home-faq__intro .home-faq__topics-label,
+.home-faq__intro .home-faq__topics {
+  justify-self: start;
+}
+
+.home-faq__intro .eyebrow {
+  margin-bottom: 0.8rem;
+}
+
 .section--final-cta .cta-banner h2 {
   font-size: clamp(1.71rem, 2.7vw, 2.3rem);
 }
@@ -6298,9 +6383,17 @@
 
   #patient-stories-home .patient-story-card--feature {
     width: min(calc(100vw - 2rem), 390px);
+    height: 238px;
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     justify-items: center;
     text-align: center;
+    padding: 0.95rem;
+  }
+
+  #patient-stories-home .patient-story-card__content {
+    justify-items: center;
+    align-content: center;
   }
 
   #patient-stories-home .patient-story-card__quote,
@@ -6316,6 +6409,16 @@
     align-items: flex-start;
     text-align: left;
     justify-content: flex-start;
+  }
+
+  .home-faq__intro .home-faq__topics-label,
+  .home-faq__intro .home-faq__topics {
+    justify-self: center;
+    text-align: left;
+  }
+
+  .home-faq__topics {
+    width: min(100%, 330px);
   }
 }
 

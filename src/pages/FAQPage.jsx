@@ -35,7 +35,7 @@ const GROUPS = [
   {
     title: 'During & after care',
     items: [
-      { q: 'Will I work with the same therapist every visit?', a: 'Yes. You see Dr. Ashkani every session with no aides and no rotating providers. That continuity is core to how we treat the root cause.' },
+      { q: 'Can I see the same physical therapist every session?', a: 'Yes. You see Dr. Ashkani every session with no aides and no rotating providers. That continuity is core to how we treat the root cause.' },
       { q: 'What should I wear and bring?', a: 'Comfortable clothing you can move in, such as athletic shorts or leggings that allow access to the area being treated. Bring relevant imaging reports if you have them, and your insurance card on the first visit.' },
       { q: 'Will I have homework between sessions?', a: 'Yes, but it will be focused and realistic. We\'d rather you do 10 minutes of the right work daily than 45 minutes you\'ll skip. Programs adapt to your real schedule.' },
       { q: 'Where is the clinic and what are your hours?', a: `${BRAND.address}, ${BRAND.city}. We're open Monday through Saturday, 8am to 6pm, and closed Sunday.` },
