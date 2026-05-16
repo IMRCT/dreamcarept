@@ -162,15 +162,25 @@ export default function AboutPage() {
               </p>
               <div className="manual-care__actions">
                 <Link to="/services" className="manual-care__button">
-                  <span>See all techniques</span>
+                  <span>Explore services</span>
                   <Icon name="arrow" size={24} />
                 </Link>
               </div>
             </Reveal>
             <Reveal delay={1} className="manual-care__art">
-              <img src="/images/hands-on-therapy-showcase.jpeg" alt="DreamCare therapist providing hands-on shoulder manual therapy with IASTM and cupping technique examples" />
-              <span className="manual-care__label manual-care__label--iastm">IASTM / Scraping</span>
-              <span className="manual-care__label manual-care__label--cupping">Cupping</span>
+              <div className="manual-care__photo">
+                <img src="/images/manual-care-main-clean.jpeg" alt="DreamCare therapist providing hands-on shoulder manual therapy" />
+              </div>
+              <div className="manual-care__techniques" aria-label="Manual therapy technique examples">
+                <Link to="/services" className="manual-care-technique-card">
+                  <img src="/images/manual-care-iastm.jpeg" alt="IASTM scraping technique" />
+                  <span>IASTM / Scraping</span>
+                </Link>
+                <Link to="/services" className="manual-care-technique-card">
+                  <img src="/images/manual-care-cupping.jpeg" alt="Cupping therapy technique" />
+                  <span>Cupping</span>
+                </Link>
+              </div>
             </Reveal>
           </div>
         </div>
