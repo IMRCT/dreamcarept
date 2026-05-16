@@ -1171,6 +1171,217 @@
   margin-top: 2.2rem;
 }
 
+/* ---------- About page expertise panel ---------- */
+.section--about-expertise {
+  padding: clamp(4.4rem, 6.4vw, 6.5rem) 0;
+  background:
+    radial-gradient(880px 420px at 12% 108%, rgba(109, 85, 242, 0.08), transparent 66%),
+    linear-gradient(180deg, #FFFFFF 0%, #FBFCFF 100%);
+}
+
+.section-head.section-head--about-expertise {
+  max-width: 860px;
+  margin-bottom: clamp(2rem, 3.5vw, 2.7rem);
+}
+
+.section-head.section-head--about-expertise .eyebrow {
+  color: var(--primary-2);
+  font-size: clamp(0.82rem, 1vw, 0.94rem);
+  font-weight: 800;
+  margin-bottom: 0.85rem;
+}
+
+.section-head.section-head--about-expertise .h2 {
+  max-width: 840px;
+  color: var(--primary);
+  font-size: clamp(2.05rem, 4.2vw, 3.38rem);
+  font-weight: 800;
+  line-height: 1.14;
+}
+
+/* When the expertise heading also uses the display `h1` class, scale it down slightly */
+.section-head.section-head--about-expertise .h1 {
+  /* reduced further (~20% smaller) */
+  font-size: clamp(1.66rem, 3.58vw, 2.94rem);
+  line-height: 1.02;
+}
+
+.section-head.section-head--about-expertise .h2 em {
+  color: var(--primary-2);
+}
+
+.about-expertise__rule,
+.about-expertise-card__rule {
+  display: block;
+  width: 78px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--primary-2);
+}
+
+.about-expertise__rule {
+  margin: 1.25rem 0 1rem;
+}
+
+.section-head.section-head--about-expertise .lead {
+  max-width: 790px;
+  color: #57627D;
+  font-size: clamp(1.02rem, 1.35vw, 1.18rem);
+  line-height: 1.72;
+}
+
+.about-expertise__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 1.45vw, 1.4rem);
+}
+
+.about-expertise-card {
+  min-height: clamp(292px, 25vw, 370px);
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 1.1rem;
+  padding: clamp(1.75rem, 3vw, 2.35rem) clamp(1.25rem, 2vw, 1.75rem);
+  text-align: center;
+  border: 1px solid rgba(222, 230, 247, 0.82);
+  border-radius: 18px;
+  background:
+    radial-gradient(180px 130px at 50% 2%, rgba(109, 85, 242, 0.06), transparent 70%),
+    rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 18px 42px rgba(15, 27, 51, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s ease;
+}
+
+.about-expertise-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(109, 85, 242, 0.22);
+  box-shadow:
+    0 26px 58px rgba(15, 27, 51, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.about-expertise-card__icon {
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--primary-2);
+  background:
+    radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.95), transparent 44%),
+    linear-gradient(145deg, #F8F6FF 0%, #EFEAFF 100%);
+  box-shadow:
+    0 16px 34px rgba(109, 85, 242, 0.12),
+    inset 0 0 0 1px rgba(109, 85, 242, 0.08);
+}
+
+.about-expertise-card h3 {
+  min-height: 3.4em;
+  margin: 0;
+  color: var(--primary);
+  font-family: var(--font-display);
+  font-size: clamp(1.08rem, 1.55vw, 1.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.about-expertise-card p {
+  max-width: 26ch;
+  margin: 0;
+  color: #57627D;
+  font-size: clamp(0.94rem, 1.05vw, 1.02rem);
+  line-height: 1.68;
+}
+
+.about-expertise-card__rule {
+  width: 58px;
+  margin-top: auto;
+}
+
+.about-expertise__assurance {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1.35rem;
+  margin-top: clamp(1.2rem, 2vw, 1.5rem);
+  padding: clamp(1.25rem, 2vw, 1.55rem) clamp(1.35rem, 2.8vw, 2.25rem);
+  border: 1px solid rgba(109, 85, 242, 0.06);
+  border-radius: 18px;
+  background: rgba(241, 235, 255, 0.74);
+  color: var(--primary);
+}
+
+.about-expertise__assurance-icon {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  color: var(--primary-2);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.about-expertise__assurance-check {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+}
+
+.about-expertise__assurance p {
+  margin: 0;
+  display: grid;
+  gap: 0.22rem;
+  color: #57627D;
+  font-size: clamp(0.96rem, 1.15vw, 1.05rem);
+  line-height: 1.55;
+}
+
+.about-expertise__assurance strong {
+  color: var(--primary);
+  font-size: clamp(1rem, 1.2vw, 1.08rem);
+  line-height: 1.38;
+}
+
+@media (max-width: 1080px) {
+  .about-expertise__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-expertise-card {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-head.section-head--about-expertise .h2 {
+    font-size: clamp(1.8rem, 9vw, 2.45rem);
+  }
+
+  .about-expertise__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-expertise-card {
+    min-height: 0;
+  }
+
+  .about-expertise-card h3 {
+    min-height: 0;
+  }
+
+  .about-expertise__assurance {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding-inline: 1.2rem;
+  }
+}
+
 /* ---------- Service cards (homepage) ---------- */
 .service-card {
   display: flex;
@@ -1885,7 +2096,8 @@
   display: grid;
   grid-template-columns: 0.95fr 1.1fr;
   gap: 3rem;
-  align-items: center;
+  align-items: center ;
+  
 }
 
 .doctor-portrait {
@@ -3976,8 +4188,30 @@
 
 .inner-hero h1 { margin-bottom: 1.25rem; }
 
+/* reduce About page hero title size by ~20% */
+.inner-hero__copy .h1 {
+  font-size: clamp(1.08rem, 2.48vw, 2.68rem);
+  line-height: 1.02;
+}
+
+/* lift the inner-hero copy upward to reduce the gap above it */
+.inner-hero__copy {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  transform: translateY(-4.5%);
+  transition: transform 0.3s var(--ease);
+}
+
+@media (max-width: 880px) {
+  .inner-hero__copy { transform: none; align-self: stretch; }
+}
+
 .inner-hero__art {
-  aspect-ratio: 5 / 4;
+  /* make the frame taller so more of portrait is visible */
+  aspect-ratio: 50 / 51;
   border-radius: var(--radius-lg);
   background: linear-gradient(150deg, var(--primary-3), var(--sun-soft));
   position: relative;
@@ -4556,6 +4790,199 @@
 .photo-band .h2 { color: #F5EFFB; }
 .photo-band .eyebrow { color: var(--sun); }
 .photo-band p { color: rgba(245, 239, 251, 0.85); max-width: 56ch; }
+
+/* About page hands-on manual therapy showcase */
+.section--manual-care {
+  padding: clamp(4.25rem, 6vw, 5.4rem) 0;
+  background: #FFFFFF;
+}
+
+.manual-care {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: clamp(3rem, 6vw, 6.25rem);
+}
+
+.manual-care__copy {
+  max-width: 470px;
+}
+
+.manual-care__copy .eyebrow {
+  color: var(--primary-2);
+  font-size: clamp(0.86rem, 1.05vw, 0.98rem);
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.manual-care__copy .h2 {
+  color: var(--primary);
+  font-size: clamp(2.18rem, 3.45vw, 2.62rem);
+  font-weight: 800;
+  line-height: 1.12;
+  max-width: 16.2ch;
+}
+
+.manual-care__copy .h2 em {
+  color: var(--primary-2);
+}
+
+.manual-care__rule {
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin: 1.25rem 0 1.3rem;
+  border-radius: 999px;
+  background: var(--primary-2);
+}
+
+.manual-care__copy .body-text {
+  max-width: 42ch;
+  color: #57627D;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.62;
+}
+
+.manual-care__actions {
+  margin-top: clamp(1.9rem, 3vw, 2.45rem);
+}
+
+.manual-care__button {
+  min-height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.95rem;
+  padding: 0.95rem 1.65rem 0.95rem 1.85rem;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  color: #FFFFFF;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 16px 34px rgba(16, 33, 68, 0.18);
+  transition: transform 0.32s var(--ease), box-shadow 0.32s var(--ease), background 0.32s ease;
+}
+
+.manual-care__button:hover {
+  transform: translateY(-2px);
+  background: #0B1832;
+  box-shadow: 0 22px 42px rgba(16, 33, 68, 0.24);
+}
+
+.manual-care__button svg {
+  flex: none;
+}
+
+.manual-care__art {
+  position: relative;
+  aspect-ratio: 838 / 830;
+  min-height: clamp(400px, 45vw, 660px);
+  border-radius: 22px;
+  overflow: visible;
+  justify-self: stretch;
+}
+
+.manual-care__art img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  box-shadow: 0 22px 56px rgba(15, 27, 51, 0.08);
+}
+
+.manual-care__label {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  width: 28.8%;
+  min-height: 8.8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.45rem 0.45rem;
+  border-radius: 0 0 17px 17px;
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--primary-2);
+  font-size: clamp(0.72rem, 1.2vw, 1.05rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(15, 27, 51, 0.06);
+  pointer-events: none;
+}
+
+.manual-care__label--iastm {
+  left: 46.3%;
+}
+
+.manual-care__label--cupping {
+  left: 79.4%;
+}
+
+@media (max-width: 980px) {
+  .manual-care {
+    grid-template-columns: 1fr;
+    gap: 2.6rem;
+  }
+
+  .manual-care__copy {
+    max-width: 680px;
+  }
+
+  .manual-care__copy .h2 {
+    max-width: 16.2ch;
+  }
+
+  .manual-care__art {
+    width: min(100%, 760px);
+    min-height: 0;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .section--manual-care {
+    padding: 3.7rem 0;
+  }
+
+  .manual-care {
+    gap: 2rem;
+  }
+
+  .manual-care__copy .eyebrow {
+    margin-bottom: 0.8rem;
+  }
+
+  .manual-care__copy .h2 {
+    max-width: 12.8ch;
+    font-size: clamp(2rem, 10vw, 2.7rem);
+  }
+
+  .manual-care__rule {
+    margin: 1rem 0 1.05rem;
+  }
+
+  .manual-care__copy .body-text {
+    font-size: 1rem;
+  }
+
+  .manual-care__button {
+    min-height: 54px;
+    padding-inline: 1.35rem;
+  }
+
+  .manual-care__art {
+    border-radius: 18px;
+  }
+
+  .manual-care__label {
+    min-height: 9%;
+    font-size: clamp(0.6rem, 3.2vw, 0.78rem);
+  }
+}
 
 /* Wellness split, image left, copy right */
 .split-photo {
@@ -5989,10 +6416,6 @@
   max-width: 1240px;
 }
 
-#patient-stories-home .patient-stories-trust {
-  margin-top: clamp(0.85rem, 1.45vw, 1.15rem);
-}
-
 .patient-story-marquee--feature::before,
 .patient-story-marquee--feature::after {
   content: '';
@@ -6015,21 +6438,18 @@
 }
 
 #patient-stories-home .patient-story-card--feature {
-  width: clamp(450px, calc((100vw - 5rem) / 2), 560px);
-  min-height: 0;
-  height: 172px;
-  align-self: stretch;
+  width: clamp(500px, calc((100vw - 5rem) / 2), 590px);
+  min-height: 270px;
   grid-template-columns: auto minmax(0, 1fr);
-  grid-template-rows: auto;
-  align-items: center;
-  gap: clamp(0.85rem, 1.4vw, 1.15rem);
-  padding: clamp(0.78rem, 1.25vw, 0.98rem);
+  align-items: start;
+  gap: clamp(1.4rem, 2.4vw, 2rem);
+  padding: clamp(1.45rem, 2.5vw, 1.85rem);
   border-radius: 14px;
 }
 
 .patient-story-card__quote-badge {
-  width: 46px;
-  height: 46px;
+  width: 64px;
+  height: 64px;
   display: grid;
   place-items: center;
   border-radius: 999px;
@@ -6041,42 +6461,18 @@
 }
 
 .patient-story-card__quote-badge .patient-story-card__quote-mark {
-  font-size: 2.45rem;
+  font-size: 3.4rem;
   line-height: 0.78;
 }
 
-#patient-stories-home .patient-story-card__content {
-  width: 100%;
-  align-content: center;
-  gap: 0.46rem;
-}
-
 #patient-stories-home .patient-story-card__quote {
-  width: 100%;
-  max-width: none;
-  font-size: clamp(0.9rem, 1.02vw, 1.02rem);
-  line-height: 1.15;
-}
-
-#patient-stories-home .patient-story-card__rule {
-  margin: 0.18rem 0;
-}
-
-#patient-stories-home .patient-story-card__rating {
-  gap: 0.12rem;
-}
-
-#patient-stories-home .patient-story-card__rating svg {
-  width: 15px;
-  height: 15px;
+  max-width: 26ch;
+  font-size: clamp(1.03rem, 1.35vw, 1.34rem);
+  line-height: 1.22;
 }
 
 #patient-stories-home .patient-story-card__person strong {
-  font-size: 0.9rem;
-}
-
-#patient-stories-home .patient-story-card__person span {
-  font-size: 0.76rem;
+  font-size: 1rem;
 }
 
 .patient-story-card__photo {
@@ -6232,60 +6628,6 @@
   stroke-width: 2.1;
 }
 
-.home-faq__topics-label {
-  margin: clamp(1.35rem, 2.4vw, 1.8rem) 0 0;
-  color: #6D728A;
-  font-size: clamp(0.98rem, 1.08vw, 1.06rem);
-  font-weight: 600;
-}
-
-.home-faq__topics {
-  display: grid;
-  gap: clamp(1rem, 2vw, 1.45rem);
-  margin: clamp(1.1rem, 2vw, 1.55rem) 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.home-faq__topics li {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;
-  gap: 1rem;
-  color: var(--ink);
-  font-size: clamp(0.98rem, 1.08vw, 1.06rem);
-  line-height: 1.35;
-}
-
-.home-faq__topics li > span {
-  width: 52px;
-  height: 52px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  color: var(--ink);
-  background:
-    radial-gradient(circle at 72% 18%, rgba(34, 199, 201, 0.12), transparent 42%),
-    linear-gradient(145deg, #F8F9FF, #EFEAFF);
-}
-
-.home-faq__topics strong {
-  font-weight: 700;
-}
-
-.home-faq__intro .home-faq__topics-label {
-  max-width: none;
-}
-
-.home-faq__intro .home-faq__topics-label,
-.home-faq__intro .home-faq__topics {
-  justify-self: start;
-}
-
-.home-faq__intro .eyebrow {
-  margin-bottom: 0.8rem;
-}
-
 .section--final-cta .cta-banner h2 {
   font-size: clamp(1.71rem, 2.7vw, 2.3rem);
 }
@@ -6383,17 +6725,9 @@
 
   #patient-stories-home .patient-story-card--feature {
     width: min(calc(100vw - 2rem), 390px);
-    height: 238px;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     justify-items: center;
     text-align: center;
-    padding: 0.95rem;
-  }
-
-  #patient-stories-home .patient-story-card__content {
-    justify-items: center;
-    align-content: center;
   }
 
   #patient-stories-home .patient-story-card__quote,
@@ -6409,16 +6743,6 @@
     align-items: flex-start;
     text-align: left;
     justify-content: flex-start;
-  }
-
-  .home-faq__intro .home-faq__topics-label,
-  .home-faq__intro .home-faq__topics {
-    justify-self: center;
-    text-align: left;
-  }
-
-  .home-faq__topics {
-    width: min(100%, 330px);
   }
 }
 

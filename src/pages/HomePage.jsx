@@ -279,7 +279,7 @@ export default function HomePage() {
           <Reveal className="home-hero__copy">
             <p className="eyebrow">Home health physical therapy</p>
             <h1 className="h1">
-              One-on-one PT that treats the mind, body, soul, and the <em>root cause</em>
+              DreamCare PT treats <em>mind, body, and soul</em>
             </h1>
 
             <p className="lead">
