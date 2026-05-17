@@ -5,63 +5,110 @@ import { CTAArt } from '../components/Illustrations'
 import Reveal from '../components/Reveal'
 import { SERVICES, BRAND } from '../data/site'
 
+const SERVICE_ICONS = [
+  'clipboard',
+  'treatmentTable',
+  'rehab',
+  'knee',
+  'soundwave',
+  'headProfile',
+  'spine',
+  'massage',
+  'laptop',
+]
+
+const PROCESS_STEPS = [
+  { icon: 'clipboard', title: 'Check-in & reassess', body: 'Every visit begins with a quick reassessment to track progress and adjust care.' },
+  { icon: 'hands', title: 'Manual therapy', body: 'Hands-on treatment selected based on what your body needs that day.' },
+  { icon: 'rehab', title: 'Exercise progression', body: 'Mobility and strength work progressed at the right pace for recovery.' },
+  { icon: 'home', title: 'Home program', body: 'Simple between-session guidance designed for real life.' },
+]
+
 export default function ServicesPage() {
   return (
     <>
-      <section className="inner-hero">
+      <section className="services-hero">
         <div className="shell shell--wide">
-          <Reveal className="inner-hero__grid">
-            <div>
-              <p className="eyebrow">Services & Pricing</p>
-              <h1 className="h1">Doctor-led care, <em>transparent pricing</em>, no shortcuts.</h1>
-              <p className="lead" style={{ marginTop: '1.4rem' }}>
-                Every session is one-on-one with Dr. Ashkani. Treatments combine manual therapy,
-                exercise progression, vestibular and BFR techniques, all selected based on what your
-                body actually needs.
+          <Reveal className="services-hero__grid">
+            <div className="services-hero__copy">
+              <h1 className="h1">Personalized care designed around <em>your goals.</em></h1>
+              <span className="services-hero__rule" aria-hidden="true" />
+              <p className="lead">
+                One-on-one physical therapy from our experienced team. Evidence-based treatment and personalized plans to help you move better, feel better, and get back to the activities you love.
               </p>
-              <div className="btn-row">
-                <Link to="/book" className="btn btn--primary">Book a treatment</Link>
-                <a href={`tel:${BRAND.phoneRaw}`} className="btn btn--ghost">
-                  <Icon name="phone" size={16} /> {BRAND.phone}
+              <div className="services-hero__actions">
+                <Link to="/book" className="btn btn--primary">
+                  <span>Book an appointment</span>
+                  <Icon name="arrow" size={18} />
+                </Link>
+                <a href={`tel:${BRAND.phoneRaw}`} className="btn services-hero__phone">
+                  <Icon name="phone" size={17} /> {BRAND.phone}
                 </a>
               </div>
             </div>
 
-            <div className="inner-hero__art">
-              <FallbackImage src="/images/services-hero.png" fallback="/images/manual-therapy.svg" alt="Physical therapy session with a client seated on an exercise ball" />
+            <div className="services-hero__art">
+              <FallbackImage src="/images/services-personalized-care.jpeg" fallback="/images/services-hero.png" alt="DreamCare physical therapist providing personalized shoulder treatment" />
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* Pricing list */}
-      <section className="section">
+      <section id="treatments" className="section section--services-treatments">
         <div className="shell">
-          <Reveal className="section-head section-head--split">
+          <Reveal className="services-treatments__head">
             <div>
-              <p className="eyebrow">Treatments & rates</p>
-              <h2 className="h2">All sessions are <em>1-on-1</em> with a Doctor of PT.</h2>
+              <p className="eyebrow">Treatments</p>
+              <h2 className="h2">Personalized physical therapy for <em>every stage of recovery.</em></h2>
+              <p className="lead">One-on-one care with a Doctor of PT. Each session is tailored to your needs, your goals, and your life.</p>
             </div>
-            <Link to="/book" className="btn btn--ink">Book any service →</Link>
+            <Link to="/book" className="services-treatments__button">
+              <span>Book any service</span>
+              <Icon name="arrow" size={18} />
+            </Link>
           </Reveal>
 
-          <Reveal className="price-list">
+          <Reveal className="services-treatment-list">
             {SERVICES.map((s, i) => (
-              <div key={s.title} className="price-row">
-                <span className="price-row__num">{String(i + 1).padStart(2, '0')}</span>
-                <div className="price-row__title">
-                  <strong>{s.title}</strong>
-                  <span>{s.blurb}</span>
+              <div key={s.title} className="services-treatment-row">
+                <span className="services-treatment-row__icon">
+                  <Icon name={SERVICE_ICONS[i] || 'clipboard'} size={34} />
+                </span>
+                <div className="services-treatment-row__copy">
+                  <h3>{s.title}</h3>
+                  <p>{s.blurb}</p>
                 </div>
-                <span className="price-row__meta">
-                  <Icon name="clock" size={14} style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 4 }} />
-                  {s.duration}
-                </span>
-                <span className="price-row__price">
-                  {s.price ? <>${s.price}</> : <em>Call for rate</em>}
-                </span>
               </div>
             ))}
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section id="process" className="section section--services-process">
+        <div className="shell shell--wide">
+          <Reveal className="services-process__head">
+            <p className="eyebrow">What to expect</p>
+            <h2 className="h2">How treatment is <em>tailored to you.</em></h2>
+            <p className="lead">Every session is one-on-one with a Doctor of PT and customized around your goals and progress.</p>
+          </Reveal>
+
+          <div className="services-process__grid">
+            {PROCESS_STEPS.map((step, i) => (
+              <Reveal key={step.title} delay={(i % 4) + 1} className="services-process-step">
+                <span className="services-process-step__num">{String(i + 1).padStart(2, '0')}</span>
+                <span className="services-process-step__icon"><Icon name={step.icon} size={42} /></span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="services-process__cta" delay={2}>
+            <Icon name="calendar" size={20} />
+            <span>Ready to start your recovery?</span>
+            <Link to="/book">Book an appointment <Icon name="arrow" size={18} /></Link>
           </Reveal>
         </div>
       </section>
@@ -95,31 +142,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="section">
-        <div className="shell shell--wide">
-          <Reveal className="section-head">
-            <p className="eyebrow">What to expect</p>
-            <h2 className="h2">A treatment session, <em>start to finish</em>.</h2>
-          </Reveal>
-
-          <div className="steps-list">
-            {[
-              { t: 'Check-in & re-assess', b: 'Each visit starts with a quick re-assessment so we track real progress, not guesses.' },
-              { t: 'Manual therapy', b: 'Hands-on work including soft tissue release, joint mobilization, cupping and IASTM as indicated.' },
-              { t: 'Exercise progression', b: 'Strength, mobility and neuromuscular work paced to where your body is today.' },
-              { t: 'Home program', b: 'Clear, simple between-session work that fits into your real schedule.' },
-            ].map((step, i) => (
-              <Reveal key={step.t} delay={(i % 4) + 1} className="step">
-                <div className="step__num">{String(i + 1).padStart(2, '0')}</div>
-                <h4 className="h4">{step.t}</h4>
-                <p>{step.b}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="section">
         <div className="shell shell--wide">
@@ -129,7 +151,7 @@ export default function ServicesPage() {
               <h2 className="h2">Start with a <em>comprehensive evaluation</em>.</h2>
               <p>45 minutes with Dr. Ashkani: assessment, treatment direction and a clear next step.</p>
               <div className="btn-row">
-                <Link to="/book" className="btn btn--primary">Book evaluation</Link>
+                <Link to="/book" className="btn btn--primary">Book an appointment</Link>
                 <Link to="/contact" className="btn btn--cream">Ask a question</Link>
               </div>
             </div>

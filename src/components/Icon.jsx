@@ -79,6 +79,39 @@ const ICONS = {
       <path d="M11 10c4 0 7 2 7 6v4M9 12c-2 1-4 3-4 7v1" />
     </g>
   ),
+  treatmentTable: (
+    <g {...STROKE}>
+      <path d="M5 12h14M7 12v7M17 12v7M9 12V9a3 3 0 016 0v3" />
+      <circle cx="12" cy="6" r="2" />
+      <path d="M8 19h8" />
+    </g>
+  ),
+  soundwave: (
+    <g {...STROKE}>
+      <path d="M12 16a4 4 0 100-8 4 4 0 000 8z" />
+      <path d="M7 7a7 7 0 000 10M17 7a7 7 0 010 10M4.5 4.5a10.5 10.5 0 000 15M19.5 4.5a10.5 10.5 0 010 15" />
+    </g>
+  ),
+  headProfile: (
+    <g {...STROKE}>
+      <path d="M10 20v-3H8a3 3 0 01-3-3v-2.5A7 7 0 0112 4a7 7 0 016.7 9" />
+      <path d="M13 20v-2.5c0-1.2.5-2.1 1.5-2.8l1.5-1" />
+      <circle cx="12" cy="11" r="2.2" />
+    </g>
+  ),
+  massage: (
+    <g {...STROKE}>
+      <path d="M7 5c0 3.5-2.5 4.2-2.5 7.3 0 2.4 1.6 4.3 4.2 4.3 1.7 0 2.9-.8 3.8-2" />
+      <path d="M17 5c0 3.5 2.5 4.2 2.5 7.3 0 2.4-1.6 4.3-4.2 4.3-1.7 0-2.9-.8-3.8-2" />
+      <path d="M8.5 20c2.2-1.4 4.8-1.4 7 0M9 8h.01M15 8h.01M11 11h2" />
+    </g>
+  ),
+  laptop: (
+    <g {...STROKE}>
+      <rect x="6" y="5" width="12" height="9" rx="1.5" />
+      <path d="M4 18h16l-2-4H6zM10 9l2 2 3-3" />
+    </g>
+  ),
 }
 
 export default function Icon({ name, size = 22, className = '', strokeWidth }) {
