@@ -114,7 +114,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Insurance band */}
-      <section className="section section--ink">
+      <section className="section section--ink services-insurance">
         <div className="shell shell--wide">
           <div className="grid grid--2" style={{ alignItems: 'center', gap: '3rem' }}>
             <Reveal>
@@ -143,7 +143,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="section">
+      <section className="section services-final-cta">
         <div className="shell shell--wide">
           <Reveal className="cta-banner">
             <div>
