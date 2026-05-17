@@ -150,12 +150,6 @@ export const NAV = {
     { label: 'Services', to: '/services' },
     { label: 'Our Team', to: '/our-team' },
     { label: 'Conditions', to: null, group: 'conditions' },
-    { label: 'Resources', to: null, group: 'resources' },
     { label: 'Contact',  to: '/contact' },
-  ],
-  resources: [
-    { label: 'Testimonials',     to: '/testimonials',    icon: 'star' },
-    { label: 'Patient Stories',  to: '/patient-stories', icon: 'heart' },
-    { label: 'FAQ',              to: '/faq',             icon: 'help'  },
   ],
 }

@@ -6,9 +6,6 @@ import OurTeamPage from './pages/OurTeamPage'
 import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
 import BookPage from './pages/BookPage'
-import TestimonialsPage from './pages/TestimonialsPage'
-import PatientStoriesPage from './pages/PatientStoriesPage'
-import FAQPage from './pages/FAQPage'
 import ConditionRouter from './pages/ConditionRouter'
 import './App.css'
 
@@ -22,9 +19,6 @@ export default function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/book" element={<BookPage />} />
-        <Route path="/testimonials" element={<TestimonialsPage />} />
-        <Route path="/patient-stories" element={<PatientStoriesPage />} />
-        <Route path="/faq" element={<FAQPage />} />
         <Route path="/conditions/:slug" element={<ConditionRouter />} />
 
         {/* Legacy redirects to keep the old DreamCare URLs working */}

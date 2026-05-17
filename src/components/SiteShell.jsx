@@ -45,23 +45,6 @@ function DesktopNav() {
             </div>
           )
         }
-        if (item.group === 'resources') {
-          return (
-            <div className="nav__group" key="resources">
-              <button className="nav__trigger" type="button">
-                Resources <Icon className="nav__chev" name="chev" size={12} />
-              </button>
-              <div className="nav__panel" role="menu">
-                {NAV.resources.map((r) => (
-                  <Link key={r.to} to={r.to} className="nav__panel-link" role="menuitem">
-                    <span><Icon name={r.icon} size={18} /></span>
-                    {r.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )
-        }
         return (
           <NavLink
             key={item.to}
@@ -105,9 +88,6 @@ function MobileDrawer({ open, onClose }) {
           { label: 'Services', to: '/services' },
           { label: 'Our Team', to: '/our-team' },
           { label: 'Contact', to: '/contact' },
-          { label: 'Testimonials', to: '/testimonials' },
-          { label: 'Patient Stories', to: '/patient-stories' },
-          { label: 'FAQ', to: '/faq' },
         ].map((l) => (
           <NavLink
             key={l.to}
