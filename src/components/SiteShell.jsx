@@ -31,12 +31,15 @@ function DesktopNav() {
         if (item.group === 'conditions') {
           return (
             <div className="nav__group" key="conditions">
-              <button className="nav__trigger" type="button">
+              <NavLink
+                to="/conditions"
+                className={({ isActive }) => `nav__trigger${isActive ? ' is-active' : ''}`}
+              >
                 Conditions <Icon className="nav__chev" name="chev" size={12} />
-              </button>
+              </NavLink>
               <div className="nav__panel" role="menu">
                 {CONDITIONS.map((c) => (
-                  <Link key={c.slug} to={`/conditions/${c.slug}`} className="nav__panel-link" role="menuitem">
+                  <Link key={c.slug} to={`/conditions#${c.slug}`} className="nav__panel-link" role="menuitem">
                     <span><Icon name={c.icon} size={18} /></span>
                     {c.label}
                   </Link>
@@ -87,6 +90,7 @@ function MobileDrawer({ open, onClose }) {
           { label: 'About', to: '/about' },
           { label: 'Services', to: '/services' },
           { label: 'Our Team', to: '/our-team' },
+          { label: 'Conditions', to: '/conditions' },
           { label: 'Contact', to: '/contact' },
         ].map((l) => (
           <NavLink
@@ -104,7 +108,7 @@ function MobileDrawer({ open, onClose }) {
         {CONDITIONS.map((c) => (
           <NavLink
             key={c.slug}
-            to={`/conditions/${c.slug}`}
+            to={`/conditions#${c.slug}`}
             className={({ isActive }) => `drawer__link${isActive ? ' is-active' : ''}`}
             onClick={onClose}
           >
@@ -198,8 +202,9 @@ export default function SiteShell() {
 
             <div className="footer-col">
               <h5>Conditions We Treat</h5>
+              <Link to="/conditions">All Conditions</Link>
               {CONDITIONS.map((c) => (
-                <Link key={c.slug} to={`/conditions/${c.slug}`}>{c.label}</Link>
+                <Link key={c.slug} to={`/conditions#${c.slug}`}>{c.label}</Link>
               ))}
             </div>
 
@@ -222,7 +227,7 @@ export default function SiteShell() {
 
           <div className="site-footer__bottom">
             <span>© {new Date().getFullYear()} DreamCare Physical Therapy, Sport and Wellness.</span>
-            <span className="site-footer__copyright">&copy; {new Date().getFullYear()} DreamCare PT. All rights reserved.</span>
+            <span className="site-footer__copyright">&copy; {new Date().getFullYear()} DreamCare Physical Therapy, Sport and Wellness. All rights reserved.</span>
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Use</Link>
           </div>

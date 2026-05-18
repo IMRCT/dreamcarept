@@ -2,14 +2,14 @@
 
 export const BRAND = {
   name: 'DreamCare PT',
-  full: 'DreamCare PT, Sport and Wellness',
+  full: 'DreamCare Physical Therapy, Sport and Wellness',
   tagline: 'DreamCare. You Deserve It.',
   doctor: 'Dr. Ashkan Ashkani, PT, DPT, CMTPT, COMT',
   phone: '+1 (323) 508-3002',
   phoneRaw: '+13235083002',
   email: 'dreamcarept@gmail.com',
-  address: '13425 Ventura Blvd, Ste 102',
-  city: 'Sherman Oaks, CA',
+  address: '453 S Spring Street Ste 400',
+  city: 'Los Angeles, CA 90013',
   hours: [
     { day: 'Mon to Fri', time: '8:00 am to 6:00 pm' },
     { day: 'Saturday', time: '8:00 am to 6:00 pm' },

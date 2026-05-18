@@ -380,7 +380,7 @@ export default function HomePage() {
               return (
                 <Reveal key={c.slug} delay={(i % 3) + 1}>
                   <Link
-                    to={`/conditions/${c.slug}`}
+                    to={`/conditions#${c.slug}`}
                     className={`cond-card${c.tileImage ? ' cond-card--photo' : ''}`}
                     style={c.tileImage ? {
                       '--cond-image': `url(${c.tileImage})`,

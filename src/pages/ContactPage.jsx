@@ -1,32 +1,57 @@
+import FallbackImage from '../components/FallbackImage'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
 import { BRAND } from '../data/site'
 
+const CONTACT_HIGHLIGHTS = [
+  { icon: 'calendar', title: 'Same-Day Responses', body: 'We aim to get back to you the same business day.' },
+  { icon: 'user', title: 'Personalized Support', body: 'Our team helps match you with the right care and therapist.' },
+  { icon: 'shield', title: 'Insurance Friendly', body: 'We\'ll help verify your benefits and answer your questions.' },
+  { icon: 'pin', title: 'Wherever You Are in Southern California', body: 'We bring personalized physical therapy care to you anywhere in Southern California.' },
+]
+
+const CONTACT_AREAS = ['Los Angeles', 'Orange County', 'San Diego', 'San Fernando Valley']
+
 export default function ContactPage() {
   return (
     <>
-      <section className="inner-hero">
+      <section className="contact-hero">
         <div className="shell shell--wide">
-          <Reveal className="inner-hero__grid">
-            <div>
+          <Reveal className="contact-hero__grid">
+            <div className="contact-hero__copy">
               <p className="eyebrow">Contact DreamCare</p>
-              <h1 className="h1">Talk <em>directly</em> with a doctor of physical therapy.</h1>
-              <p className="lead" style={{ marginTop: '1.4rem' }}>
-                Questions about your symptoms, insurance or whether PT is the right fit?
-                Reach out and we'll get back to you the same business day.
+              <h1 className="h1">Talk with the <em>DreamCare</em> team.</h1>
+              <span className="contact-hero__rule" aria-hidden="true" />
+              <p className="lead">
+                Questions about your symptoms, insurance, or which service is right for you? Reach out and our team will help you take the next step.
               </p>
+              <div className="contact-hero__actions">
+                <a href={`tel:${BRAND.phoneRaw}`} className="contact-hero-action contact-hero-action--primary">
+                  <Icon name="phone" size={28} />
+                  <span><strong>Call us</strong>{BRAND.phone}</span>
+                </a>
+                <a href={`mailto:${BRAND.email}`} className="contact-hero-action">
+                  <Icon name="mail" size={28} />
+                  <span><strong>Send a message</strong>We&apos;ll reply the same day</span>
+                </a>
+              </div>
             </div>
-            <div className="inner-hero__art">
-              <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-                <defs><linearGradient id="cgrad" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#DCC6EE" /><stop offset="1" stopColor="#F5DDF0" /></linearGradient></defs>
-                <rect width="400" height="320" fill="url(#cgrad)" />
-                <g stroke="#8B2FB7" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="100" y="80" width="200" height="160" rx="20" fill="#FFFFFF" />
-                  <path d="M100 100 L200 170 L300 100" />
-                  <circle cx="320" cy="80" r="12" fill="#E04E8B" stroke="none" />
-                </g>
-              </svg>
+
+            <div className="contact-hero__image">
+              <FallbackImage src="/images/home-hero-dreamcare.jpeg" fallback="/images/doctor-led-treatment.webp" alt="DreamCare therapist helping a patient during a visit" />
             </div>
+          </Reveal>
+
+          <Reveal delay={1} className="contact-hero__highlights">
+            {CONTACT_HIGHLIGHTS.map((item) => (
+              <article key={item.title} className="contact-highlight">
+                <span><Icon name={item.icon} size={32} /></span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
+              </article>
+            ))}
           </Reveal>
         </div>
       </section>
@@ -36,7 +61,7 @@ export default function ContactPage() {
           <div className="contact-grid">
             <Reveal className="contact-info">
               <p className="eyebrow">Reach us</p>
-              <h3 className="h3">DreamCare PT, Sport and Wellness</h3>
+              <h3 className="h3">{BRAND.full}</h3>
               <p className="lead">{BRAND.address}, {BRAND.city}</p>
 
               <div className="contact-row">
@@ -56,7 +81,7 @@ export default function ContactPage() {
               <div className="contact-row">
                 <div className="ico"><Icon name="pin" size={18} /></div>
                 <div>
-                  <strong>Studio</strong>
+                  <strong>Address</strong>
                   <span>{BRAND.address}<br />{BRAND.city}</span>
                 </div>
               </div>
@@ -104,15 +129,16 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section section--mint">
-        <div className="shell shell--wide" style={{ textAlign: 'center' }}>
-          <Reveal>
-            <p className="eyebrow" style={{ justifyContent: 'center' }}>Service areas</p>
-            <h2 className="h2" style={{ marginBottom: '2rem' }}>Patients come to us from <em>across LA</em>.</h2>
-            <div className="locations">
-              {BRAND.serviceAreas.map((a) => (
-                <span key={a} className="location-pill">
-                  <Icon name="pin" size={14} /> {a}
+      <section className="section contact-service-areas">
+        <div className="shell shell--wide">
+          <Reveal className="contact-service-areas__head">
+            <p className="eyebrow">Service areas</p>
+            <h2 className="h2">Serving communities across <em>Southern California.</em></h2>
+            <p>Los Angeles <span /> Orange County <span /> San Diego <span /> and San Fernando Valley</p>
+            <div className="contact-service-areas__pills">
+              {CONTACT_AREAS.map((area) => (
+                <span key={area} className="contact-service-pill">
+                  <Icon name="pin" size={22} /> {area}
                 </span>
               ))}
             </div>

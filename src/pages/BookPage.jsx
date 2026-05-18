@@ -65,7 +65,7 @@ export default function BookPage() {
                   </label>
                   <label>Visit format
                     <select defaultValue="In-clinic">
-                      <option>In-clinic (Sherman Oaks)</option>
+                      <option>In-clinic (Los Angeles)</option>
                       <option>Telehealth</option>
                     </select>
                   </label>
@@ -117,7 +117,7 @@ export default function BookPage() {
               <div className="contact-row">
                 <div className="ico"><Icon name="pin" size={18} /></div>
                 <div>
-                  <strong>Sherman Oaks studio</strong>
+                  <strong>Clinic address</strong>
                   <span>{BRAND.address}, {BRAND.city}</span>
                 </div>
               </div>
