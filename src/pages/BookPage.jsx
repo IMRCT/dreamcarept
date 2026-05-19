@@ -6,45 +6,37 @@ import { BRAND, SERVICES } from '../data/site'
 export default function BookPage() {
   return (
     <>
-      <section className="inner-hero">
-        <div className="shell shell--wide">
-          <Reveal className="inner-hero__grid">
-            <div>
-              <p className="eyebrow">Book an Appointment</p>
-              <h1 className="h1">Book a 45-minute eval with a <em>Doctor of PT</em>.</h1>
-              <p className="lead" style={{ marginTop: '1.4rem' }}>
-                Tell us a little about your goals and we'll confirm a time within one
-                business day. New clients usually start with a comprehensive evaluation
-                so we can build the right plan from day one.
-              </p>
-              <div className="btn-row">
-                <a href={`tel:${BRAND.phoneRaw}`} className="btn btn--ghost">
-                  <Icon name="phone" size={16} /> Call {BRAND.phone}
-                </a>
-              </div>
-            </div>
-            <div className="inner-hero__art">
-              <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-                <defs><linearGradient id="bgrad" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#FBE7B8" /><stop offset="1" stopColor="#DCC6EE" /></linearGradient></defs>
-                <rect width="400" height="320" fill="url(#bgrad)" />
-                <g stroke="#8B2FB7" strokeWidth="3" fill="none" strokeLinecap="round">
-                  <rect x="80" y="60" width="240" height="200" rx="20" fill="#FFFFFF" />
-                  <path d="M80 100 L320 100" />
-                  <path d="M120 80 L120 60 M180 80 L180 60 M240 80 L240 60 M280 80 L280 60" />
-                  <rect x="120" y="130" width="40" height="30" rx="6" fill="#E04E8B" stroke="none" />
-                  <rect x="180" y="130" width="40" height="30" rx="6" fill="#DCC6EE" />
-                  <rect x="240" y="130" width="40" height="30" rx="6" fill="#FBE7B8" stroke="none" />
-                  <rect x="120" y="180" width="40" height="30" rx="6" fill="#DCC6EE" />
-                  <rect x="180" y="180" width="40" height="30" rx="6" fill="#FFFFFF" />
-                  <rect x="240" y="180" width="40" height="30" rx="6" fill="#A24BCC" stroke="none" />
-                </g>
-              </svg>
+      <section className="book-hero">
+        <div className="shell shell--wide book-hero__layout">
+          <Reveal className="book-hero__content">
+            <p className="eyebrow book-hero__eyebrow">
+              <Icon name="plus" size={16} /> Book an Appointment
+            </p>
+            <h1 className="h1 book-hero__title">Book a 45-minute eval with a <em>Doctor of PT</em>.</h1>
+            <p className="lead book-hero__lead">
+              Tell us a little about your goals and we'll confirm a time within one
+              business day. New clients usually start with a comprehensive evaluation
+              so we can build the right plan from day one.
+            </p>
+            <div className="book-hero__actions">
+              <a href="#booking-request" className="btn btn--primary book-hero__primary">
+                <Icon name="calendar" size={18} />
+                <span>Schedule Your Appointment</span>
+                <Icon name="arrow" size={18} />
+              </a>
+              <a href={`tel:${BRAND.phoneRaw}`} className="btn btn--ghost book-hero__phone">
+                <Icon name="phone" size={18} />
+                <span>Call Us: {BRAND.phone.replace('+1 ', '')}</span>
+              </a>
             </div>
           </Reveal>
+          <div className="book-hero__media" aria-hidden="true">
+            <img src="/images/book-appointment-hero.jpeg" alt="" />
+          </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" id="booking-request">
         <div className="shell">
           <div className="contact-grid">
             <Reveal>
