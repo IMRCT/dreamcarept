@@ -30,6 +30,8 @@ const ICONS = {
   close: <path d="M6 6l12 12M18 6L6 18" {...STROKE} />,
   spark: <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l3 3M15 15l3 3M6 18l3-3M15 9l3-3" {...STROKE} />,
   shield: <path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z" {...STROKE} />,
+  briefcase: <g {...STROKE}><rect x="4" y="7" width="16" height="12" rx="2" /><path d="M9 7V5h6v2M4 12h16M10 12v2h4v-2" /></g>,
+  car: <g {...STROKE}><path d="M5 15h14l-1.5-5.2A3 3 0 0014.6 8H9.4a3 3 0 00-2.9 1.8L5 15z" /><path d="M6 15v3M18 15v3M7.5 18h.01M16.5 18h.01M8 12h8" /></g>,
   hands: <g {...STROKE}><path d="M6 12V8a2 2 0 014 0v4M10 12V6a2 2 0 014 0v6M14 12V8a2 2 0 014 0v6c0 4-3 6-6 6s-6-2-6-6v-2" /></g>,
   home: <path d="M4 11l8-7 8 7v8a2 2 0 01-2 2h-3v-6h-6v6H6a2 2 0 01-2-2v-8z" {...STROKE} />,
   user: <g {...STROKE}><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0116 0" /></g>,

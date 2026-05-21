@@ -24,6 +24,29 @@ const PROCESS_STEPS = [
   { icon: 'home', title: 'Home program', body: 'Simple between-session guidance designed for real life.' },
 ]
 
+const INSURANCE_ACCESS = [
+  {
+    icon: 'shield',
+    title: 'PPO Insurance Plans',
+    body: 'We are in-network with many major PPO plans.',
+  },
+  {
+    icon: 'user',
+    title: 'Medicare',
+    body: 'We accept Medicare for eligible patients.',
+  },
+  {
+    icon: 'briefcase',
+    title: 'Workers’ Compensation',
+    body: 'We work with most workers’ comp insurance.',
+  },
+  {
+    icon: 'car',
+    title: 'Personal Injury / Auto Accident Cases',
+    body: 'Care for auto accident and injury related cases.',
+  },
+]
+
 export default function ServicesPage() {
   return (
     <>
@@ -114,31 +137,35 @@ export default function ServicesPage() {
       </section>
 
       {/* Insurance band */}
-      <section className="section section--ink services-insurance">
-        <div className="shell shell--wide">
-          <div className="grid grid--2" style={{ alignItems: 'center', gap: '3rem' }}>
-            <Reveal>
-              <p className="eyebrow">Insurance & access</p>
-              <h2 className="h2">We accept <em>nearly all major</em> insurance plans.</h2>
-              <p className="lead" style={{ marginTop: '1.25rem' }}>
-                Some plans are accepted without a doctor's referral. Call us first and we'll
-                check coverage so you can skip the wait.
-              </p>
-              <div className="btn-row">
-                <a href={`tel:${BRAND.phoneRaw}`} className="btn btn--primary">
-                  <Icon name="phone" size={16} /> Verify coverage
-                </a>
-              </div>
-            </Reveal>
+      <section className="section services-insurance">
+        <div className="shell shell--wide services-insurance__layout">
+          <Reveal className="services-insurance__copy">
+            <p className="eyebrow">Insurance & access</p>
+            <h2 className="h2">We work with many <em>major insurance</em> plans.</h2>
+            <p className="lead">
+              Our goal is to make your care simple and stress-free. We’re in-network with
+              many major PPO plans and Medicare, and we accept workers’ comp and personal
+              injury cases.
+            </p>
+            <a href={`tel:${BRAND.phoneRaw}`} className="btn btn--primary services-insurance__button">
+              <Icon name="phone" size={16} /> Verify coverage
+            </a>
+            <p className="services-insurance__note">We’ll check your benefits so you can skip the wait.</p>
+          </Reveal>
 
-            <Reveal delay={1} className="grid grid--2" style={{ gap: '0.75rem' }}>
-              {['PPO plans', 'Medicare', 'Workers\' comp', 'Auto / personal injury', 'Southpacific PT', 'Cedars Orthopedics'].map((label) => (
-                <div key={label} className="card" style={{ padding: '1.1rem 1.2rem', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: '#F5EFFB', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                  <Icon name="check" size={18} /> {label}
+          <Reveal delay={1} className="services-insurance__cards">
+            {INSURANCE_ACCESS.map((item) => (
+              <article key={item.title} className="services-insurance-card">
+                <span className="services-insurance-card__icon">
+                  <Icon name={item.icon} size={34} />
+                </span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
                 </div>
-              ))}
-            </Reveal>
-          </div>
+              </article>
+            ))}
+          </Reveal>
         </div>
       </section>
 
@@ -149,7 +176,7 @@ export default function ServicesPage() {
             <div>
               <p className="eyebrow">Not sure what fits?</p>
               <h2 className="h2">Start with a <em>comprehensive evaluation</em>.</h2>
-              <p>45 minutes with Dr. Ashkani: assessment, treatment direction and a clear next step.</p>
+              <p>We’ll assess your condition, understand your goals, and create a personalized plan to help you move better.</p>
               <div className="btn-row">
                 <Link to="/book" className="btn btn--primary">Book an appointment</Link>
                 <Link to="/contact" className="btn btn--cream">Ask a question</Link>
