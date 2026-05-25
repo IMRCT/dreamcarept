@@ -23,10 +23,10 @@ export default function BookPage() {
         status: 'success',
         message: 'Thank you. Your appointment request has been sent to DreamCare.',
       })
-    } catch {
+    } catch (error) {
       setSubmission({
         status: 'error',
-        message: 'Sorry, the request could not be sent. Please call or email DreamCare directly.',
+        message: error?.message || 'Sorry, the request could not be sent. Please call or email DreamCare directly.',
       })
     }
   }

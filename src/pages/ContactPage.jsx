@@ -32,10 +32,10 @@ export default function ContactPage() {
         status: 'success',
         message: 'Thank you. Your message has been sent to DreamCare.',
       })
-    } catch {
+    } catch (error) {
       setSubmission({
         status: 'error',
-        message: 'Sorry, the message could not be sent. Please call or email DreamCare directly.',
+        message: error?.message || 'Sorry, the message could not be sent. Please call or email DreamCare directly.',
       })
     }
   }

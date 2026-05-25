@@ -23,7 +23,19 @@ export async function submitFormToEmail(form, { subject, source }) {
   payload['Form source'] = source
   payload['Submitted at'] = new Date().toLocaleString()
 
-  return Promise.all(FORM_SUBMIT_RECIPIENTS.map((email) => submitToRecipient(email, payload)))
+  const results = await Promise.allSettled(
+    FORM_SUBMIT_RECIPIENTS.map((email) => submitToRecipient(email, payload)),
+  )
+
+  const sent = results.filter((result) => result.status === 'fulfilled')
+  const failed = results.filter((result) => result.status === 'rejected')
+
+  if (sent.length > 0) {
+    return { success: true, sent: sent.length, failed: failed.length }
+  }
+
+  const firstError = failed[0]?.reason
+  throw new Error(firstError?.message || 'The message could not be sent.')
 }
 
 async function submitToRecipient(email, payload) {
@@ -44,7 +56,8 @@ async function submitToRecipient(email, payload) {
   }
 
   if (!response.ok) {
-    throw new Error(data?.message || 'The message could not be sent.')
+    const message = data?.message || data?.error || 'The message could not be sent.'
+    throw new Error(message)
   }
 
   return data
