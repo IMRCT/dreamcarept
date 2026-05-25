@@ -4658,6 +4658,43 @@
   box-shadow: 0 0 0 4px rgba(109, 85, 242, 0.11);
 }
 
+.form-honey {
+  display: none !important;
+}
+
+.form-status {
+  margin: -0.35rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.form-status--loading {
+  color: var(--primary);
+  background: rgba(228, 235, 255, 0.72);
+  border: 1px solid rgba(109, 85, 242, 0.18);
+}
+
+.form-status--success {
+  color: #0D5C5E;
+  background: rgba(221, 248, 249, 0.9);
+  border: 1px solid rgba(34, 199, 201, 0.32);
+}
+
+.form-status--error {
+  color: #8A1F3D;
+  background: rgba(255, 238, 244, 0.92);
+  border: 1px solid rgba(224, 78, 139, 0.24);
+}
+
+.form-card .btn:disabled {
+  cursor: progress;
+  opacity: 0.72;
+  transform: none;
+}
+
 @media (max-width: 720px) { .form-grid { grid-template-columns: 1fr; } }
 
 @media (max-width: 540px) {

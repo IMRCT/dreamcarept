@@ -1,9 +1,36 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
 import { BRAND, SERVICES } from '../data/site'
+import { FORM_SUBMIT_ACTION, submitFormToEmail } from '../utils/formSubmit'
 
 export default function BookPage() {
+  const [submission, setSubmission] = useState({ status: 'idle', message: '' })
+
+  async function handleBookingSubmit(event) {
+    event.preventDefault()
+    const form = event.currentTarget
+    setSubmission({ status: 'loading', message: 'Sending your appointment request...' })
+
+    try {
+      await submitFormToEmail(form, {
+        subject: 'New DreamCare appointment request',
+        source: 'Book appointment page form',
+      })
+      form.reset()
+      setSubmission({
+        status: 'success',
+        message: 'Thank you. Your appointment request has been sent to DreamCare.',
+      })
+    } catch {
+      setSubmission({
+        status: 'error',
+        message: 'Sorry, the request could not be sent. Please call or email DreamCare directly.',
+      })
+    }
+  }
+
   return (
     <>
       <section className="book-hero">
@@ -40,39 +67,52 @@ export default function BookPage() {
         <div className="shell">
           <div className="contact-grid">
             <Reveal>
-              <form className="form-card" onSubmit={(e) => e.preventDefault()}>
+              <form className="form-card" action={FORM_SUBMIT_ACTION} method="POST" onSubmit={handleBookingSubmit}>
+                <input type="hidden" name="_subject" value="New DreamCare appointment request" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input className="form-honey" type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true" />
                 <div>
                   <p className="eyebrow">Booking request</p>
                   <h2 className="h2" style={{ fontSize: '1.6rem' }}>Tell us about your visit.</h2>
                 </div>
                 <div className="form-grid">
-                  <label>Full name<input type="text" placeholder="Jordan Parker" /></label>
-                  <label>Date of birth<input type="date" /></label>
-                  <label>Email<input type="email" placeholder="jordan@example.com" /></label>
-                  <label>Phone<input type="tel" placeholder="(555) 123-4567" /></label>
+                  <label>Full name<input name="name" type="text" placeholder="Jordan Parker" required /></label>
+                  <label>Date of birth<input name="dateOfBirth" type="date" /></label>
+                  <label>Email<input name="email" type="email" placeholder="jordan@example.com" required /></label>
+                  <label>Phone<input name="phone" type="tel" placeholder="(555) 123-4567" required /></label>
                   <label>Visit type
-                    <select defaultValue="Comprehensive Evaluation">
+                    <select name="visitType" defaultValue="Comprehensive Evaluation">
                       {SERVICES.map((s) => <option key={s.title}>{s.title}</option>)}
                     </select>
                   </label>
                   <label>Visit format
-                    <select defaultValue="In-clinic">
+                    <select name="visitFormat" defaultValue="In-clinic">
                       <option>In-clinic (Los Angeles)</option>
                       <option>Telehealth</option>
                     </select>
                   </label>
                   <label className="form-grid--full">Preferred days / times
-                    <input type="text" placeholder="e.g. weekday mornings, Saturdays after 10am" />
+                    <input name="preferredDaysTimes" type="text" placeholder="e.g. weekday mornings, Saturdays after 10am" />
                   </label>
                   <label className="form-grid--full">What is bringing you in?
-                    <textarea rows="5" placeholder="Brief summary of symptoms, goals, prior treatment or recent surgery." />
+                    <textarea name="visitReason" rows="5" placeholder="Brief summary of symptoms, goals, prior treatment or recent surgery." required />
                   </label>
                   <label className="form-grid--full">Insurance (optional)
-                    <input type="text" placeholder="Carrier and plan, if you'd like us to verify coverage" />
+                    <input name="insurance" type="text" placeholder="Carrier and plan, if you'd like us to verify coverage" />
                   </label>
                 </div>
-                <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }}>
-                  Request appointment
+                {submission.message && (
+                  <p
+                    className={`form-status form-status--${submission.status}`}
+                    role={submission.status === 'error' ? 'alert' : 'status'}
+                    aria-live="polite"
+                  >
+                    {submission.message}
+                  </p>
+                )}
+                <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }} disabled={submission.status === 'loading'}>
+                  {submission.status === 'loading' ? 'Sending...' : 'Request appointment'}
                 </button>
               </form>
             </Reveal>

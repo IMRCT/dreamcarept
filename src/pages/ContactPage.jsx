@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import FallbackImage from '../components/FallbackImage'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
 import { BRAND } from '../data/site'
+import { FORM_SUBMIT_ACTION, submitFormToEmail } from '../utils/formSubmit'
 
 const CONTACT_HIGHLIGHTS = [
   { icon: 'calendar', title: 'Same-Day Responses', body: 'We aim to get back to you the same business day.' },
@@ -13,6 +15,31 @@ const CONTACT_HIGHLIGHTS = [
 const CONTACT_AREAS = ['Los Angeles', 'Orange County', 'San Diego', 'San Fernando Valley']
 
 export default function ContactPage() {
+  const [submission, setSubmission] = useState({ status: 'idle', message: '' })
+
+  async function handleContactSubmit(event) {
+    event.preventDefault()
+    const form = event.currentTarget
+    setSubmission({ status: 'loading', message: 'Sending your message...' })
+
+    try {
+      await submitFormToEmail(form, {
+        subject: 'New DreamCare website message',
+        source: 'Contact page form',
+      })
+      form.reset()
+      setSubmission({
+        status: 'success',
+        message: 'Thank you. Your message has been sent to DreamCare.',
+      })
+    } catch {
+      setSubmission({
+        status: 'error',
+        message: 'Sorry, the message could not be sent. Please call or email DreamCare directly.',
+      })
+    }
+  }
+
   return (
     <>
       <section className="contact-hero">
@@ -97,17 +124,21 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal delay={1}>
-              <form className="form-card" onSubmit={(e) => e.preventDefault()}>
+              <form className="form-card" action={FORM_SUBMIT_ACTION} method="POST" onSubmit={handleContactSubmit}>
+                <input type="hidden" name="_subject" value="New DreamCare website message" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input className="form-honey" type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true" />
                 <div>
                   <p className="eyebrow">Send a message</p>
                   <h3 className="h3">We respond within one business day.</h3>
                 </div>
                 <div className="form-grid">
-                  <label>Full name<input type="text" placeholder="Jordan Parker" /></label>
-                  <label>Email<input type="email" placeholder="jordan@example.com" /></label>
-                  <label>Phone<input type="tel" placeholder="(555) 123-4567" /></label>
+                  <label>Full name<input name="name" type="text" placeholder="Jordan Parker" required /></label>
+                  <label>Email<input name="email" type="email" placeholder="jordan@example.com" required /></label>
+                  <label>Phone<input name="phone" type="tel" placeholder="(555) 123-4567" /></label>
                   <label>Topic
-                    <select defaultValue="General">
+                    <select name="topic" defaultValue="General inquiry">
                       <option>General inquiry</option>
                       <option>Book an appointment</option>
                       <option>Insurance & coverage</option>
@@ -117,11 +148,20 @@ export default function ContactPage() {
                     </select>
                   </label>
                   <label className="form-grid--full">Message
-                    <textarea rows="6" placeholder="Tell us about your symptoms, goals or insurance situation." />
+                    <textarea name="message" rows="6" placeholder="Tell us about your symptoms, goals or insurance situation." required />
                   </label>
                 </div>
-                <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }}>
-                  Send message
+                {submission.message && (
+                  <p
+                    className={`form-status form-status--${submission.status}`}
+                    role={submission.status === 'error' ? 'alert' : 'status'}
+                    aria-live="polite"
+                  >
+                    {submission.message}
+                  </p>
+                )}
+                <button type="submit" className="btn btn--primary" style={{ alignSelf: 'flex-start' }} disabled={submission.status === 'loading'}>
+                  {submission.status === 'loading' ? 'Sending...' : 'Send message'}
                 </button>
               </form>
             </Reveal>
