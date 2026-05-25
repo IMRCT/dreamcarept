@@ -1,6 +1,6 @@
 import { BRAND } from '../data/site'
 
-export const FORM_SUBMIT_ACTION = `https://formsubmit.co/${BRAND.email}`
+export const FORM_SUBMIT_ACTION = '/api/send-form'
 
 export async function submitFormToEmail(form, { subject, source }) {
   const formData = new FormData(form)
