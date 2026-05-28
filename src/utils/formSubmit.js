@@ -1,6 +1,6 @@
-import { BRAND } from '../data/site'
+export const FORM_SUBMIT_ACTION = 'https://api.web3forms.com/submit'
 
-export const FORM_SUBMIT_ACTION = '/api/send-form'
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
 
 export async function submitFormToEmail(form, { subject, source }) {
   const formData = new FormData(form)
@@ -9,24 +9,26 @@ export async function submitFormToEmail(form, { subject, source }) {
     return { success: true }
   }
 
-  const fields = {}
+  if (!WEB3FORMS_ACCESS_KEY) {
+    throw new Error('Web3Forms is not configured yet. Add VITE_WEB3FORMS_ACCESS_KEY to your environment variables.')
+  }
+
+  const payload = new FormData()
+  payload.append('access_key', WEB3FORMS_ACCESS_KEY)
+  payload.append('subject', subject)
+  payload.append('from_name', 'DreamCare Website')
+  payload.append('Form source', source)
+
   formData.forEach((value, key) => {
     const normalized = typeof value === 'string' ? value.trim() : value
     if (key.startsWith('_') || normalized === '') return
-    fields[key] = normalized
+    payload.append(labelize(key), normalized)
   })
 
-  const response = await fetch('/api/send-form', {
+  const response = await fetch(FORM_SUBMIT_ACTION, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({
-      subject,
-      source,
-      fields,
-    }),
+    headers: { Accept: 'application/json' },
+    body: payload,
   })
 
   let data = null
@@ -41,4 +43,13 @@ export async function submitFormToEmail(form, { subject, source }) {
   }
 
   return data
+}
+
+function labelize(key) {
+  return key
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^./, (letter) => letter.toUpperCase())
 }

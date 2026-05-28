@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import { FORM_SUBMIT_ACTION, submitFormToEmail } from '../utils/formSubmit'
+
 const visitPrograms = [
   {
     title: 'In-home physical therapy',
@@ -31,6 +34,31 @@ const visitSteps = [
 ]
 
 function RequestStaffPage() {
+  const [submission, setSubmission] = useState({ status: 'idle', message: '' })
+
+  async function handleVisitRequestSubmit(event) {
+    event.preventDefault()
+    const form = event.currentTarget
+    setSubmission({ status: 'loading', message: 'Sending your visit request...' })
+
+    try {
+      await submitFormToEmail(form, {
+        subject: 'New DreamCare visit request',
+        source: 'Request visit page form',
+      })
+      form.reset()
+      setSubmission({
+        status: 'success',
+        message: 'Thank you. Your visit request has been sent to DreamCare.',
+      })
+    } catch (error) {
+      setSubmission({
+        status: 'error',
+        message: error?.message || 'Sorry, the request could not be sent. Please call or email DreamCare directly.',
+      })
+    }
+  }
+
   return (
     <>
       <section className="page-section page-section--hero page-section--inner">
@@ -74,7 +102,11 @@ function RequestStaffPage() {
 
       <section className="page-section page-section--band">
         <div className="form-layout">
-          <form className="surface-card form-card">
+          <form className="surface-card form-card" action={FORM_SUBMIT_ACTION} method="POST" onSubmit={handleVisitRequestSubmit}>
+            <input type="hidden" name="_subject" value="New DreamCare visit request" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input className="form-honey" type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true" />
             <div className="section-head section-head--compact">
               <p className="eyebrow">Visit Request Form</p>
               <h2 className="section-title">Share the basics and we can shape the home PT visit from there.</h2>
@@ -83,40 +115,52 @@ function RequestStaffPage() {
             <div className="form-grid">
               <label>
                 Client name
-                <input placeholder="Jordan Parker" type="text" />
+                <input name="clientName" placeholder="Jordan Parker" type="text" required />
               </label>
               <label>
                 Contact phone
-                <input placeholder="(555) 123-4567" type="text" />
+                <input name="phone" placeholder="(555) 123-4567" type="tel" required />
               </label>
               <label>
                 Email
-                <input placeholder="jordan@example.com" type="email" />
+                <input name="email" placeholder="jordan@example.com" type="email" required />
               </label>
               <label>
                 Visit type
-                <select defaultValue="In-home physical therapy">
+                <select name="visitType" defaultValue="In-home physical therapy">
                   <option>In-home physical therapy</option>
                   <option>Post-surgical recovery</option>
                   <option>Sport rehabilitation</option>
                   <option>Wellness and mobility support</option>
                 </select>
               </label>
-              <label className="form-grid__full">
+              <label className="form-grid--full">
                 Home address or visit location
-                <input placeholder="123 Main Street, City, State" type="text" />
+                <input name="visitLocation" placeholder="123 Main Street, City, State" type="text" />
               </label>
-              <label className="form-grid__full">
+              <label className="form-grid--full">
                 What support is needed?
                 <textarea
-                  placeholder="Tell DreamCare about the client’s goals, current condition, injury, surgery, or movement concerns."
+                  name="supportNeeded"
+                  placeholder="Tell DreamCare about the client's goals, current condition, injury, surgery, or movement concerns."
                   rows="6"
+                  required
                 />
               </label>
             </div>
 
-            <button className="button button--primary" type="button">
-              Request a Visit
+            {submission.message && (
+              <p
+                className={`form-status form-status--${submission.status}`}
+                role={submission.status === 'error' ? 'alert' : 'status'}
+                aria-live="polite"
+              >
+                {submission.message}
+              </p>
+            )}
+
+            <button className="btn btn--primary" type="submit" disabled={submission.status === 'loading'}>
+              {submission.status === 'loading' ? 'Sending...' : 'Request a Visit'}
             </button>
           </form>
 

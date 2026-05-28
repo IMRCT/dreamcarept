@@ -1,7 +1,7 @@
 /* global process */
 import nodemailer from 'nodemailer'
 
-const RECIPIENTS = ['dreamcarept@gmail.com', 'imrctsite@gmail.com']
+const RECIPIENTS = ['dreamcarept@gmail.com']
 
 export default async function handler(req, res) {
   setCorsHeaders(res)
