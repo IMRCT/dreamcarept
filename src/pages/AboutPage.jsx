@@ -30,7 +30,7 @@ export default function AboutPage() {
                 DreamCare is led by Dr. Ashkan Ashkani, an orthopedic and sports physical therapist, former clinical instructor, and Olympic team therapist. Every visit is one-on-one, every plan is evidence-based, and every program is designed to treat the root cause.
               </p>
               <div className="btn-row">
-                <Link to="/book" className="btn btn--primary">Book with Dr. Ashkani</Link>
+                <Link to="/book" className="btn btn--primary">Book An Appointment</Link>
                 <Link to="/services" className="btn btn--ghost">See services</Link>
               </div>
             </div>

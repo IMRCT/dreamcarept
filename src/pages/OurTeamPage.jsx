@@ -101,9 +101,7 @@ export default function OurTeamPage() {
               <p className="eyebrow">Our team</p>
               <h1 className="h1">The people behind your <em>home recovery</em>.</h1>
               <p className="lead" style={{ marginTop: '1.4rem' }}>
-                DreamCare is built around focused, one-on-one care. Every team
-                member profile is designed to make credentials, specialties and
-                care style easy to understand before your first visit.
+                DreamCare is built around focused, one-on-one care. Our team is committed to helping patients improve mobility, reduce pain, and achieve lasting results through personalized treatment, clinical expertise, and compassionate support every step of the recovery journey.
               </p>
               <div className="btn-row">
                 <Link to="/book" className="btn btn--primary">Book an Appointment</Link>
@@ -134,10 +132,9 @@ export default function OurTeamPage() {
         <div className="shell shell--wide">
           <Reveal className="section-head team-slider__head">
             <p className="eyebrow">Care team profiles</p>
-            <h2 className="h2">Small profile cards for a <em>growing team</em>.</h2>
+            <h2 className="h2">Meet the Professionals Supporting Your Recovery</h2>
             <p className="lead" style={{ marginTop: '1.15rem' }}>
-              The carousel starts with Dr. Ashkani and leaves polished placeholders
-              for future therapists, coordinators and specialty support.
+              Learn more about the clinicians and care professionals dedicated to helping you achieve your recovery goals. Our team combines clinical expertise, personalized treatment, and compassionate care to support every step of your journey.
             </p>
           </Reveal>
 

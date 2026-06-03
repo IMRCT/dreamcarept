@@ -118,7 +118,7 @@ function MobileDrawer({ open, onClose }) {
 
         <div className="drawer__cta">
           <Link to="/book" className="btn btn--primary" onClick={onClose} style={{ width: '100%' }}>
-            Book an Appointment
+            Book An Appointment
           </Link>
         </div>
       </aside>
@@ -152,7 +152,7 @@ export default function SiteShell() {
               <Icon name="phone" size={16} /> {BRAND.phone}
             </a>
             <Link to="/book" className="btn btn--primary btn--small">
-              Book Appointment
+              Book An Appointment
             </Link>
             <button
               className="menu-btn"
