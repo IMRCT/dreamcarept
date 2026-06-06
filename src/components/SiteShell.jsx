@@ -130,9 +130,92 @@ function MobileDrawer({ open, onClose }) {
   )
 }
 
+const DEFAULT_SEO = {
+  title: 'DreamCare PT | In-Home Physical Therapy in Southern California',
+  description:
+    'DreamCare PT provides one-on-one in-home physical therapy, sport rehab, vestibular care, concussion rehab, post-surgical recovery, and wellness care across Southern California.',
+}
+
+const ROUTE_SEO = {
+  '/': DEFAULT_SEO,
+  '/about': {
+    title: 'About DreamCare PT | Physical Therapy in Southern California',
+    description:
+      'Learn about DreamCare PT, an evidence-based physical therapy practice providing personalized home health, sport rehab, and wellness care.',
+  },
+  '/our-team': {
+    title: 'Our Team | DreamCare PT',
+    description:
+      'Meet the DreamCare PT care team providing one-on-one physical therapy, rehab, and wellness support across Southern California.',
+  },
+  '/services': {
+    title: 'Physical Therapy Services | DreamCare PT',
+    description:
+      'Explore DreamCare PT services including in-home physical therapy, post-surgical rehabilitation, vestibular care, concussion rehab, and sport recovery.',
+  },
+  '/conditions': {
+    title: 'Conditions We Treat | DreamCare PT',
+    description:
+      'DreamCare PT treats back pain, neck pain, shoulder pain, knee pain, hip pain, balance concerns, vestibular symptoms, and post-surgical recovery needs.',
+  },
+  '/contact': {
+    title: 'Contact DreamCare PT | Southern California Physical Therapy',
+    description:
+      'Contact DreamCare PT for personalized in-home physical therapy, insurance questions, referrals, and appointment support.',
+  },
+  '/book': {
+    title: 'Book an Appointment | DreamCare PT',
+    description:
+      'Book a one-on-one DreamCare PT evaluation for in-home physical therapy, rehab, and wellness care in Southern California.',
+  },
+  '/refer': {
+    title: 'Refer a Patient | DreamCare PT',
+    description:
+      'Refer a patient to DreamCare PT for personalized in-home physical therapy, post-surgical rehab, and recovery support.',
+  },
+}
+
+function setMeta(attribute, key, content) {
+  let tag = document.head.querySelector(`meta[${attribute}="${key}"]`)
+
+  if (!tag) {
+    tag = document.createElement('meta')
+    tag.setAttribute(attribute, key)
+    document.head.appendChild(tag)
+  }
+
+  tag.setAttribute('content', content)
+}
+
+function setCanonical(pathname) {
+  const href = `https://www.dreamcarept.com${pathname === '/' ? '/' : pathname}`
+  let tag = document.head.querySelector('link[rel="canonical"]')
+
+  if (!tag) {
+    tag = document.createElement('link')
+    tag.setAttribute('rel', 'canonical')
+    document.head.appendChild(tag)
+  }
+
+  tag.setAttribute('href', href)
+  setMeta('property', 'og:url', href)
+}
+
 export default function SiteShell() {
   const location = useLocation()
   const [drawerOpen, setDrawerOpen] = useState(false)
+
+  useEffect(() => {
+    const seo = ROUTE_SEO[location.pathname] ?? DEFAULT_SEO
+
+    document.title = seo.title
+    setMeta('name', 'description', seo.description)
+    setMeta('property', 'og:title', seo.title)
+    setMeta('property', 'og:description', seo.description)
+    setMeta('name', 'twitter:title', seo.title)
+    setMeta('name', 'twitter:description', seo.description)
+    setCanonical(location.pathname)
+  }, [location.pathname])
 
   useEffect(() => {
     if (location.hash) {
@@ -197,7 +280,7 @@ export default function SiteShell() {
 
             <div className="footer-col">
               <h5>Practice</h5>
-              <Link to="/about">About Dr. Ashkani</Link>
+              <Link to="/about">About DreamCare</Link>
               <Link to="/our-team">Our Team</Link>
               <Link to="/services">Services</Link>
               <Link to="/#recovery-path">How It Works</Link>
