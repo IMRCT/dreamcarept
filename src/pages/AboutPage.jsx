@@ -51,7 +51,7 @@ export default function AboutPage() {
 
           <Reveal className="body-text" delay={1} style={{ fontSize: '1.05rem' }}>
             <p style={{ marginBottom: '1.2rem' }}>
-              Dr. Ashkani earned his Doctor of Physical Therapy degree from the University of North Gereinjuryraduating with honors and distinction. Over a decade of clinical practice, he has become nationally and internationally recognized for orthopedic and sports physical therapy.
+              Dr. Ashkani earned his Doctor of Physical Therapy degree from the University of North Georgia, graduating with honors and distinction. Over a decade of clinical practice, he has become nationally and internationally recognized for orthopedic and sports physical therapy.
             </p>
             <p style={{ marginBottom: '1.2rem' }}>
               He has worked with gold medal-winning weightlifting athletes, served as an Olympic and elite athletic team therapist, and mentored Doctor of Physical Therapy students from Columbia University, USC, and the University of Pittsburgh. He also volunteers with the Red Cross and balances clinical work with surfing, swimming, hiking, and travel.

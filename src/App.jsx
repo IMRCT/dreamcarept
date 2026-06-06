@@ -7,6 +7,7 @@ import ServicesPage from './pages/ServicesPage'
 import ConditionsPage from './pages/ConditionsPage'
 import ContactPage from './pages/ContactPage'
 import BookPage from './pages/BookPage'
+import ReferPatientPage from './pages/ReferPatientPage'
 import './App.css'
 
 function ConditionAnchorRedirect() {
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/conditions" element={<ConditionsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/book" element={<BookPage />} />
+        <Route path="/refer" element={<ReferPatientPage />} />
         <Route path="/conditions/:slug" element={<ConditionAnchorRedirect />} />
 
         {/* Legacy redirects to keep the old DreamCare URLs working */}
@@ -37,6 +39,8 @@ export default function App() {
         <Route path="/book-a-visit" element={<Navigate replace to="/book" />} />
         <Route path="/request-staff" element={<Navigate replace to="/book" />} />
         <Route path="/request-home-pt" element={<Navigate replace to="/book" />} />
+        <Route path="/refer-a-patient" element={<Navigate replace to="/refer" />} />
+        <Route path="/refer-patient" element={<Navigate replace to="/refer" />} />
 
         <Route path="*" element={<Navigate replace to="/" />} />
       </Route>

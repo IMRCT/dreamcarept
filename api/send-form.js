@@ -1,7 +1,11 @@
 /* global process */
+import { Buffer } from 'node:buffer'
 import nodemailer from 'nodemailer'
 
-const RECIPIENTS = ['dreamcarept@gmail.com']
+const RECIPIENTS = (process.env.FORM_RECIPIENT_EMAIL || 'referral@dreamcarept.com')
+  .split(',')
+  .map((email) => email.trim())
+  .filter(Boolean)
 
 export default async function handler(req, res) {
   setCorsHeaders(res)
@@ -19,7 +23,8 @@ export default async function handler(req, res) {
   try {
     const body = await readRequestBody(req)
     const fields = body?.fields && typeof body.fields === 'object' ? body.fields : body
-    const subject = body?.subject || fields?._subject || 'New DreamCare website submission'
+    const files = Array.isArray(body?.files) ? body.files : []
+    const subject = body?.subject || fields?.subject || fields?._subject || 'New DreamCare website submission'
     const source = body?.source || fields?.source || 'Website form'
 
     if (!fields || typeof fields !== 'object') {
@@ -40,14 +45,20 @@ export default async function handler(req, res) {
     }
 
     const transporter = createTransporter()
+    const attachments = files.map((file) => ({
+      filename: sanitizeFilename(file.filename),
+      content: file.content,
+      contentType: file.contentType || undefined,
+    }))
     const messages = RECIPIENTS.map((recipient) => (
       transporter.sendMail({
         from: `"DreamCare Website" <${process.env.FORM_FROM_EMAIL || process.env.SMTP_USER}>`,
         to: recipient,
-        replyTo: cleanFields.email || cleanFields.Email || undefined,
+        replyTo: getReplyTo(cleanFields),
         subject,
         text: formatTextEmail(payload),
         html: formatHtmlEmail(payload),
+        attachments,
       })
     ))
 
@@ -85,12 +96,20 @@ function createTransporter() {
 
 function sanitizeFields(fields) {
   return Object.entries(fields).reduce((clean, [key, value]) => {
-    if (!key || key.startsWith('_') || key === 'source') return clean
+    if (!key || key.startsWith('_') || key === 'source' || key === 'subject') return clean
     const normalized = typeof value === 'string' ? value.trim() : value
     if (normalized === '') return clean
     clean[labelize(key)] = normalized
     return clean
   }, {})
+}
+
+function getReplyTo(fields) {
+  return fields.Email || fields['Provider Email'] || fields['Patient Email'] || undefined
+}
+
+function sanitizeFilename(filename = 'attachment') {
+  return String(filename).replace(/[^\w.\- ]+/g, '').trim() || 'attachment'
 }
 
 function labelize(key) {
@@ -138,23 +157,68 @@ function escapeHtml(value) {
 }
 
 async function readRequestBody(req) {
+  if (Buffer.isBuffer(req.body)) return parseBody(req.body, req.headers['content-type'])
   if (req.body && typeof req.body === 'object') return req.body
   if (typeof req.body === 'string') return parseBody(req.body, req.headers['content-type'])
 
-  let raw = ''
+  const chunks = []
   for await (const chunk of req) {
-    raw += chunk
+    chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk))
   }
 
-  return parseBody(raw, req.headers['content-type'])
+  return parseBody(Buffer.concat(chunks), req.headers['content-type'])
 }
 
 function parseBody(raw, contentType = '') {
-  if (!raw) return {}
-  if (contentType.includes('application/x-www-form-urlencoded')) {
-    return Object.fromEntries(new URLSearchParams(raw))
+  if (!raw || raw.length === 0) return {}
+  if (contentType.includes('multipart/form-data')) {
+    return parseMultipartBody(Buffer.isBuffer(raw) ? raw : Buffer.from(raw), contentType)
   }
-  return JSON.parse(raw)
+  const text = Buffer.isBuffer(raw) ? raw.toString('utf8') : raw
+  if (contentType.includes('application/x-www-form-urlencoded')) {
+    return Object.fromEntries(new URLSearchParams(text))
+  }
+  return JSON.parse(text)
+}
+
+function parseMultipartBody(buffer, contentType) {
+  const boundary = contentType.match(/boundary=(?:"([^"]+)"|([^;]+))/)?.[1]
+    || contentType.match(/boundary=(?:"([^"]+)"|([^;]+))/)?.[2]
+
+  if (!boundary) return { fields: {}, files: [] }
+
+  const raw = buffer.toString('binary')
+  const parts = raw.split(`--${boundary}`).slice(1, -1)
+  const fields = {}
+  const files = []
+
+  parts.forEach((part) => {
+    const cleanPart = part.replace(/^\r\n/, '')
+    const headerEnd = cleanPart.indexOf('\r\n\r\n')
+    if (headerEnd === -1) return
+
+    const headerText = cleanPart.slice(0, headerEnd)
+    let body = cleanPart.slice(headerEnd + 4)
+    if (body.endsWith('\r\n')) body = body.slice(0, -2)
+
+    const disposition = headerText.match(/content-disposition:[^\r\n]+/i)?.[0] || ''
+    const name = disposition.match(/name="([^"]+)"/)?.[1]
+    const filename = disposition.match(/filename="([^"]*)"/)?.[1]
+    const contentTypeHeader = headerText.match(/content-type:\s*([^\r\n]+)/i)?.[1]?.trim()
+    if (!name) return
+
+    if (filename) {
+      const content = Buffer.from(body, 'binary')
+      if (content.length === 0) return
+      fields[name] = filename
+      files.push({ fieldName: name, filename, contentType: contentTypeHeader, content })
+      return
+    }
+
+    fields[name] = Buffer.from(body, 'binary').toString('utf8')
+  })
+
+  return { fields, files }
 }
 
 function setCorsHeaders(res) {

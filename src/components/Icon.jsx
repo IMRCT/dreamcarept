@@ -18,6 +18,7 @@ const ICONS = {
   calendar: <g {...STROKE}><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M8 3v4M16 3v4M4 10h16M8 14h.01M12 14h.01M16 14h.01" /></g>,
   phone: <path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v3a2 2 0 01-2 2A14 14 0 014 6a2 2 0 011-2z" {...STROKE} />,
   mail: <g {...STROKE}><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></g>,
+  send: <path d="M21 3L10 14M21 3l-7 18-4-7-7-4 18-7z" {...STROKE} />,
   pin: <g {...STROKE}><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z" /><circle cx="12" cy="9" r="2.5" /></g>,
   clock: <g {...STROKE}><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></g>,
   clipboard: <g {...STROKE}><path d="M9 4h6l1 2h3v15H5V6h3z" /><path d="M9 4v3h6V4M8 12h5M8 16h8" /></g>,

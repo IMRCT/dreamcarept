@@ -92,6 +92,7 @@ function MobileDrawer({ open, onClose }) {
           { label: 'Our Team', to: '/our-team' },
           { label: 'Conditions', to: '/conditions' },
           { label: 'Contact', to: '/contact' },
+          { label: 'Refer a Patient', to: '/refer' },
         ].map((l) => (
           <NavLink
             key={l.to}
@@ -116,8 +117,11 @@ function MobileDrawer({ open, onClose }) {
           </NavLink>
         ))}
 
-        <div className="drawer__cta">
-          <Link to="/book" className="btn btn--primary" onClick={onClose} style={{ width: '100%' }}>
+        <div className="drawer__cta drawer__cta-actions">
+          <Link to="/refer" className="btn btn--ghost" onClick={onClose}>
+            Refer a Patient
+          </Link>
+          <Link to="/book" className="btn btn--primary" onClick={onClose}>
             Book An Appointment
           </Link>
         </div>
@@ -153,6 +157,9 @@ export default function SiteShell() {
             </a>
             <Link to="/book" className="btn btn--primary btn--small">
               Book An Appointment
+            </Link>
+            <Link to="/refer" className="btn btn--ghost btn--small site-header__cta-secondary">
+              Refer a Patient
             </Link>
             <button
               className="menu-btn"
@@ -197,6 +204,7 @@ export default function SiteShell() {
               <Link to="/#insurance-access">Insurance</Link>
               <Link to="/services">Private Pay</Link>
               <Link to="/book">Book a Visit</Link>
+              <Link to="/refer">Refer a Patient</Link>
               <Link to="/contact">Contact Us</Link>
             </div>
 

@@ -1,6 +1,4 @@
-export const FORM_SUBMIT_ACTION = 'https://api.web3forms.com/submit'
-
-const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+export const FORM_SUBMIT_ACTION = '/api/send-form'
 
 export async function submitFormToEmail(form, { subject, source }) {
   const formData = new FormData(form)
@@ -9,20 +7,15 @@ export async function submitFormToEmail(form, { subject, source }) {
     return { success: true }
   }
 
-  if (!WEB3FORMS_ACCESS_KEY) {
-    throw new Error('Web3Forms is not configured yet. Add VITE_WEB3FORMS_ACCESS_KEY to your environment variables.')
-  }
-
   const payload = new FormData()
-  payload.append('access_key', WEB3FORMS_ACCESS_KEY)
   payload.append('subject', subject)
-  payload.append('from_name', 'DreamCare Website')
-  payload.append('Form source', source)
+  payload.append('source', source)
 
   formData.forEach((value, key) => {
     const normalized = typeof value === 'string' ? value.trim() : value
     if (key.startsWith('_') || normalized === '') return
-    payload.append(labelize(key), normalized)
+    if (value instanceof File && value.size === 0) return
+    payload.append(key, normalized)
   })
 
   const response = await fetch(FORM_SUBMIT_ACTION, {
@@ -43,13 +36,4 @@ export async function submitFormToEmail(form, { subject, source }) {
   }
 
   return data
-}
-
-function labelize(key) {
-  return key
-    .replace(/([A-Z])/g, ' $1')
-    .replace(/[-_]+/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/^./, (letter) => letter.toUpperCase())
 }
