@@ -3,7 +3,7 @@ import FallbackImage from '../components/FallbackImage'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
 import { BRAND } from '../data/site'
-import { FORM_SUBMIT_ACTION, submitFormToEmail } from '../utils/formSubmit'
+import { FORM_SUBMIT_ACTION, WEB3FORMS_ACCESS_KEY, submitFormToEmail } from '../utils/formSubmit'
 
 const MAX_REFERRAL_FILE_SIZE = 10 * 1024 * 1024
 
@@ -54,10 +54,10 @@ export default function ReferPatientPage() {
             encType="multipart/form-data"
             onSubmit={handleReferralSubmit}
           >
-            <input type="hidden" name="_subject" value="New DreamCare patient referral" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input className="form-honey" type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true" />
+            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+            <input type="hidden" name="subject" value="New DreamCare patient referral" />
+            <input type="hidden" name="from_name" value="DreamCare PT Website" />
+            <input className="form-honey" type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" aria-hidden="true" />
 
             <header className="refer-card__header">
               <div className="refer-card__brand">

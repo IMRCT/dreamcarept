@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FORM_SUBMIT_ACTION, submitFormToEmail } from '../utils/formSubmit'
+import { FORM_SUBMIT_ACTION, WEB3FORMS_ACCESS_KEY, submitFormToEmail } from '../utils/formSubmit'
 
 const visitPrograms = [
   {
@@ -103,10 +103,10 @@ function RequestStaffPage() {
       <section className="page-section page-section--band">
         <div className="form-layout">
           <form className="surface-card form-card" action={FORM_SUBMIT_ACTION} method="POST" onSubmit={handleVisitRequestSubmit}>
-            <input type="hidden" name="_subject" value="New DreamCare visit request" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input className="form-honey" type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true" />
+            <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+            <input type="hidden" name="subject" value="New DreamCare visit request" />
+            <input type="hidden" name="from_name" value="DreamCare PT Website" />
+            <input className="form-honey" type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" aria-hidden="true" />
             <div className="section-head section-head--compact">
               <p className="eyebrow">Visit Request Form</p>
               <h2 className="section-title">Share the basics and we can shape the home PT visit from there.</h2>

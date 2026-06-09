@@ -3,7 +3,7 @@ import FallbackImage from '../components/FallbackImage'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
 import { BRAND } from '../data/site'
-import { FORM_SUBMIT_ACTION, submitFormToEmail } from '../utils/formSubmit'
+import { FORM_SUBMIT_ACTION, WEB3FORMS_ACCESS_KEY, submitFormToEmail } from '../utils/formSubmit'
 
 const CONTACT_HIGHLIGHTS = [
   { icon: 'calendar', title: 'Same-Day Responses', body: 'We aim to get back to you the same business day.' },
@@ -125,10 +125,10 @@ export default function ContactPage() {
 
             <Reveal delay={1}>
               <form className="form-card" action={FORM_SUBMIT_ACTION} method="POST" onSubmit={handleContactSubmit}>
-                <input type="hidden" name="_subject" value="New DreamCare website message" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input className="form-honey" type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true" />
+                <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+                <input type="hidden" name="subject" value="New DreamCare website message" />
+                <input type="hidden" name="from_name" value="DreamCare PT Website" />
+                <input className="form-honey" type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" aria-hidden="true" />
                 <div>
                   <p className="eyebrow">Send a message</p>
                   <h3 className="h3">We respond within one business day.</h3>

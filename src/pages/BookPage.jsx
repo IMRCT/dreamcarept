@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Icon from '../components/Icon'
 import Reveal from '../components/Reveal'
 import { BRAND, SERVICES } from '../data/site'
-import { FORM_SUBMIT_ACTION, submitFormToEmail } from '../utils/formSubmit'
+import { FORM_SUBMIT_ACTION, WEB3FORMS_ACCESS_KEY, submitFormToEmail } from '../utils/formSubmit'
 
 export default function BookPage() {
   const [submission, setSubmission] = useState({ status: 'idle', message: '' })
@@ -68,10 +68,10 @@ export default function BookPage() {
           <div className="contact-grid">
             <Reveal>
               <form className="form-card" action={FORM_SUBMIT_ACTION} method="POST" onSubmit={handleBookingSubmit}>
-                <input type="hidden" name="_subject" value="New DreamCare appointment request" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input className="form-honey" type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true" />
+                <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+                <input type="hidden" name="subject" value="New DreamCare appointment request" />
+                <input type="hidden" name="from_name" value="DreamCare PT Website" />
+                <input className="form-honey" type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" aria-hidden="true" />
                 <div>
                   <p className="eyebrow">Booking request</p>
                   <h2 className="h2" style={{ fontSize: '1.6rem' }}>Tell us about your visit.</h2>

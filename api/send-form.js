@@ -2,7 +2,7 @@
 import { Buffer } from 'node:buffer'
 import nodemailer from 'nodemailer'
 
-const RECIPIENTS = (process.env.FORM_RECIPIENT_EMAIL || 'referral@dreamcarept.com')
+const RECIPIENTS = (process.env.FORM_RECIPIENT_EMAIL || 'referrals@dreamcarept.com')
   .split(',')
   .map((email) => email.trim())
   .filter(Boolean)
