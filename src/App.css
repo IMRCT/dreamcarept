@@ -2466,8 +2466,8 @@
 
 .team-card--compact {
   display: grid;
-  grid-template-rows: 150px 1fr;
-  min-height: 460px;
+  grid-template-rows: 240px 1fr;
+  min-height: 540px;
   padding: 0;
   overflow: hidden;
   scroll-snap-align: start;
@@ -2485,9 +2485,7 @@
 .team-card__media {
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 80% 15%, rgba(34, 199, 201, 0.22), transparent 46%),
-    linear-gradient(145deg, var(--primary-4), #FFFFFF);
+  background: #FFFFFF;
 }
 
 .team-card__media img {
@@ -2495,6 +2493,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
+  
 }
 
 .team-card__placeholder {
@@ -2600,7 +2599,7 @@
   }
 
   .team-card--compact {
-    min-height: 440px;
+    min-height: 520px;
   }
 }
 

@@ -8,75 +8,35 @@ import { BRAND } from '../data/site'
 const TEAM_MEMBERS = [
   {
     name: 'Dr. Ashkan Ashkani',
-    initials: 'AA',
     role: 'PT, DPT, CMTPT, COMT',
     focus: 'Orthopedic, sports and home health PT',
     photo: '/images/doctor-photo.jpg',
+    pos: 'center bottom',
     body: 'Founder of DreamCare PT with 13+ years of clinical experience, Olympic team consulting experience and advanced manual therapy training.',
-    tags: ['Founder', 'Doctor of PT', 'Manual therapy'],
   },
   {
-    name: 'Home Health PT',
-    initials: 'PT',
-    icon: 'home',
-    role: 'Licensed clinician',
-    focus: 'In-home recovery and mobility',
-    body: 'Placeholder for a future physical therapist profile with service area, credentials and a short care style summary.',
-    tags: ['Home visits', 'Mobility', 'Strength'],
+    name: 'Niki Mahmoudzadeh',
+    role: 'Clinical Director & Lead PT – San Diego',
+    focus: 'Doctor of Physical Therapy',
+    photo: '/images/team/niki-mahmoudzadeh.jpg',
+    pos: 'center 25%',
+    body: 'Earned her DPT from George Washington University, with orthopedic residency and COMT certification. She specializes in orthopedic rehabilitation and is committed to hands-on treatment, movement-based interventions, and individualized care to help each patient achieve lasting results.',
   },
   {
-    name: 'Post-Surgical Specialist',
-    initials: 'PS',
-    icon: 'tools',
-    role: 'Rehab clinician',
-    focus: 'Joint replacement and post-op care',
-    body: 'Placeholder for a clinician focused on total knee, hip, shoulder and ankle replacement rehabilitation.',
-    tags: ['Post-op', 'Protocols', 'Gait'],
+    name: 'Tim Lee',
+    role: 'Lead PT – Los Angeles',
+    focus: 'Doctor of Physical Therapy',
+    photo: '/images/team/tim-lee.jpg',
+    pos: 'center top',
+    body: 'Dedicated to helping patients return to the activities they love through expert, evidence-based care and performance-focused rehabilitation. He takes a personalized approach to support each patient’s unique goals.',
   },
   {
-    name: 'Vestibular Therapist',
-    initials: 'VT',
-    icon: 'vestibular',
-    role: 'Specialty PT',
-    focus: 'Dizziness, balance and concussion',
-    body: 'Placeholder for a provider who supports vertigo, concussion symptoms, gaze stability and fall-risk recovery.',
-    tags: ['Balance', 'Vestibular', 'Concussion'],
-  },
-  {
-    name: 'Care Coordinator',
-    initials: 'CC',
-    icon: 'phone',
-    role: 'Scheduling support',
-    focus: 'Benefits, onboarding and visits',
-    body: 'Placeholder for the person who helps with referrals, scheduling, insurance checks and first-visit preparation.',
-    tags: ['Scheduling', 'Benefits', 'Referrals'],
-  },
-  {
-    name: 'Balance Coach',
-    initials: 'BC',
-    icon: 'pulse',
-    role: 'Fall-prevention support',
-    focus: 'Gait, confidence and safety',
-    body: 'Placeholder for a team member focused on home safety, walking confidence and progressive balance work.',
-    tags: ['Gait', 'Safety', 'Confidence'],
-  },
-  {
-    name: 'Sports Rehab PT',
-    initials: 'SR',
-    icon: 'trophy',
-    role: 'Return-to-sport clinician',
-    focus: 'Loading, performance and prevention',
-    body: 'Placeholder for a clinician who helps active adults return to running, lifting, training and weekend sport.',
-    tags: ['Sport', 'Loading', 'Return'],
-  },
-  {
-    name: 'Wellness Therapist',
-    initials: 'WT',
-    icon: 'heart',
-    role: 'Wellness support',
-    focus: 'Mobility and long-term function',
-    body: 'Placeholder for a provider focused on flexibility, strength maintenance and independence at home.',
-    tags: ['Wellness', 'Mobility', 'Function'],
+    name: 'Sarvenaz Dirakvand',
+    role: 'Manager of Operations',
+    focus: 'Operations & patient experience leader',
+    photo: '/images/team/sarvenaz-dirakvand.jpg',
+    pos: 'center 8%',
+    body: 'Ensures smooth business processes and a seamless patient experience from the first visit to full recovery and beyond. She is dedicated to supporting both our team and patients every step of the way.',
   },
 ]
 
@@ -152,24 +112,13 @@ export default function OurTeamPage() {
               {TEAM_MEMBERS.map((member, i) => (
                 <article key={member.name} className={`team-card team-card--compact${i === 0 ? ' team-card--founder' : ''}`}>
                   <div className="team-card__media">
-                    {member.photo ? (
-                      <FallbackImage src={member.photo} fallback="/images/doctor.svg" alt={member.name} />
-                    ) : (
-                      <div className="team-card__placeholder">
-                        <Icon name={member.icon} size={24} />
-                      </div>
-                    )}
+                    <FallbackImage src={member.photo} fallback="/images/doctor.svg" alt={member.name} style={member.pos ? { objectPosition: member.pos } : undefined} />
                   </div>
                   <div className="team-card__copy">
                     <span>{member.role}</span>
                     <h3>{member.name}</h3>
                     <strong>{member.focus}</strong>
                     <p>{member.body}</p>
-                    <div className="team-card__tags">
-                      {member.tags.map((tag) => (
-                        <em key={tag}>{tag}</em>
-                      ))}
-                    </div>
                   </div>
                 </article>
               ))}
